@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class HibernateUtil {
 	private static SessionFactory sessionFactory;
-
+//felipe
 	public static SessionFactory getSessionFactory() {
 		if (sessionFactory == null) {
 			try {
