@@ -1,5 +1,6 @@
 package Hibernate.Dao;
 
+import Hibernate.Model.Localidad;
 import Hibernate.Model.Pais;
 import Hibernate.Util.HibernateUtil;
 import org.hibernate.Session;
@@ -7,18 +8,18 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class PaisDao {
+public class LocalidadDao {
 	// guardado
 	// borrado
 	// get by id
 	// get all
 	// update
-	public static void savePais(Pais pais){
+	public static void saveLocalidad(Localidad localidad){
 		Transaction transaction = null;
 		try(Session session = HibernateUtil.getSessionFactory().openSession()){
 			transaction = session.beginTransaction();
 
-			session.save(pais);
+			session.save(localidad);
 
 			transaction.commit();
 		}catch (Exception e){
@@ -27,12 +28,12 @@ public class PaisDao {
 			}
 		}
 	}
-	public static void updatePais(Pais pais){
+	public static void updateLocalidad(Localidad localidad){
 		Transaction transaction = null;
 		try(Session session = HibernateUtil.getSessionFactory().openSession()){
 			transaction = session.beginTransaction();
 
-			session.saveOrUpdate(pais);
+			session.saveOrUpdate(localidad);
 
 			transaction.commit();
 		}catch (Exception e){
@@ -42,13 +43,13 @@ public class PaisDao {
 		}
 	}
 
-	public static Pais getPaisById(int id){
+	public static Localidad getLocalidadById(int id){
 		Transaction transaction = null;
-		Pais pais = null;
+		Localidad localidad = null;
 		try(Session session = HibernateUtil.getSessionFactory().openSession()){
 			transaction = session.beginTransaction();
 
-			pais = session.get(Pais.class,id);
+			localidad = session.get(Localidad.class,id);
 
 			transaction.commit();
 		}catch (Exception e){
@@ -56,16 +57,16 @@ public class PaisDao {
 				transaction.rollback();
 			}
 		}
-		return pais;
+		return localidad;
 	}
 
-	public static List<Pais> getPaises(){
+	public static List<Localidad> getLocalidades(){
 		Transaction transaction = null;
-		List<Pais> paises = null;
+		List<Localidad> localidades = null;
 		try(Session session = HibernateUtil.getSessionFactory().openSession()){
 			transaction = session.beginTransaction();
 
-			paises = session.createQuery("from Pais").list();
+			localidades = session.createQuery("from Localidad").list();
 
 			transaction.commit();
 		}catch (Exception e){
@@ -73,17 +74,17 @@ public class PaisDao {
 				transaction.rollback();
 			}
 		}
-		return paises;
+		return localidades;
 	}
 
-	public static void deletePais(int id){
+	public static void deleteLocalodad(int id){
 		Transaction transaction = null;
-		Pais pais = null;
+		Localidad localidad = null;
 		try(Session session = HibernateUtil.getSessionFactory().openSession()){
 			transaction = session.beginTransaction();
 
-			pais = session.get(Pais.class,id);
-			session.delete(pais);
+			localidad = session.get(Localidad.class,id);
+			session.delete(localidad);
 
 			transaction.commit();
 		}catch (Exception e){
@@ -93,3 +94,4 @@ public class PaisDao {
 		}
 	}
 }
+

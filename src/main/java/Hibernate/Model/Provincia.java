@@ -1,13 +1,17 @@
 package Hibernate.Model;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Provincia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id")
     private int id;
-    @Column (name = "nombre")
+    @Column (name = "nombre", length = 20)
     private String nombre;
 
     @Column (name = "cpostal")
@@ -15,6 +19,8 @@ public class Provincia {
     @ManyToOne
     @JoinColumn(name = "pais_id")
     private Pais pais;
+    @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Localidad> localidades  = new ArrayList<>();
 
     @Override
     public String toString() {

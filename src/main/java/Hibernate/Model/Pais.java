@@ -12,7 +12,7 @@ public class Pais {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name = "id")
 	private int id;
-	@Column (name = "nombre")
+	@Column (name = "nombre", length = 20)
 	private String nombre;
 
 	@OneToMany(mappedBy = "pais", cascade = CascadeType.ALL, orphanRemoval = true)

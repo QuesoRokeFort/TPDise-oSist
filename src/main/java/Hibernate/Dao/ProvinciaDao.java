@@ -13,7 +13,7 @@ public class ProvinciaDao {
     // get by id
     // get all
     // update
-    public void saveProvincia(Provincia provincia){
+    public static void saveProvincia(Provincia provincia){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
@@ -27,7 +27,7 @@ public class ProvinciaDao {
             }
         }
     }
-    public void updateProvincia(Provincia provincia){
+    public static void updateProvincia(Provincia provincia){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
@@ -42,7 +42,7 @@ public class ProvinciaDao {
         }
     }
 
-    public Provincia getProvinciaById(Long id){
+    public static Provincia getProvinciaById(int id){
         Transaction transaction = null;
         Provincia provincia = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -59,7 +59,7 @@ public class ProvinciaDao {
         return provincia;
     }
 
-    public List<Provincia> getProvincias(){
+    public static List<Provincia> getProvincias(){
         Transaction transaction = null;
         List<Provincia> provincias = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -76,7 +76,7 @@ public class ProvinciaDao {
         return provincias;
     }
 
-    public void deleteProvincia(Long id){
+    public static void deleteProvincia(int id){
         Transaction transaction = null;
         Provincia provincia = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
