@@ -1,3 +1,5 @@
+import Hibernate.Dao.DireccionDao;
+import Hibernate.Dao.LocalidadDao;
 import Hibernate.Dao.PaisDao;
 import Hibernate.Dao.ProvinciaDao;
 import Hibernate.Model.*;
@@ -7,23 +9,19 @@ import java.util.List;
 
 public class App {
 	public static void main(String[] args) {
-		Provincia pr = new Provincia();
-		pr.setNombre("Santa Fe");
-		pr.setCodPostal(3000);
-		PaisDao paisDao = new PaisDao();
-		PaisDao pd = new PaisDao();;
-		pr.setPais(pd.getPaisById((long)1));
-		ProvinciaDao prd = new ProvinciaDao();
-		prd.saveProvincia(pr);
-
-		//paisDao.savePais(p);
-		List<Pais> paises = paisDao.getPaises();
-		paises.forEach(pais -> System.out.println(pais.toString()));
-		/*for (int i = 0; i < paises.size(); i++) {
-			System.out.println(;paises.get(i).toString());
-		}*/
-
-		List<Provincia> provincias = prd.getProvincias();
-		provincias.forEach(provincia -> System.out.println(provincia.toString()));
+		/*Localidad localidad = new Localidad();
+		localidad.setNombre("Santa Fe");
+		localidad.setValorDeRiesgo(10);
+		localidad.setProvincia(ProvinciaDao.getProvinciaById(1));
+		LocalidadDao.saveLocalidad(localidad);*/
+		LocalidadDao.getLocalidades().forEach(l-> System.out.println(l.toString()));
+		/*Direccion direccion =new Direccion();
+		direccion.setCalle("pedro dias colodrero");
+		direccion.setAltura(1645);
+		direccion.setPiso("0");
+		direccion.setDepto("no");
+		direccion.setLocalidad(LocalidadDao.getLocalidadById(1));
+		DireccionDao.saveDireccion(direccion);*/
+		DireccionDao.getDirecciones().forEach(d-> System.out.println(d.toString()));
 	}
 }
