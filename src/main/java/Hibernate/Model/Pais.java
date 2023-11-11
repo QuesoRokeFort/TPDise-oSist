@@ -1,6 +1,10 @@
 package Hibernate.Model;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table (name = "Pais")
 public class Pais {
@@ -11,6 +15,8 @@ public class Pais {
 	@Column (name = "nombre")
 	private String nombre;
 
+	@OneToMany(mappedBy = "pais", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Provincia> provincias = new ArrayList<>();
 	@Override
 	public String toString() {
 		return "Pais{" +

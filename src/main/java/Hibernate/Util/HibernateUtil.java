@@ -43,6 +43,7 @@ public class HibernateUtil {
 
 				// Añadir clases de entidad
 				configuration.addAnnotatedClass(Pais.class);
+				configuration.addAnnotatedClass(Provincia.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();
