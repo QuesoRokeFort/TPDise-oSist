@@ -4,7 +4,8 @@ package Hibernate.Model;
 public enum Rol {
 	COBRADOR("Cobrador"),
 	GERENTE("Gerente"),
-	PRODUCTOR_SEGURO("Productor de Seguros");
+	PRODUCTOR_SEGURO("Productor de Seguros"),
+	CLIENTE("Cliente");
 	private final String descripcion;
 
 	Rol(String descripcion) {
