@@ -79,7 +79,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="Ingrese aqui"/>
+          <text value="ingrese aqui"/>
         </properties>
       </component>
       <component id="3ce61" class="javax.swing.JLabel">
@@ -117,7 +117,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="Ingrese aqui"/>
+          <text value="ingrese aqui"/>
         </properties>
       </component>
       <component id="997ec" class="javax.swing.JTextField" binding="AlturaText">
@@ -128,7 +128,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="Ingrese aqui"/>
+          <text value="ingrese aqui"/>
         </properties>
       </component>
       <component id="2ea8e" class="javax.swing.JTextField" binding="DeptoText">
@@ -139,7 +139,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="Ingrese aqui"/>
+          <text value="ingrese aqui"/>
         </properties>
       </component>
       <component id="de3bb" class="javax.swing.JButton" binding="doneButton" default-binding="true">
