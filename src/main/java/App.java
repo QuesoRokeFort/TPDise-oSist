@@ -1,11 +1,20 @@
-import Hibernate.Dao.*;
-import Hibernate.Model.*;
+import DTO.DireccionDTO;
+import DTO.PersonaDTO;
+import Interface.CargaPersonaInterface;
+import Interface.DirreccionInterface;
 
 
-import java.util.Date;
-import java.util.List;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class App {
+	private JFrame frame;
+	private JPanel cardPanel;
+	private CardLayout cardLayout;
+	private DireccionDTO direccionDTO;
+	private PersonaDTO personaDTO=new PersonaDTO();
 	public static void main(String[] args) {
 		/*Localidad localidad = new Localidad();
 		localidad.setNombre("Santa Fe");
@@ -40,6 +49,62 @@ public class App {
 		persona.setNroDocumento(41847630);
 		persona.setTipoDocumento(TipoDocumento.DNI);
 		PersonaDao.savePersona(persona);*/
-		PersonaDao.getAllPersonas().forEach(p->System.out.println(p.toString()));
+		//PersonaDao.getAllPersonas().forEach(p->System.out.println(p.toString()));
+		//ProvinciaDao.getProvinciasByPais(PaisDao.getPaisById(1)).forEach(p-> System.out.println(p.toString()));
+
+
+		SwingUtilities.invokeLater(() -> {
+			try {
+				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			new App();
+		});
 	}
+    public App() {
+			frame = new JFrame("Carga de Persona");
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+			cardPanel = new JPanel();
+			cardLayout = new CardLayout();
+			cardPanel.setLayout(cardLayout);
+
+			// Panel 1 (Assuming CargaPersonaInterface.panel1 is the first panel)
+			CargaPersonaInterface cargaPersonaInterface = new CargaPersonaInterface(frame);
+			cardPanel.add(cargaPersonaInterface.getPanel1(), "CargaPersonaPanel");
+
+			// Panel 2 (Assuming DirreccionInterface.getPanel1() returns the second panel)
+			DirreccionInterface dirreccionInterface = new DirreccionInterface(frame);
+			cardPanel.add(dirreccionInterface.getPanel1(), "DirreccionPanel");
+
+			// Set up button action in the first panel to switch to the second panel
+			cargaPersonaInterface.agregarDireccionButton.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					cardLayout.show(cardPanel, "DirreccionPanel");
+				}
+			});
+
+			// Set up button action in the second panel to switch back to the first panel
+			dirreccionInterface.doneButton.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					cardLayout.show(cardPanel, "CargaPersonaPanel");
+				}
+		});
+		cargaPersonaInterface.terminarButton.addActionListener(e -> {
+			personaDTO = cargaPersonaInterface.getPersonaDTO();
+			direccionDTO = dirreccionInterface.getDireccionDTO();
+			personaDTO.setDireccion(direccionDTO);
+			System.out.println(personaDTO.toString());
+		});
+
+			// Set the initial panel to show
+			cardLayout.show(cardPanel, "CargaPersonaPanel");
+
+			frame.setContentPane(cardPanel);
+			frame.setSize(500, 400);
+			frame.setVisible(true);
+		}
 }
