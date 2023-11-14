@@ -1,5 +1,6 @@
 package Hibernate.Model;
 
+import DTO.ProvinciaDTO;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -21,6 +22,13 @@ public class Provincia {
     private Pais pais;
     @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Localidad> localidades  = new ArrayList<>();
+
+    public Provincia(ProvinciaDTO provincia) {
+        this.id = provincia.getId();
+        this.nombre = provincia.getNombre();
+        this.codPostal = provincia.getCodPostal();
+        this.pais = new Pais(provincia.getPais());
+    }
 
     @Override
     public String toString() {
