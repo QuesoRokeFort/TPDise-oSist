@@ -1,6 +1,7 @@
 package Hibernate.Model;
 
 
+import DTO.DireccionDTO;
 import jakarta.persistence.*;
 
 @Entity
@@ -39,7 +40,19 @@ public class Direccion {
 		this.localidad = localidad;
 	}
 
-	public String getCalle() {
+
+
+    public Direccion(DireccionDTO direccion) {
+		this.id = direccion.getId();
+		this.calle = direccion.getCalle();
+		this.piso = direccion.getPiso();
+		this.altura = direccion.getAltura();
+		this.depto = direccion.getDepto();
+		this.localidad = new Localidad(direccion.getLocalidad());
+
+	}
+
+    public String getCalle() {
 		return calle;
 	}
 

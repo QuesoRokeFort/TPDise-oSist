@@ -1,5 +1,6 @@
 package Hibernate.Model;
 
+import DTO.LocalidadDTO;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -29,7 +30,15 @@ public class Localidad {
 		this.provincia = provincia;
 	}
 
-	@Override
+    public Localidad(LocalidadDTO localidad) {
+		this.id = localidad.getId();
+		this.nombre = localidad.getNombre();
+		this.valorDeRiesgo = localidad.getValorDeRiesgo();
+		this.provincia = new Provincia(localidad.getProvincia());
+
+	}
+
+    @Override
 	public String toString() {
 		return "Localidad{" +
 				"id=" + id +
