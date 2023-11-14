@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="me puse a hacer un menu para cargar personas jaja me aburro y eso">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/DireccionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/LocalidadDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/PaisDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/ProvinciaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorDirrecciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/ProvinciaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/ProvinciaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/TipoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/TipoDocumento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +49,9 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="2Y0MKdiUSiCyN3HWdqfZGDUYI0K" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -71,25 +60,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "421",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="DTO" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="DirreccionInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DirreccionInterface" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Interface.DirreccionInterface" />
       <module name="Trabajo_Practico_Dds" />
       <extension name="coverage">
@@ -207,6 +199,26 @@
     <MESSAGE value="parte de Personas terminadas&#10;podriamos hacer el menu de ingreso de usuarios ahora" />
     <MESSAGE value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
     <option name="LAST_COMMIT_MESSAGE" value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java</url>
+          <line>32</line>
+          <properties class="Interface.CargaPersonaInterface" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

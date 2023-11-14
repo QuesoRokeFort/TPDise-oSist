@@ -36,7 +36,7 @@ public class DirreccionInterface {
 		CalleText.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				CalleText.setText("");
+				if(CalleText.getText().equals("ingrese aqui"))CalleText.setText("");
 			}
 
 			@Override
@@ -49,7 +49,7 @@ public class DirreccionInterface {
 		PisoText.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				PisoText.setText("");
+				if(PisoText.getText().equals("ingrese aqui"))PisoText.setText("");
 			}
 
 			@Override
@@ -63,7 +63,7 @@ public class DirreccionInterface {
 		AlturaText.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				AlturaText.setText("");
+				if(AlturaText.getText().equals("ingrese aqui"))AlturaText.setText("");
 			}
 
 			@Override
@@ -77,7 +77,8 @@ public class DirreccionInterface {
 		DeptoText.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				DeptoText.setText("");
+
+				if(DeptoText.getText().equals("ingrese aqui"))DeptoText.setText("");
 			}
 
 			@Override
@@ -157,6 +158,39 @@ public class DirreccionInterface {
 
 
 	public DireccionDTO getDireccionDTO() {
-		return Ddto;
+		String aviso = validateData();
+		if (aviso.equals("Error en:")) {
+			return Ddto;
+			// Aquí puedes realizar acciones adicionales con el objeto personaDTO
+		} else {
+			JOptionPane.showMessageDialog(null, aviso);
+		}
+		return null;
+	}
+
+	private String validateData() {
+		String aviso = "Error en:";
+		if (PaisComboBox.getSelectedIndex() < 0) {
+			aviso += " Pais, ";
+		}
+		if (ProvComboBox.getSelectedIndex() < 0) {
+			aviso += " Provincia, ";
+		}
+		if (LocComboBox.getSelectedIndex() < 0) {
+			aviso += " Localidad, ";
+		}
+		if (CalleText.getText().equals("ingrese aqui")) {
+			aviso += " Calle, ";
+		}
+		if (PisoText.getText().equals("ingrese aqui")) {
+			aviso += " Piso, ";
+		}
+		if (AlturaText.getText().equals("ingrese aqui")) {
+			aviso += " Altura, ";
+		}
+		if (DeptoText.getText().equals("ingrese aqui")) {
+			aviso += " Depto, ";
+		}
+		return aviso;
 	}
 }
