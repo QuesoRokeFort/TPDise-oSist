@@ -1,5 +1,6 @@
 package Hibernate.Model;
 
+import DTO.PaisDTO;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -17,6 +18,12 @@ public class Pais {
 
 	@OneToMany(mappedBy = "pais", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Provincia> provincias = new ArrayList<>();
+
+	public Pais(PaisDTO paisDTO) {
+		this.id = paisDTO.getId();
+		this.nombre = paisDTO.getNombre();
+	}
+
 	@Override
 	public String toString() {
 		return "Pais{" +
@@ -47,5 +54,9 @@ public class Pais {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public List<Provincia> getProvincias() {
+		return provincias;
 	}
 }

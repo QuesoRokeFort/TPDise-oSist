@@ -27,7 +27,7 @@ public class PersonaDTO {
 	private Date fechaNac;
 
 
-	private Direccion direccion;
+	private DireccionDTO direccion;
 
 
 	private TipoDocumento tipoDocumento;
@@ -45,7 +45,7 @@ public class PersonaDTO {
 	public PersonaDTO() {
 	}
 
-	public PersonaDTO(Integer idPersona, String nombrePersona, String apellido, Integer nroDocumento, Integer nroCuil, Sexo sexo, Date fechaNac, Direccion direccion, TipoDocumento tipoDocumento, EstadoCivil estadoCivil, Profesion profesion, Usuario usuario) {
+	public PersonaDTO(Integer idPersona, String nombrePersona, String apellido, Integer nroDocumento, Integer nroCuil, Sexo sexo, Date fechaNac, DireccionDTO direccion, TipoDocumento tipoDocumento, EstadoCivil estadoCivil, Profesion profesion, Usuario usuario) {
 		this.idPersona = idPersona;
 		this.nombrePersona = nombrePersona;
 		this.apellido = apellido;
@@ -58,6 +58,20 @@ public class PersonaDTO {
 		this.estadoCivil = estadoCivil;
 		this.profesion = profesion;
 		this.usuario = usuario;
+	}
+	public PersonaDTO(Persona persona) {
+		this.idPersona = persona.getIdPersona();
+		this.nombrePersona = persona.getNombrePersona();
+		this.apellido = persona.getApellido();
+		this.nroDocumento = persona.getNroDocumento();
+		this.nroCuil = persona.getNroCuil();
+		this.sexo = persona.getSexo();
+		this.fechaNac = persona.getFechaNac();
+		this.direccion = new DireccionDTO(persona.getDireccion());
+		this.tipoDocumento = persona.getTipoDocumento();
+		this.estadoCivil = persona.getEstadoCivil();
+		this.profesion = persona.getProfesion();
+		this.usuario = persona.getUsuario();
 	}
 
 	@Override
@@ -134,11 +148,11 @@ public class PersonaDTO {
 		this.fechaNac = fechaNac;
 	}
 
-	public Direccion getDireccion() {
+	public DireccionDTO getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(Direccion direccion) {
+	public void setDireccion(DireccionDTO direccion) {
 		this.direccion = direccion;
 	}
 

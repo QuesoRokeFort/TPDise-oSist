@@ -1,5 +1,7 @@
 package Hibernate.Dao;
 
+import Hibernate.Model.Localidad;
+import Hibernate.Model.Pais;
 import Hibernate.Model.Provincia;
 import Hibernate.Util.HibernateUtil;
 import org.hibernate.Session;
@@ -91,5 +93,26 @@ public class ProvinciaDao {
                 transaction.rollback();
             }
         }
+    }
+    public static List<Provincia> getProvinciasByPais(Pais pais) {
+        Transaction transaction = null;
+        List<Provincia> provincias = null;
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            String query = "from Provincia where pais = :pais";
+            provincias = session.createQuery(query, Provincia.class)
+                    .setParameter("pais", pais)
+                    .list();
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace(); // Handle the exception appropriately
+        }
+        return provincias;
     }
 }

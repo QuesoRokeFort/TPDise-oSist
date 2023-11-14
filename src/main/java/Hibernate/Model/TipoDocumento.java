@@ -3,8 +3,7 @@ package Hibernate.Model;
 
 public enum TipoDocumento {
 	DNI("Documento Nacional de Identidad"),
-	PASAPORTE("Pasaporte"),
-	CEDULA("Cédula de Identidad");
+	CUIT("Cuit");
 
 	private String descripcion;
 
