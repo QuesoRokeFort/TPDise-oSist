@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="Interfaces hechas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="me puse a hacer un menu para cargar personas jaja me aburro y eso">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/AnioFabricacionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/MarcaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/ModeloDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/VehiculoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/AnioFabricacionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/MarcaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/ModeloDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/VehiculoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/AnioFabricacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Marca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Modelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/ModeloAnioFabricacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Vehiculo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +56,6 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -61,53 +67,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "211",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;421&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="DTO" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="AccesoUsuario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Interface.AccesoUsuario" />
-      <module name="Trabajo_Practico_Dds" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Interface.MenuGerente" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="App" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="Trabajo_Practico_Dds" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="DirreccionInterface" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Interface.DirreccionInterface" />
       <module name="Trabajo_Practico_Dds" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Interface.MenuGerente" />
+          <option name="PATTERN" value="Interface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,14 +114,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.App" />
-      <item itemvalue="Application.AccesoUsuario" />
-      <item itemvalue="Application.DirreccionInterface" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AccesoUsuario" />
         <item itemvalue="Application.DirreccionInterface" />
       </list>
     </recent_temporary>
@@ -205,31 +185,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699847077995</updated>
     </task>
-    <task id="LOCAL-00009" summary="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente">
-      <option name="closed" value="true" />
-      <created>1700257968625</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1700257968625</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Interaces hechas">
-      <option name="closed" value="true" />
-      <created>1700429138753</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700429138753</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Interfaces hechas">
-      <option name="closed" value="true" />
-      <created>1700429655976</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1700429655976</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,10 +205,27 @@
     <MESSAGE value="cree Direccion y Localidad&#10;cambie los Dao a staticos por comodidad" />
     <MESSAGE value="parte de Personas terminadas&#10;podriamos hacer el menu de ingreso de usuarios ahora" />
     <MESSAGE value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
-    <MESSAGE value="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente" />
-    <MESSAGE value="Interaces hechas" />
-    <MESSAGE value="Interfaces hechas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interfaces hechas" />
+    <option name="LAST_COMMIT_MESSAGE" value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java</url>
+          <line>32</line>
+          <properties class="Interface.CargaPersonaInterface" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
