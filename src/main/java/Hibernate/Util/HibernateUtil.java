@@ -58,6 +58,7 @@ public class HibernateUtil {
 				configuration.addAnnotatedClass(AnioFabricacion.class);
 				configuration.addAnnotatedClass(Marca.class);
 				configuration.addAnnotatedClass(ModeloAnioFabricacion.class);
+				configuration.addAnnotatedClass(Cliente.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();
