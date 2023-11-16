@@ -1,5 +1,6 @@
 package Hibernate.Model;
 import DTO.PersonaDTO;
+import DTO.UsuarioDTO;
 import jakarta.persistence.*;
 import java.util.Date;
 
@@ -46,9 +47,12 @@ public class Persona {
 	private Profesion profesion;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "idUsuario", unique = true) // Indica que la relación es única (1 a 1)
+	@JoinColumn(name = "idUsuario", unique = true)
 	private Usuario usuario;
 
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "idCliente", unique = true)
+	private Cliente cliente;
 
 	public Persona() {
 	}
@@ -80,7 +84,16 @@ public class Persona {
 		this.tipoDocumento = personaDTO.getTipoDocumento();
 		this.estadoCivil = personaDTO.getEstadoCivil();
 		this.profesion = personaDTO.getProfesion();
-		this.usuario = personaDTO.getUsuario();
+		this.usuario = new Usuario(personaDTO.getUsuario());
+		this.cliente = new Cliente(personaDTO.getCliente());
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	@Override
@@ -91,13 +104,14 @@ public class Persona {
 				", apellido='" + apellido + '\'' +
 				", nroDocumento=" + nroDocumento +
 				", nroCuil=" + nroCuil +
-				", sexo='" + sexo + '\'' +
+				", sexo=" + sexo +
 				", fechaNac=" + fechaNac +
 				", direccion=" + direccion +
 				", tipoDocumento=" + tipoDocumento +
 				", estadoCivil=" + estadoCivil +
 				", profesion=" + profesion +
 				", usuario=" + usuario +
+				", cliente=" + cliente +
 				'}';
 	}
 
