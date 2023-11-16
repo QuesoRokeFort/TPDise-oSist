@@ -32,7 +32,7 @@ public class DirreccionInterface {
 	private List<LocalidadDTO> localidades ;
 	private  DireccionDTO Ddto;
 
-	public DirreccionInterface(JFrame frame) {
+	public DirreccionInterface() {
 		CalleText.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
