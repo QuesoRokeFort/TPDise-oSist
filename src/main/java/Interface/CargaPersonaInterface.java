@@ -31,7 +31,7 @@ public class CargaPersonaInterface {
     private JLabel TextoAviso;
     private PersonaDTO personaDTO;
 
-    public CargaPersonaInterface(JFrame frame) {
+    public CargaPersonaInterface() {
         TextoApellido.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -172,14 +172,6 @@ public class CargaPersonaInterface {
         return personaDTO;
     }
 
-    public static void main(String[] args) {
-        JFrame jFrame = new JFrame("Carga de Persona");
-        CargaPersonaInterface cargaPersonaInterface = new CargaPersonaInterface(jFrame);
-        jFrame.setContentPane(cargaPersonaInterface.panel1);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setSize(500, 400);
-        jFrame.setVisible(true);
-    }
 
     public JPanel getPanel1() {
         return panel1;

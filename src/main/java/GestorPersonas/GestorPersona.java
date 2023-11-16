@@ -2,10 +2,13 @@ package GestorPersonas;
 
 import DTO.ClienteDTO;
 import DTO.PersonaDTO;
+import DTO.UsuarioDTO;
 import Hibernate.Dao.PersonaDao;
+import Hibernate.Dao.UsuarioDao;
 import Hibernate.Model.Cliente;
 import Hibernate.Model.Persona;
 import Hibernate.Model.Rol;
+import Hibernate.Model.Usuario;
 
 public class GestorPersona {
 
@@ -21,5 +24,14 @@ public class GestorPersona {
         Persona persona = new Persona(personaDTO);
         persona.setUsuario(null);
         PersonaDao.savePersona(persona);
+    }
+
+    public static UsuarioDTO logInUsuario(UsuarioDTO usuario) {
+        Usuario usuario1 = UsuarioDao.getUsuarioByMail(usuario.getMail());
+        if (usuario1!=null && usuario1.getClave().equals(usuario.getClave())){
+            usuario.setRol(usuario1.getRol());
+            return usuario;
+        }
+        return null;
     }
 }
