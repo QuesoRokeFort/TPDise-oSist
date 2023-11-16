@@ -2,6 +2,7 @@ package Interface;
 
 import DTO.DireccionDTO;
 import DTO.PersonaDTO;
+import DTO.UsuarioDTO;
 import Hibernate.Model.*;
 
 import javax.swing.*;
@@ -164,9 +165,9 @@ public class CargaPersonaInterface {
             personaDTO.setNroCuil(Integer.valueOf(Nro.getText()));
         }
 
-        Usuario usuario = new Usuario();
+        UsuarioDTO usuario = new UsuarioDTO();
         usuario.setMail(TextoEmail.getText());
-        usuario.setRol(Rol.CLIENTE);
+        usuario.setPersona(personaDTO);
         personaDTO.setUsuario(usuario);
         return personaDTO;
     }

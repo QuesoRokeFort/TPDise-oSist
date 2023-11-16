@@ -1,7 +1,7 @@
 package DTO;
 
 import Hibernate.Model.Direccion;
-import Hibernate.Model.Localidad;
+
 
 
 public class DireccionDTO {

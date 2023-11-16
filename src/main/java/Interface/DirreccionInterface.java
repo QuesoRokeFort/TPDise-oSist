@@ -100,7 +100,6 @@ public class DirreccionInterface {
 						.filter(localidad -> localidad.getNombre().equals(LocComboBox.getSelectedItem()))
 						.findFirst()
 						.orElse(null)));
-				System.out.println(direccion.toString());
 				Ddto = direccion;
 			}
 		});

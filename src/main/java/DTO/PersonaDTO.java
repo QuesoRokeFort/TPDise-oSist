@@ -39,8 +39,13 @@ public class PersonaDTO {
 	private Profesion profesion;
 
 
-	private Usuario usuario;
+	private UsuarioDTO usuario;
 
+	private ClienteDTO cliente;
+
+	public void setCliente(ClienteDTO cliente) {
+		this.cliente = cliente;
+	}
 
 	public PersonaDTO() {
 	}
@@ -57,7 +62,7 @@ public class PersonaDTO {
 		this.tipoDocumento = tipoDocumento;
 		this.estadoCivil = estadoCivil;
 		this.profesion = profesion;
-		this.usuario = usuario;
+		this.usuario = new UsuarioDTO(usuario);
 	}
 	public PersonaDTO(Persona persona) {
 		this.idPersona = persona.getIdPersona();
@@ -71,7 +76,10 @@ public class PersonaDTO {
 		this.tipoDocumento = persona.getTipoDocumento();
 		this.estadoCivil = persona.getEstadoCivil();
 		this.profesion = persona.getProfesion();
-		this.usuario = persona.getUsuario();
+		this.usuario = new UsuarioDTO(persona.getUsuario());
+		usuario.setPersona(this);
+		this.cliente = new ClienteDTO(persona.getCliente());
+		cliente.setPersona(this);
 	}
 
 	@Override
@@ -89,6 +97,7 @@ public class PersonaDTO {
 				", estadoCivil=" + estadoCivil +
 				", profesion=" + profesion +
 				", usuario=" + usuario +
+				", cliente=" + cliente +
 				'}';
 	}
 
@@ -180,11 +189,15 @@ public class PersonaDTO {
 		this.profesion = profesion;
 	}
 
-	public Usuario getUsuario() {
+	public UsuarioDTO getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(UsuarioDTO usuario) {
 		this.usuario = usuario;
+	}
+
+	public ClienteDTO getCliente() {
+		return cliente;
 	}
 }

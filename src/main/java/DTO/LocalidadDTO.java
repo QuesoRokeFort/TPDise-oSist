@@ -1,12 +1,9 @@
 package DTO;
 
-import Hibernate.Model.Direccion;
+
 import Hibernate.Model.Localidad;
 import Hibernate.Model.Provincia;
-import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class LocalidadDTO {
 	private int id;
