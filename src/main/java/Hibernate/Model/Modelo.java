@@ -12,7 +12,7 @@ import java.util.List;
 public class Modelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id_modelo")
     private Integer id;
 
     @Column(name = "nombreModelo", length = 20)
@@ -25,7 +25,7 @@ public class Modelo {
     private Integer valorPorcentualRiesgo;
 
     @ManyToOne
-    @JoinColumn(name = "idMarca")
+    @JoinColumn(name = "Marca_id")
     private Marca marca;
 
     public Modelo() {

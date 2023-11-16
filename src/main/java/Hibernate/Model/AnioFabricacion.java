@@ -14,7 +14,7 @@ import java.util.List;
 public class AnioFabricacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id_anio")
     private Integer id;
 
     @Column(name = "anio")
