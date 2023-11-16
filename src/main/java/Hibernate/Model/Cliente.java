@@ -26,7 +26,7 @@ public class Cliente {
 	@Column(name = "nroSiniestros")
 	private Integer nroSiniestros;
 
-	@OneToOne
+	@OneToOne(mappedBy = "cliente")
 	private Persona persona;
 
 	public Cliente() {
