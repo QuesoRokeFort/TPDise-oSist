@@ -1,32 +1,53 @@
 package Interface;
 
 
-import DTO.UsuarioDTO;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.lang.management.LockInfo;
 
 
-public class AccesoUsuario{
+public class AccesoUsuario extends JFrame{
     private JPanel PantallaPrincipal;
+    private JPanel Borde;
+    private JPanel Login;
     private JLabel idLogin;
     private JLabel idUsuario;
     private JTextField idUsuarioText;
     private JLabel idContraseña;
     private JTextField idContraseñaText;
-    public JButton confirmarMenu;
+    private JButton confirmarMenu;
     private JPanel idPanelLogin;
     private JPanel idPanelUsuario;
+    private JPanel idPanelContraseña;
 
     private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 
     public AccesoUsuario() {
+        //  SetImageLabel(Dibujo, "/java/images/auto.jpg");
+        setContentPane(PantallaPrincipal);
+        setTitle("Menu");
+        setSize(500, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        confirmarMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String aviso = validateData();
+                if(aviso.equals("Error en: ")) {
+                    String usuario = idUsuarioText.getText();
+                    JOptionPane.showMessageDialog(AccesoUsuario.this, "Bienvenido " + usuario);
+                }
+                else{
+                    JOptionPane.showMessageDialog(AccesoUsuario.this,aviso);
+                }
+            }
+        });
         idUsuarioText.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -56,7 +77,9 @@ public class AccesoUsuario{
             }
         });
     }
-
+    public static void main(String[] args) {
+        new AccesoUsuario();
+    }
     private String validateData() {
         String aviso = "Error en: ";
         if (idUsuarioText.getText().equals("Escriba su Usuario...")) {
@@ -67,23 +90,10 @@ public class AccesoUsuario{
         }
     return aviso;
     }
-
-	public JPanel getPanel1() {
-        return PantallaPrincipal;
-	}
-
-    public UsuarioDTO getUsuario() {
-        String aviso = validateData();
-        UsuarioDTO usuario = new UsuarioDTO();
-        if(aviso.equals("Error en: ")) {
-            usuario.setMail(idUsuarioText.getText());
-            usuario.setClave(idContraseñaText.getText());
-            return usuario;
-        }
-        else{
-            JOptionPane.showMessageDialog(null,aviso);
-        }
-        return null;
-    }
-
+    //private void SetImageLabel(JLabel labelName, String root){
+    //  ImageIcon image = new ImageIcon(root);
+    //  Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(),labelName.getHeight(), Image.SCALE_DEFAULT));
+    //  labelName.setIcon(icon);
+    //  this.repaint();
+    //}
 }
