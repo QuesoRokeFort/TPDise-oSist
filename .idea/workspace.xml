@@ -4,22 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="me puse a hacer un menu para cargar personas jaja me aburro y eso">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/AnioFabricacionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/MarcaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/ModeloDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/VehiculoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/AnioFabricacionDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/MarcaDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/ModeloDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/VehiculoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/AnioFabricacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Marca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Modelo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/ModeloAnioFabricacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Vehiculo.java" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="hice muchas cosas&#10;2 interfaces un menu handler de las 2 termine la carga depersonas y hice un monton de DTOS&#10; nose porque no se paso este archivo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/ClienteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/UsuarioDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/DireccionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/DireccionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/LocalidadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/LocalidadDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PaisDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PaisDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/ProvinciaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/ProvinciaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +91,14 @@
       <recent name="DTO" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="Trabajo_Practico_Dds" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DirreccionInterface" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Interface.DirreccionInterface" />
       <module name="Trabajo_Practico_Dds" />
@@ -114,6 +125,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.DirreccionInterface" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.DirreccionInterface" />
@@ -212,17 +227,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java</url>
-          <line>32</line>
+          <line>33</line>
           <properties class="Interface.CargaPersonaInterface" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java</url>
-          <line>139</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
