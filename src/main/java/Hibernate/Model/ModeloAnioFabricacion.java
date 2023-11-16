@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 @Entity
-@Table(name = "modelo_anio_fabricacion")
+@Table(name = "Modelo_Anio_Fabricacion")
 public class ModeloAnioFabricacion {
     @Id
     @Column(name = "id")
