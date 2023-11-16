@@ -26,7 +26,11 @@ public class Cliente {
 	@Column(name = "nroSiniestros")
 	private Integer nroSiniestros;
 
+<<<<<<< HEAD
 	@OneToOne(mappedBy = "cliente")
+=======
+	@OneToOne
+>>>>>>> 77eb5ff (cree el modelo de CLiente y modifique un monton de cosas)
 	private Persona persona;
 
 	public Cliente() {
