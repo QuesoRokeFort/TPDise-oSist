@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="hice muchas cosas&#10;2 interfaces un menu handler de las 2 termine la carga depersonas y hice un monton de DTOS&#10; nose porque no se paso este archivo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/ClienteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/UsuarioDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/DireccionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/DireccionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/LocalidadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/LocalidadDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PaisDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PaisDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/ProvinciaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/ProvinciaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorPersona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/CargaPersonaInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
