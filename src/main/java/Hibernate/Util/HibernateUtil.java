@@ -1,4 +1,5 @@
 package Hibernate.Util;
+import Hibernate.Model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -41,7 +42,22 @@ public class HibernateUtil {
 				configuration.setProperties(settings);
 
 				// Añadir clases de entidad
-				//configuration.addAnnotatedClass(Pais.class);
+				configuration.addPackage("Hibernate.Model");
+				configuration.addAnnotatedClass(Pais.class);
+				configuration.addAnnotatedClass(Provincia.class);
+				configuration.addAnnotatedClass(Localidad.class);
+				configuration.addAnnotatedClass(Direccion.class);
+				configuration.addAnnotatedClass(Rol.class);
+				configuration.addAnnotatedClass(Usuario.class);
+				configuration.addAnnotatedClass(TipoDocumento.class);
+				configuration.addAnnotatedClass(Profesion.class);
+				configuration.addAnnotatedClass(EstadoCivil.class);
+				configuration.addAnnotatedClass(Persona.class);
+				configuration.addAnnotatedClass(Vehiculo.class);
+				configuration.addAnnotatedClass(Modelo.class);
+				configuration.addAnnotatedClass(AnioFabricacion.class);
+				configuration.addAnnotatedClass(Marca.class);
+				configuration.addAnnotatedClass(ModeloAnioFabricacion.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();
