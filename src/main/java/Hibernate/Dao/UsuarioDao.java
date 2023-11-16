@@ -5,6 +5,8 @@ import Hibernate.Model.Usuario;
 import Hibernate.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
 import java.util.List;
 
 public class UsuarioDao {
@@ -94,5 +96,30 @@ public class UsuarioDao {
 			}
 			e.printStackTrace();
 		}
+	}
+
+	public static Usuario getUsuarioByMail(String mail) {
+		Transaction transaction = null;
+		Usuario usuario = null;
+
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+			transaction = session.beginTransaction();
+
+			// HQL (Hibernate Query Language) para realizar la consulta por correo electrónico
+			String hql = "FROM Usuario WHERE mail = :mail";
+			Query<Usuario> query = session.createQuery(hql, Usuario.class);
+			query.setParameter("mail", mail);
+
+			usuario = query.uniqueResult();
+
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null && transaction.isActive()) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+
+		return (usuario != null) ? usuario : null;
 	}
 }
