@@ -2,6 +2,8 @@ import Hibernate.Dao.PersonaDao;
 import Hibernate.Model.*;
 import Interface.GestorInterface;
 
+import javax.swing.*;
+
 //Backdoor profiles
 // gerente mail ("gerente@gmail.com");
 // gerente contra("gerente");
@@ -17,17 +19,18 @@ public class App {
 
     public static void main(String[] args) {
 
-        /*SwingUtilities.invokeLater(() -> {
+        SwingUtilities.invokeLater(() -> {
             try {
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             } catch (Exception e) {
                 e.printStackTrace();
             }
             new App();
-        });*/
+        });
     }
 
     public App() {
-        GestorInterface.panelCargaCliente();
+        GestorInterface.AccesoUsuario();
+        //GestorInterface.panelCargaCliente();
     }
 }

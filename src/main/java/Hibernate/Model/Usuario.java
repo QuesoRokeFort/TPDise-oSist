@@ -24,6 +24,7 @@ public class Usuario {
 	@OneToOne(mappedBy = "usuario")
 	private Persona persona;
 
+
 	// Otros atributos y métodos según tus necesidades
 
 	public Usuario() {
