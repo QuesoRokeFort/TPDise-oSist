@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class HibernateUtil {
 	private static SessionFactory sessionFactory;
-//felipe
+
 	public static SessionFactory getSessionFactory() {
 		if (sessionFactory == null) {
 			try {
@@ -53,11 +53,6 @@ public class HibernateUtil {
 				configuration.addAnnotatedClass(Profesion.class);
 				configuration.addAnnotatedClass(EstadoCivil.class);
 				configuration.addAnnotatedClass(Persona.class);
-				configuration.addAnnotatedClass(Vehiculo.class);
-				configuration.addAnnotatedClass(Modelo.class);
-				configuration.addAnnotatedClass(AnioFabricacion.class);
-				configuration.addAnnotatedClass(Marca.class);
-				configuration.addAnnotatedClass(ModeloAnioFabricacion.class);
 				configuration.addAnnotatedClass(Cliente.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
