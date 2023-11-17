@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="hice muchas cosas&#10;2 interfaces un menu handler de las 2 termine la carga depersonas y hice un monton de DTOS&#10; nose porque no se paso este archivo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/LabelBackground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="fondo con seleccionador de cartas echo">
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/NewJFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/NewJFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,22 +56,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "164",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "421",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;164&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;421&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="DTO" />
@@ -238,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699847077995</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fondo con seleccionador de cartas echo">
+      <created>1700247451600</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700247451600</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,7 +258,8 @@
     <MESSAGE value="cree Direccion y Localidad&#10;cambie los Dao a staticos por comodidad" />
     <MESSAGE value="parte de Personas terminadas&#10;podriamos hacer el menu de ingreso de usuarios ahora" />
     <MESSAGE value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
-    <option name="LAST_COMMIT_MESSAGE" value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
+    <MESSAGE value="fondo con seleccionador de cartas echo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fondo con seleccionador de cartas echo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
