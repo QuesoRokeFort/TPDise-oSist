@@ -9,12 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.lang.management.LockInfo;
 
 
 public class AccesoUsuario{
     private JPanel PantallaPrincipal;
-    private JPanel Borde;
-    private JPanel Login;
     private JLabel idLogin;
     private JLabel idUsuario;
     private JTextField idUsuarioText;
@@ -23,16 +22,11 @@ public class AccesoUsuario{
     public JButton confirmarMenu;
     private JPanel idPanelLogin;
     private JPanel idPanelUsuario;
-    private JPanel idPanelContraseña;
 
     private void createUIComponents() {
-        // TODO: place custom component creation code here
     }
 
     public AccesoUsuario() {
-        //  SetImageLabel(Dibujo, "/java/images/auto.jpg");
-
-
         idUsuarioText.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -91,10 +85,5 @@ public class AccesoUsuario{
         }
         return null;
     }
-    //private void SetImageLabel(JLabel labelName, String root){
-    //  ImageIcon image = new ImageIcon(root);
-    //  Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(),labelName.getHeight(), Image.SCALE_DEFAULT));
-    //  labelName.setIcon(icon);
-    //  this.repaint();
-    //}
+
 }
