@@ -99,7 +99,7 @@ public class GestorInterface {
 
 		accesoUsuario.confirmarMenu.addActionListener(e -> {
 			UsuarioDTO usuario = accesoUsuario.getUsuario();
-			/*if (usuario != null) {
+			if (usuario != null) {
 				usuario = GestorPersona.logInUsuario(usuario);
 				if (usuario != null) {
 					JOptionPane.showMessageDialog(null, usuario.getRol());
@@ -108,13 +108,26 @@ public class GestorInterface {
 				}
 			}
 			switch (usuario.getRol()){
-				case GERENTE -> cardLayout.show(cardPanel,"MenuGerente");
-				case COBRADOR -> cardLayout.show(cardPanel,"MenuCobrador");
-				case PRODUCTOR_SEGURO -> cardLayout.show(cardPanel,"MenuProductorSeguro");
-			}*/
-			cardLayout.next(cardPanel);
-			cardPanel.setPreferredSize(cargaPersonaInterface.getPanel1().getPreferredSize());
-		});
+				case GERENTE -> {
+					MenuGerente menuGerente = new MenuGerente();
+					cardPanel.add(menuGerente.getPanel3(),"MenuGerente");
+					cardLayout.show(cardPanel,"MenuGerente");
+					cardPanel.setPreferredSize(menuGerente.getPanel3().getPreferredSize());
+				}
+				case COBRADOR -> {
+					MenuCobrador menuCobrador = new MenuCobrador();
+					cardPanel.add(menuCobrador.getPanel2(),"MenuCobrador");
+					cardLayout.show(cardPanel,"MenuCobrador");
+					cardPanel.setPreferredSize(menuCobrador.getPanel2().getPreferredSize());
+				}
+				case PRODUCTOR_SEGURO -> {
+					MenuProductorSeguros menuProductorSeguros = new MenuProductorSeguros();
+					cardPanel.add(menuProductorSeguros.getPanel1(),"MenuProductorSeguro");
+					cardLayout.show(cardPanel,"MenuProductorSeguro");
+					cardPanel.setPreferredSize(menuProductorSeguros.getPanel1().getPreferredSize());
+				}
+			}
+			});
 
 		frame.pack();
 		frame.setLocationRelativeTo(null);
