@@ -5,6 +5,7 @@ import Hibernate.Model.Localidad;
 import Hibernate.Model.Provincia;
 
 
+
 public class LocalidadDTO {
 	private int id;
 

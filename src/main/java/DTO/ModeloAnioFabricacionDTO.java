@@ -1,43 +1,33 @@
-package Hibernate.Model;
+package DTO;
 
-import DTO.ModeloAnioFabricacionDTO;
-import DTO.ModeloDTO;
+import Hibernate.Model.*;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
-@Entity
-@Table(name = "ModeloAnioFabricacion")
-public class ModeloAnioFabricacion {
-    @Id
-    @Column(name = "id")
+
+public class ModeloAnioFabricacionDTO{
+
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "idModelo", referencedColumnName = "idModelo")
     private Modelo modelo;
 
-    @ManyToOne
-    @JoinColumn(name = "idAnio", referencedColumnName = "idAnio")
     private AnioFabricacion anio;
 
-
-    public ModeloAnioFabricacion() {
+    public ModeloAnioFabricacionDTO() {
     }
 
-    public ModeloAnioFabricacion(Integer id, Modelo modelo, AnioFabricacion anio) {
+    public ModeloAnioFabricacionDTO(Integer id, Modelo modelo, AnioFabricacion anio) {
         this.id = id;
         this.modelo = modelo;
         this.anio = anio;
     }
 
-    public ModeloAnioFabricacion(ModeloAnioFabricacionDTO modeloAnioFabricacion) {
+    public ModeloAnioFabricacionDTO(ModeloAnioFabricacion modeloAnioFabricacion) {
         this.id = modeloAnioFabricacion.getId();
         this.modelo = modeloAnioFabricacion.getModelo();
         this.anio = modeloAnioFabricacion.getAnio();
     }
-
-
 
     public Integer getId() {
         return id;
@@ -65,11 +55,16 @@ public class ModeloAnioFabricacion {
 
     @Override
     public String toString() {
-        return "ModeloAnioFabricacion{" +
+        return "ModeloAnioFabricacionDTO{" +
                 "id=" + id +
                 ", modelo=" + modelo +
                 ", anio=" + anio +
                 '}';
     }
-// Otros campos y métodos getters/setters
 }
+
+
+//tostring
+//getter setters
+
+
