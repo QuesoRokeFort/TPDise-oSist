@@ -1,11 +1,7 @@
 package DTO;
 
 import Hibernate.Model.Pais;
-import Hibernate.Model.Provincia;
-import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import Hibernate.Model.*;
 
 public class PaisDTO {
 	private int id;

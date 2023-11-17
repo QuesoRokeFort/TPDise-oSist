@@ -58,6 +58,19 @@ public class HibernateUtil {
 				configuration.addAnnotatedClass(AnioFabricacion.class);
 				configuration.addAnnotatedClass(Marca.class);
 				configuration.addAnnotatedClass(ModeloAnioFabricacion.class);
+				configuration.addAnnotatedClass(Cliente.class);
+				configuration.addAnnotatedClass(TipoCobertura.class);
+				configuration.addAnnotatedClass(Proveedor.class);
+				configuration.addAnnotatedClass(Poliza.class);
+				configuration.addAnnotatedClass(Hijo.class);
+				configuration.addAnnotatedClass(HijoPoliza.class);
+				configuration.addAnnotatedClass(Cobertura.class);
+				configuration.addAnnotatedClass(CambioPoliza.class);
+				configuration.addAnnotatedClass(PrecioProveedorTipo.class);
+				configuration.addAnnotatedClass(MedidaSeguridad.class);
+				configuration.addAnnotatedClass(Cuota.class);
+				configuration.addAnnotatedClass(Pago.class);
+				configuration.addAnnotatedClass(MedidaPoliza.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();

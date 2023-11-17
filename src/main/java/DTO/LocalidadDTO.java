@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class LocalidadDTO {
 	private int id;
 
