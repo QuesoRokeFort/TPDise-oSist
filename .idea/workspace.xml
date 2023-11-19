@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="Interaces hechas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700257968625</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Interaces hechas">
+      <option name="closed" value="true" />
+      <created>1700429138753</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700429138753</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,7 +232,8 @@
     <MESSAGE value="parte de Personas terminadas&#10;podriamos hacer el menu de ingreso de usuarios ahora" />
     <MESSAGE value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
     <MESSAGE value="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente" />
+    <MESSAGE value="Interaces hechas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interaces hechas" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
