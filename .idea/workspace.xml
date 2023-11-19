@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="hice muchas cosas&#10;2 interfaces un menu handler de las 2 termine la carga depersonas y hice un monton de DTOS&#10; nose porque no se paso este archivo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuCobrador.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuCobrador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuGerente.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuGerente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagenes/a.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagenes/a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699847077995</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente">
+      <option name="closed" value="true" />
+      <created>1700257968625</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700257968625</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,7 +233,8 @@
     <MESSAGE value="cree Direccion y Localidad&#10;cambie los Dao a staticos por comodidad" />
     <MESSAGE value="parte de Personas terminadas&#10;podriamos hacer el menu de ingreso de usuarios ahora" />
     <MESSAGE value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
-    <option name="LAST_COMMIT_MESSAGE" value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
+    <MESSAGE value="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
