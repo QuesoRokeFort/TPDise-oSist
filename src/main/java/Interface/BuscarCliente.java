@@ -15,7 +15,5 @@ public class BuscarCliente {
     private JButton cancelarButton;
     private JButton confirmarButton;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }
