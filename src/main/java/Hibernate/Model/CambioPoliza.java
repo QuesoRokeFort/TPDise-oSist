@@ -33,6 +33,10 @@ public class CambioPoliza {
     @JoinColumn(name = "idTipoCobertura")
     private TipoCobertura tipoCobertura;
 
+    @ManyToOne
+    @JoinColumn(name = "poliza_id")
+    private Poliza poliza;
+
     public CambioPoliza() {
     }
 

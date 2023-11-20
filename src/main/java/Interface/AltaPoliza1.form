@@ -452,7 +452,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Confirmar"/>
+          <text value="Cancelar"/>
         </properties>
       </component>
       <vspacer id="f331f">

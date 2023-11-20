@@ -18,7 +18,7 @@ public class Provincia {
     @Column (name = "cpostal")
     private int codPostal;
     @ManyToOne
-    @JoinColumn(name = "idPais")
+    @JoinColumn(name = "pais_id")
     private Pais pais;
     @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL, orphanRemoval = true) // no seria mapped by= idProvincia?
     private List<Localidad> localidades  = new ArrayList<>();

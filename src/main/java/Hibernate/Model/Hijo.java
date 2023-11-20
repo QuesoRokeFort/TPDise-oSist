@@ -18,8 +18,8 @@ public class Hijo {
     @Column(name = "sexoHijo", length = 10)
     private String sexoHijo;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idEstadoCivil")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "idEstadoCivil")
     private EstadoCivil estadoCivil;
 
     public Hijo() {

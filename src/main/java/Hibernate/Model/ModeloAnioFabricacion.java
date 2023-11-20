@@ -14,11 +14,11 @@ public class ModeloAnioFabricacion {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "idModelo", referencedColumnName = "idModelo")
+    @JoinColumn(name = "idModelo")
     private Modelo modelo;
 
     @ManyToOne
-    @JoinColumn(name = "idAnio", referencedColumnName = "idAnio")
+    @JoinColumn(name = "idAnio")
     private AnioFabricacion anio;
 
 

@@ -1,89 +1,50 @@
 package Interface;
 
-import DTO.DireccionDTO;
-import DTO.PersonaDTO;
+
 import DTO.UsuarioDTO;
 import GestorPersonas.GestorPersona;
-import Hibernate.Dao.UsuarioDao;
 
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GestorInterface {
 	private static JFrame frame;
-	private static JPanel cardPanel;
-	private static CardLayout cardLayout;
+	static JPanel cardPanel;
+	static CardLayout cardLayout;
+	private static AccesoUsuario accesoUsuario;
+	//private static JComponent emptyCard;
 
-	public static void panelCargaCliente(){
-		frame = new JFrame("Carga de Persona");
+
+	public static void AccesoUsuario() {
+		frame = new JFrame("Acceso Usuarios");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		BufferedImage img;
+		try {
+			img = ImageIO.read(new File("src/imagenes/a.png"));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+
+		frame.setContentPane(new JLabel(new ImageIcon(img)));
+
+		frame.setLayout(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.gridwidth = GridBagConstraints.REMAINDER;
 
 		cardPanel = new JPanel();
-
 		cardLayout = new CardLayout();
 		cardPanel.setLayout(cardLayout);
+		accesoUsuario = new AccesoUsuario();
+		cardPanel.add(accesoUsuario.getPanel1(), "AccesoUsuario");
 
-		// Panel 1 (Assuming CargaPersonaInterface.panel1 is the first panel)
 		CargaPersonaInterface cargaPersonaInterface = new CargaPersonaInterface();
 		cardPanel.add(cargaPersonaInterface.getPanel1(), "CargaPersonaPanel");
 
-		// Panel 2 (Assuming DirreccionInterface.getPanel1() returns the second panel)
-		DirreccionInterface dirreccionInterface = new DirreccionInterface();
-		cardPanel.add(dirreccionInterface.getPanel1(), "DirreccionPanel");
-
-		// Set up button action in the first panel to switch to the second panel
-		cargaPersonaInterface.agregarDireccionButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				cardLayout.show(cardPanel, "DirreccionPanel");
-			}
-		});
-
-		// Set up button action in the second panel to switch back to the first panel
-		dirreccionInterface.doneButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				cardLayout.show(cardPanel, "CargaPersonaPanel");
-			}
-		});
-		cargaPersonaInterface.terminarButton.addActionListener(e -> {
-			PersonaDTO personaDTO = cargaPersonaInterface.getPersonaDTO();
-			DireccionDTO direccionDTO = dirreccionInterface.getDireccionDTO();
-			if (personaDTO != null) {
-				personaDTO.setDireccion(direccionDTO);
-				GestorPersona.crearCliente(personaDTO);
-			}
-
-		});
-
-		// Set the initial panel to show
-		cardLayout.show(cardPanel, "CargaPersonaPanel");
-
-		frame.setContentPane(cardPanel);
-		frame.setSize(500, 400);
-		frame.setVisible(true);
-	}
-	public static void AccesoUsuario(){
-		frame = new JFrame("Acceso Usuarios");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		cardPanel = new JPanel();
-
-		cardLayout = new CardLayout();
-		cardPanel.setLayout(cardLayout);
-
-		// Panel 1 (Assuming CargaPersonaInterface.panel1 is the first panel)
-		AccesoUsuario accesoUsuario = new AccesoUsuario();
-		cardPanel.add(accesoUsuario.getPanel1(), "AccesoUsuario");
-
-		/*// Panel 2 (Assuming DirreccionInterface.getPanel1() returns the second panel)
-		DirreccionInterface dirreccionInterface = new DirreccionInterface();
-		cardPanel.add(dirreccionInterface.getPanel1(), "DirreccionPanel");
-		*/
-
-		// Set up button action in the second panel to switch back to the first panel
 
 		accesoUsuario.confirmarMenu.addActionListener(e -> {
 			UsuarioDTO usuario = accesoUsuario.getUsuario();
@@ -95,14 +56,68 @@ public class GestorInterface {
 					JOptionPane.showMessageDialog(null, "error cuenta o contraseña no valida");
 				}
 			}
-
+			switch (usuario.getRol()) {
+				case GERENTE -> {
+					MenuGerente menuGerente = new MenuGerente();
+					cardPanel.add(menuGerente.getPanel3(), "MenuGerente");
+					cardLayout.show(cardPanel, "MenuGerente");
+					cardPanel.setPreferredSize(menuGerente.getPanel3().getPreferredSize());
+					configurarCerrarSeccion(menuGerente);
+				}
+				case COBRADOR -> {
+					MenuCobrador menuCobrador = new MenuCobrador();
+					cardPanel.add(menuCobrador.getPanel2(), "MenuCobrador");
+					cardLayout.show(cardPanel, "MenuCobrador");
+					cardPanel.setPreferredSize(menuCobrador.getPanel2().getPreferredSize());
+					configurarCerrarSeccion(menuCobrador);
+				}
+				case PRODUCTOR_SEGURO -> {
+					MenuProductorSeguros menuProductorSeguros = new MenuProductorSeguros();
+					cardPanel.add(menuProductorSeguros.getPanel1(), "MenuProductorSeguro");
+					cardLayout.show(cardPanel, "MenuProductorSeguro");
+					cardPanel.setPreferredSize(menuProductorSeguros.getPanel1().getPreferredSize());
+					configurarCerrarSeccion(menuProductorSeguros);
+				}
+			}
 		});
 
-		// Set the initial panel to show
-		cardLayout.show(cardPanel, "AccesoUsuario");
-
-		frame.setContentPane(cardPanel);
-		frame.setSize(500, 400);
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		MenuAccerso();
+		frame.add(cardPanel);
 		frame.setVisible(true);
 	}
+
+	private static void configurarCerrarSeccion(Object instance) {
+		switch (instance.getClass().getSimpleName()) {
+			case "MenuCobrador":
+				MenuCobrador cobrador = (MenuCobrador) instance;
+				cobrador.getCerrarSesionButton().addActionListener(e -> MenuAccerso());
+				break;
+
+			case "MenuGerente":
+				MenuGerente gerente = (MenuGerente) instance;
+				gerente.getCerrarSesionButton().addActionListener(e -> MenuAccerso());
+				break;
+
+			case "MenuProductorSeguros":
+				MenuProductorSeguros productor = (MenuProductorSeguros) instance;
+				productor.getCerrarSesionButton().addActionListener(e -> MenuAccerso());
+				break;
+
+			default:
+				// Handle the case where the provided instance is not of the expected type.
+				break;
+		}
+	}
+	private static void MenuAccerso() {
+		cardLayout.show(cardPanel, "AccesoUsuario");
+		cardPanel.setPreferredSize(accesoUsuario.getPanel1().getPreferredSize());
+	}
+	/*private static void emptyLayout(){
+		cardLayout.show(cardPanel, "EmptyCard");
+		cardPanel.setPreferredSize(emptyCard.getPreferredSize());
+	}*/
+
 }
+

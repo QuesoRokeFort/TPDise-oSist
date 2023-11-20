@@ -13,11 +13,11 @@ public class HijoPoliza {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "idHijo", referencedColumnName = "idHijo")
+    @JoinColumn(name = "idHijo")
     private Hijo hijo;
 
     @ManyToOne
-    @JoinColumn(name = "idPoliza", referencedColumnName = "idPoliza")
+    @JoinColumn(name = "idPoliza")
     private Poliza poliza;
 
     

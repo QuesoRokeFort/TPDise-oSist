@@ -17,11 +17,11 @@ public class PrecioProveedorTipo {
     private Integer precio;  // asumo que lo agarra desde TipoCobertura
 
     @ManyToOne
-    @JoinColumn(name = "idProveedor", referencedColumnName = "idProveedor")
+    @JoinColumn(name = "idProveedor")
     private Proveedor proveedor;
 
     @ManyToOne
-    @JoinColumn(name = "idTipoCobertura", referencedColumnName = "idTipoCobertura")
+    @JoinColumn(name = "idTipoCobertura")
     private TipoCobertura tipoCobertura;
 
     public PrecioProveedorTipo() {

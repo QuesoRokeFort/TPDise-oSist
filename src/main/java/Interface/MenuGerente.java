@@ -12,4 +12,8 @@ public class MenuGerente {
     public Component getPanel3() {
         return PantallaPrincipal;
     }
+
+    public JButton getCerrarSesionButton() {
+        return  cerrarSesionButton;
+    }
 }

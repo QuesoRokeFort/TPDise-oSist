@@ -2,7 +2,7 @@ package Interface;
 
 import javax.swing.*;
 
-public class DarAltaPoliza {
+public class SeleccionarCobertura {
     private JPanel PantallPrincipal;
     private JButton button1;
     private JLabel nroDeClienteLabel;

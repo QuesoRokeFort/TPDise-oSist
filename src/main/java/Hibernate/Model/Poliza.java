@@ -74,7 +74,7 @@ public class Poliza {
     @JoinColumn(name = "idLocalidad")
     private Localidad localidad;
 
-    @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HijoPoliza> hijosPoliza = new ArrayList<>();
 
 

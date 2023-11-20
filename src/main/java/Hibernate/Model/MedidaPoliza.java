@@ -15,11 +15,11 @@ public class MedidaPoliza {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "idMedida", referencedColumnName = "idMedida")
+    @JoinColumn(name = "idMedida")
     private MedidaSeguridad medidaSeguridad;
 
     @ManyToOne
-    @JoinColumn(name = "idPoliza", referencedColumnName = "idPoliza")
+    @JoinColumn(name = "idPoliza")
     private Poliza poliza;
 
     public MedidaPoliza() {

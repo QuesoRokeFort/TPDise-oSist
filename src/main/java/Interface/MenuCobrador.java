@@ -12,4 +12,8 @@ public class MenuCobrador {
     public Component getPanel2() {
         return PantallaPrincipal;
     }
+
+    public JButton getCerrarSesionButton() {
+        return cerrarSesionButton;
+    }
 }
