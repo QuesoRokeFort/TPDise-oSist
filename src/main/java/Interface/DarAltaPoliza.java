@@ -8,8 +8,8 @@ public class DarAltaPoliza {
     private JLabel nroDeClienteLabel;
     private JLabel nombreLabel;
     private JLabel apellidoLabel;
-    private JRadioButton radioButton1;
     private JComboBox comboBox1;
     private JButton confirmarButton;
     private JButton cancelarButton;
+    private JTable tablaCoberturas;
 }
