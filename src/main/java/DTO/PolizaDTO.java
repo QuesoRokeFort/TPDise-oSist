@@ -1,10 +1,9 @@
 package DTO;
 
 import Hibernate.Model.*;
-import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class PolizaDTO{
@@ -21,10 +20,10 @@ public class PolizaDTO{
     private String estadoPoliza;
 
 
-    private Date fechaInicioVigencia;
+    private LocalDate fechaInicioVigencia;
 
 
-    private Date fechaFinVigencia;
+    private LocalDate fechaFinVigencia;
 
 
     private String formaDePago;
@@ -49,20 +48,20 @@ public class PolizaDTO{
 
     private List<CambioPoliza> cambiosPoliza = new ArrayList<>();
 
-    private Cliente cliente;
+    private ClienteDTO cliente;
 
-    private Cobertura cobertura;
+    private CoberturaDTO cobertura;
 
-    private Vehiculo vehiculo;
+    private VehiculoDTO vehiculo;
 
-    private Localidad localidad;
+    private LocalidadDTO localidad;
 
-    private List<HijoPoliza> hijosPoliza = new ArrayList<>();
+    private List<HijoDTO> hijos = new ArrayList<>();
 
     public PolizaDTO() {
     }
 
-    public PolizaDTO(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, Date fechaInicioVigencia, Date fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<HijoPoliza> hijosPoliza) {
+    public PolizaDTO(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -81,7 +80,7 @@ public class PolizaDTO{
         this.cobertura = cobertura;
         this.vehiculo = vehiculo;
         this.localidad = localidad;
-        this.hijosPoliza = hijosPoliza;
+        this.hijos = hijos;
     }
 
     public PolizaDTO(Poliza poliza) {
@@ -99,11 +98,11 @@ public class PolizaDTO{
         this.montoTotal = poliza.getMontoTotal();
         this.prima = poliza.getPrima();
         this.cambiosPoliza = poliza.getCambiosPoliza();
-        this.cliente = poliza.getCliente();
-        this.cobertura = poliza.getCobertura();
-        this.vehiculo = poliza.getVehiculo();
-        this.localidad = poliza.getLocalidad();
-        this.hijosPoliza = poliza.getHijosPoliza();
+        this.cliente = new ClienteDTO(poliza.getCliente());
+        this.cobertura = new CoberturaDTO(poliza.getCobertura());
+        this.vehiculo = new VehiculoDTO(poliza.getVehiculo());
+        this.localidad = new LocalidadDTO(poliza.getLocalidad());
+        poliza.getHijosPoliza().forEach(hijoPoliza -> this.hijos.add(new HijoDTO(hijoPoliza)));
     }
 
     public Integer getId() {
@@ -138,19 +137,19 @@ public class PolizaDTO{
         this.estadoPoliza = estadoPoliza;
     }
 
-    public Date getFechaInicioVigencia() {
+    public LocalDate getFechaInicioVigencia() {
         return fechaInicioVigencia;
     }
 
-    public void setFechaInicioVigencia(Date fechaInicioVigencia) {
+    public void setFechaInicioVigencia(LocalDate fechaInicioVigencia) {
         this.fechaInicioVigencia = fechaInicioVigencia;
     }
 
-    public Date getFechaFinVigencia() {
+    public LocalDate getFechaFinVigencia() {
         return fechaFinVigencia;
     }
 
-    public void setFechaFinVigencia(Date fechaFinVigencia) {
+    public void setFechaFinVigencia(LocalDate fechaFinVigencia) {
         this.fechaFinVigencia = fechaFinVigencia;
     }
 
@@ -218,44 +217,44 @@ public class PolizaDTO{
         this.cambiosPoliza = cambiosPoliza;
     }
 
-    public Cliente getCliente() {
+    public ClienteDTO getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(ClienteDTO cliente) {
         this.cliente = cliente;
     }
 
-    public Cobertura getCobertura() {
+    public CoberturaDTO getCobertura() {
         return cobertura;
     }
 
-    public void setCobertura(Cobertura cobertura) {
+    public void setCobertura(CoberturaDTO cobertura) {
         this.cobertura = cobertura;
     }
 
-    public Vehiculo getVehiculo() {
+    public VehiculoDTO getVehiculo() {
         return vehiculo;
     }
 
-    public void setVehiculo(Vehiculo vehiculo) {
+    public void setVehiculo(VehiculoDTO vehiculo) {
         this.vehiculo = vehiculo;
     }
 
-    public Localidad getLocalidad() {
+    public LocalidadDTO getLocalidad() {
         return localidad;
     }
 
-    public void setLocalidad(Localidad localidad) {
+    public void setLocalidad(LocalidadDTO localidad) {
         this.localidad = localidad;
     }
 
-    public List<HijoPoliza> getHijosPoliza() {
-        return hijosPoliza;
+    public List<HijoDTO> getHijosPoliza() {
+        return hijos;
     }
 
-    public void setHijosPoliza(List<HijoPoliza> hijosPoliza) {
-        this.hijosPoliza = hijosPoliza;
+    public void setHijosPoliza(List<HijoDTO> hijosPoliza) {
+        this.hijos = hijosPoliza;
     }
 
     @Override
@@ -279,8 +278,12 @@ public class PolizaDTO{
                 ", cobertura=" + cobertura +
                 ", vehiculo=" + vehiculo +
                 ", localidad=" + localidad +
-                ", hijosPoliza=" + hijosPoliza +
+                ", hijosPoliza=" + hijos +
                 '}';
+    }
+
+    public void addHijo(HijoDTO hijoDTO) {
+        this.hijos.add(hijoDTO);
     }
 }
 

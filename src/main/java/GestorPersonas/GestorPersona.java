@@ -5,10 +5,9 @@ import DTO.PersonaDTO;
 import DTO.UsuarioDTO;
 import Hibernate.Dao.PersonaDao;
 import Hibernate.Dao.UsuarioDao;
-import Hibernate.Model.Cliente;
-import Hibernate.Model.Persona;
-import Hibernate.Model.Rol;
-import Hibernate.Model.Usuario;
+import Hibernate.Model.*;
+
+import java.util.List;
 
 public class GestorPersona {
 
@@ -34,4 +33,11 @@ public class GestorPersona {
         }
         return null;
     }
+
+	public static List<PersonaDTO> getPersonas() {
+        List <PersonaDTO> lista = PersonaDao.getAllPersonas().stream()
+                .filter(persona -> persona.getCliente()!=null )
+                .map(p-> new PersonaDTO(p)).toList();
+        return lista;
+	}
 }

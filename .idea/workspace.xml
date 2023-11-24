@@ -4,16 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="Hice otra vez el menu del productor de seguros, y despues hice el de gerente y cobrador. Luego puse en el gestorinterface el codigo para ejecutar el menu del cobrador y gerente">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/DarAltaPoliza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="mis cosas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorVehiculos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/test.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interface/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_8_16_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/DireccionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/DireccionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/HijoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/HijoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/LocalidadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/LocalidadDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/ModeloDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/ModeloDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PersonaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/VehiculoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/VehiculoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorDirrecciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorDirrecciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/DireccionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/DireccionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/LocalidadDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/LocalidadDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/ProvinciaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/ProvinciaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Direccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Direccion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Hijo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Hijo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Vehiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +67,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -50,6 +82,12 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -61,21 +99,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "170",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;453&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="DTO" />
@@ -95,9 +134,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AltaPoliza2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interface.AltaPoliza2" />
+      <module name="Trabajo_Practico_Dds" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="Trabajo_Practico_Dds" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuscarCliente (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BuscarCliente" />
+      <module name="Trabajo_Practico_Dds" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuscarCliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interface.BuscarCliente" />
+      <module name="Trabajo_Practico_Dds" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,11 +202,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.App" />
+      <item itemvalue="Application.AltaPoliza2" />
+      <item itemvalue="Application.BuscarCliente" />
+      <item itemvalue="Application.BuscarCliente (1)" />
       <item itemvalue="Application.AccesoUsuario" />
       <item itemvalue="Application.DirreccionInterface" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AltaPoliza2" />
+        <item itemvalue="Application.BuscarCliente" />
+        <item itemvalue="Application.BuscarCliente (1)" />
         <item itemvalue="Application.AccesoUsuario" />
         <item itemvalue="Application.DirreccionInterface" />
       </list>

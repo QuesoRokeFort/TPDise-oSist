@@ -6,12 +6,10 @@ import DTO.ProvinciaDTO;
 import Hibernate.Dao.LocalidadDao;
 import Hibernate.Dao.PaisDao;
 import Hibernate.Dao.ProvinciaDao;
-import Hibernate.Model.Localidad;
 import Hibernate.Model.Pais;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class GestorDirrecciones {
 	public static List<PaisDTO>  getPaises(){

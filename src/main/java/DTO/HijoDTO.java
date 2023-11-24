@@ -15,14 +15,14 @@ public class HijoDTO{
 
     private Date fechaDeNacimiento;
 
-    private String sexoHijo;
+    private Sexo sexoHijo;
 
     private EstadoCivil estadoCivil;
 
     public HijoDTO() {
     }
 
-    public HijoDTO(Integer id, Date fechaDeNacimiento, String sexoHijo, EstadoCivil estadoCivil) {
+    public HijoDTO(Integer id, Date fechaDeNacimiento, Sexo sexoHijo, EstadoCivil estadoCivil) {
         this.id = id;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.sexoHijo = sexoHijo;
@@ -51,11 +51,11 @@ public class HijoDTO{
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public String getSexoHijo() {
+    public Sexo getSexoHijo() {
         return sexoHijo;
     }
 
-    public void setSexoHijo(String sexoHijo) {
+    public void setSexoHijo(Sexo sexoHijo) {
         this.sexoHijo = sexoHijo;
     }
 

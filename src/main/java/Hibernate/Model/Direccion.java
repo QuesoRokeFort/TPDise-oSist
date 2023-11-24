@@ -27,6 +27,9 @@ public class Direccion {
 	@ManyToOne
 	@JoinColumn(name = "idLocalidad")
 	private Localidad localidad;
+	@ManyToOne
+	@JoinColumn(name = "idPersona")
+	private Persona persona;
 
 	public Direccion() {
 	}
@@ -110,5 +113,9 @@ public class Direccion {
 				", depto='" + depto + '\'' +
 				", localidad=" + localidad +
 				'}';
+	}
+
+	public Persona getPersona() {
+		return persona;
 	}
 }

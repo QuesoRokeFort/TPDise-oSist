@@ -1,6 +1,7 @@
 package Hibernate.Model;
 
 import DTO.HijoDTO;
+import DTO.PolizaDTO;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,17 +16,21 @@ public class Hijo {
     @Column(name = "fechaDeNacimiento")
     private Date fechaDeNacimiento;
 
-    @Column(name = "sexoHijo", length = 10)
-    private String sexoHijo;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "sexoHijo")
+    private Sexo sexoHijo;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "idEstadoCivil")
     private EstadoCivil estadoCivil;
+    @ManyToOne
+    @JoinColumn(name = "poliza_id")
+    private Poliza poliza;
 
     public Hijo() {
     }
 
-    public Hijo(Integer id, Date fechaDeNacimiento, String sexoHijo, EstadoCivil estadoCivil) {
+    public Hijo(Integer id, Date fechaDeNacimiento, Sexo sexoHijo, EstadoCivil estadoCivil) {
         this.id = id;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.sexoHijo = sexoHijo;
@@ -54,11 +59,11 @@ public class Hijo {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public String getSexoHijo() {
+    public Sexo getSexoHijo() {
         return sexoHijo;
     }
 
-    public void setSexoHijo(String sexoHijo) {
+    public void setSexoHijo(Sexo sexoHijo) {
         this.sexoHijo = sexoHijo;
     }
 

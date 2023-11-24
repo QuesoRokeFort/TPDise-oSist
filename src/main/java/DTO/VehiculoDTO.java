@@ -20,17 +20,21 @@ public class VehiculoDTO {
 
     private AnioFabricacionDTO anioFabricacion;
 
+    private String motor;
+
+
     public VehiculoDTO() {
 
     }
 
-    public VehiculoDTO(int id, String chasis, String patente, int kilometrosAnuales, ModeloDTO modelo, AnioFabricacionDTO anioFabricacion) {
+    public VehiculoDTO(int id, String chasis, String patente, int kilometrosAnuales, ModeloDTO modelo, AnioFabricacionDTO anioFabricacion, String motor) {
         this.id = id;
         this.chasis = chasis;
         this.patente = patente;
         this.kilometrosAnuales = kilometrosAnuales;
         this.modelo = modelo;
         this.anioFabricacion = anioFabricacion;
+        this.motor = motor;
     }
 
     public VehiculoDTO(Vehiculo vehiculo) {
@@ -38,6 +42,7 @@ public class VehiculoDTO {
         this.chasis = vehiculo.getChasis();
         this.patente = vehiculo.getPatente();
         this.kilometrosAnuales = vehiculo.getKilometrosAnuales();
+        this.motor = vehiculo.getMotor();
         this.modelo = new ModeloDTO(vehiculo.getModelo());
         this.anioFabricacion = new AnioFabricacionDTO(vehiculo.getAnioFabricacion());
     }
@@ -99,11 +104,16 @@ public class VehiculoDTO {
                 ", kilometrosAnuales=" + kilometrosAnuales +
                 ", modelo=" + modelo +
                 ", anioFabricacion=" + anioFabricacion +
+                ", motor='" + motor + '\'' +
                 '}';
     }
 
+    public String getMotor() {
+        return motor;
+    }
 
-//tostring
-    //getter setters
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
 
 }

@@ -15,6 +15,13 @@ public class LocalidadDTO {
 
 	private ProvinciaDTO provincia;
 
+	public LocalidadDTO(LocalidadDTO localidad) {
+		this.id = localidad.getId();
+		this.nombre = localidad.getNombre();
+		this.valorDeRiesgo = localidad.getValorDeRiesgo();
+		this.provincia = new ProvinciaDTO(localidad.getProvincia());
+	}
+
 	@Override
 	public String toString() {
 		return "LocalidadDTO{" +
@@ -25,12 +32,6 @@ public class LocalidadDTO {
 				'}';
 	}
 
-	public LocalidadDTO(LocalidadDTO localidad) {
-		this.id = localidad.getId();
-		this.nombre = localidad.getNombre();
-		this.valorDeRiesgo = localidad.getValorDeRiesgo();
-		this.provincia = new ProvinciaDTO(localidad.getProvincia());
-	}
 
 	public int getId() {
 		return id;

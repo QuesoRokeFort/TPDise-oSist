@@ -3,7 +3,6 @@ package DTO;
 import Hibernate.Model.Direccion;
 
 
-
 public class DireccionDTO {
 
 	private Integer id;
@@ -19,6 +18,7 @@ public class DireccionDTO {
 
 
 	private String depto;
+	private PersonaDTO persona;
 
 
 	private LocalidadDTO localidad;

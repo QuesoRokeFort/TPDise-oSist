@@ -31,7 +31,6 @@ public class ModeloDTO {
     public ModeloDTO(Modelo modelo) {
         this.id = modelo.getId();
         this.nombreModelo = modelo.getNombreModelo();
-        this.motor = modelo.getMotor();
         this.valorPorcentualRiesgo = modelo.getValorPorcentualRiesgo();
         this.marca = modelo.getMarca();
     }

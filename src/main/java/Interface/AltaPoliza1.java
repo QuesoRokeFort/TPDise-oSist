@@ -1,13 +1,22 @@
 package Interface;
 
+import DTO.PersonaDTO;
+
 import javax.swing.*;
 
 public class AltaPoliza1 {
     private JButton buscarClienteButton;
     private JButton agregarClienteButton;
     private JPanel PantallaPrincipal;
-    private JLabel a999999Label;
-    private JButton confirmarButton;
+    private JLabel nroClientelabel;
+    public JButton confirmarButton;
+    private JLabel nombreLabel;
+    private JLabel ApellidoLabel;
+    private JLabel tipoDocumentLabel;
+    private JLabel numeroDocumentoLabel;
+    private JLabel provinciaLabel;
+    private JLabel localidadLabel;
+    private JLabel direccionLabel;
 
     public JButton getBuscarClienteButton() {
         return buscarClienteButton;
@@ -23,5 +32,16 @@ public class AltaPoliza1 {
 
     public JPanel getPantallaPrincipal(){
         return PantallaPrincipal;
+    }
+
+    public void setdatos(PersonaDTO personaDTO) {
+        nroClientelabel.setText(String.valueOf(personaDTO.getCliente().getNroCliente()));
+        nombreLabel.setText(personaDTO.getNombrePersona());
+        ApellidoLabel.setText(personaDTO.getApellido());
+        tipoDocumentLabel.setText(String.valueOf(personaDTO.getTipoDocumento()));
+        numeroDocumentoLabel.setText(String.valueOf(personaDTO.getNroDocumento()));
+        provinciaLabel.setText(personaDTO.getDireccion().get(0).getCalle());
+        localidadLabel.setText(personaDTO.getDireccion().get(0).getLocalidad().getNombre());
+        direccionLabel.setText(personaDTO.getDireccion().get(0).getLocalidad().getProvincia().getNombre());
     }
 }

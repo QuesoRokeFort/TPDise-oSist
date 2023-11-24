@@ -2,7 +2,10 @@ package Hibernate.Model;
 import DTO.PersonaDTO;
 import DTO.UsuarioDTO;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Persona")
@@ -30,10 +33,8 @@ public class Persona {
 	@Column(name = "fechaNac")
 	private Date fechaNac;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "idDireccion")
-	private Direccion direccion;
-
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	private List<Direccion> direccion = new ArrayList<>();
 	@Enumerated(EnumType.STRING)
 	@Column(name = "idTipoDocumento")
 	private TipoDocumento tipoDocumento;
@@ -57,7 +58,7 @@ public class Persona {
 	public Persona() {
 	}
 
-	public Persona(Integer idPersona, String nombrePersona, String apellido, Integer nroDocumento, Integer nroCuil, Sexo sexo, Date fechaNac, Direccion direccion, TipoDocumento tipoDocumento, EstadoCivil estadoCivil, Profesion profesion, Usuario usuario) {
+	public Persona(Integer idPersona, String nombrePersona, String apellido, Integer nroDocumento, Integer nroCuil, Sexo sexo, Date fechaNac, List<Direccion> direccion, TipoDocumento tipoDocumento, EstadoCivil estadoCivil, Profesion profesion, Usuario usuario) {
 		this.idPersona = idPersona;
 		this.nombrePersona = nombrePersona;
 		this.apellido = apellido;
@@ -80,7 +81,7 @@ public class Persona {
 		this.nroCuil = personaDTO.getNroCuil();
 		this.sexo = personaDTO.getSexo();
 		this.fechaNac = personaDTO.getFechaNac();
-		this.direccion = new Direccion(personaDTO.getDireccion());
+		personaDTO.getDireccion().forEach(d-> this.direccion.add(new Direccion(d)));
 		this.tipoDocumento = personaDTO.getTipoDocumento();
 		this.estadoCivil = personaDTO.getEstadoCivil();
 		this.profesion = personaDTO.getProfesion();
@@ -171,11 +172,11 @@ public class Persona {
 		this.fechaNac = fechaNac;
 	}
 
-	public Direccion getDireccion() {
+	public List<Direccion> getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(Direccion direccion) {
+	public void setDireccion(List<Direccion> direccion) {
 		this.direccion = direccion;
 	}
 

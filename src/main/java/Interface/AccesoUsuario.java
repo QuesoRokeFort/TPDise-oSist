@@ -13,7 +13,6 @@ import java.awt.event.FocusEvent;
 
 public class AccesoUsuario{
     private JPanel PantallaPrincipal;
-    private JPanel Borde;
     private JPanel Login;
     private JLabel idLogin;
     private JLabel idUsuario;

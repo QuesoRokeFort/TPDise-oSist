@@ -24,6 +24,9 @@ public class Vehiculo {
 
     @Column(name = "kilometrosAnuales")
     private Integer kilometrosAnuales;
+    @Column(name = "motor", length = 20)
+    private String motor;
+
 
     @ManyToOne
     @JoinColumn(name = "idModelo")
@@ -36,20 +39,30 @@ public class Vehiculo {
     public Vehiculo() {
     }
 
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
     public Vehiculo(VehiculoDTO vehiculo) {
         this.id = vehiculo.getId();
         this.chasis = vehiculo.getChasis();
         this.patente = vehiculo.getPatente();
         this.kilometrosAnuales = vehiculo.getKilometrosAnuales();
+        this.motor = vehiculo.getMotor();
         this.modelo = new Modelo(vehiculo.getModelo());
         this.anioFabricacion = new AnioFabricacion(vehiculo.getAnioFabricacion());
     }
 
-    public Vehiculo(Integer id, String chasis, String patente, Integer kilometrosAnuales, Modelo modelo, AnioFabricacion anioFabricacion) {
+    public Vehiculo(Integer id, String chasis, String patente, Integer kilometrosAnuales, String motor, Modelo modelo, AnioFabricacion anioFabricacion) {
         this.id = id;
         this.chasis = chasis;
         this.patente = patente;
         this.kilometrosAnuales = kilometrosAnuales;
+        this.motor = motor;
         this.modelo = modelo;
         this.anioFabricacion = anioFabricacion;
     }

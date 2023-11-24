@@ -3,8 +3,8 @@ package Hibernate.Model;
 import DTO.PolizaDTO;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -28,10 +28,10 @@ public class Poliza {
     private String estadoPoliza;
 
     @Column(name = "fechaInicioVigencia")
-    private Date fechaInicioVigencia;
+    private LocalDate fechaInicioVigencia;
 
     @Column(name = "fechaFinVigencia")
-    private Date fechaFinVigencia;
+    private LocalDate fechaFinVigencia;
 
     @Column(name = "formaDePago", length = 20)
     private String formaDePago;
@@ -75,13 +75,13 @@ public class Poliza {
     private Localidad localidad;
 
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<HijoPoliza> hijosPoliza = new ArrayList<>();
+    private List<Hijo> hijos = new ArrayList<>();
 
 
     public Poliza() {
     }
 
-    public Poliza(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, Date fechaInicioVigencia, Date fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<HijoPoliza> hijosPoliza) {
+    public Poliza(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijosPoliza) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -100,7 +100,7 @@ public class Poliza {
         this.cobertura = cobertura;
         this.vehiculo = vehiculo;
         this.localidad = localidad;
-        this.hijosPoliza = hijosPoliza;
+        this.hijos = hijosPoliza;
     }
 
     public Poliza(PolizaDTO poliza) {
@@ -118,11 +118,11 @@ public class Poliza {
         this.montoTotal = poliza.getMontoTotal();
         this.prima = poliza.getPrima();
         this.cambiosPoliza = poliza.getCambiosPoliza();
-        this.cliente = poliza.getCliente();
-        this.cobertura = poliza.getCobertura();
-        this.vehiculo = poliza.getVehiculo();
-        this.localidad = poliza.getLocalidad();
-        this.hijosPoliza = poliza.getHijosPoliza();
+        this.cliente = new Cliente( poliza.getCliente());
+        this.cobertura = new Cobertura(poliza.getCobertura());
+        this.vehiculo = new Vehiculo(poliza.getVehiculo());
+        this.localidad = new Localidad(poliza.getLocalidad());
+        poliza.getHijosPoliza().forEach(hijoDTO -> this.hijos.add(new Hijo(hijoDTO)));
     }
 
     public Integer getId() {
@@ -157,19 +157,19 @@ public class Poliza {
         this.estadoPoliza = estadoPoliza;
     }
 
-    public Date getFechaInicioVigencia() {
+    public LocalDate getFechaInicioVigencia() {
         return fechaInicioVigencia;
     }
 
-    public void setFechaInicioVigencia(Date fechaInicioVigencia) {
+    public void setFechaInicioVigencia(LocalDate fechaInicioVigencia) {
         this.fechaInicioVigencia = fechaInicioVigencia;
     }
 
-    public Date getFechaFinVigencia() {
+    public LocalDate getFechaFinVigencia() {
         return fechaFinVigencia;
     }
 
-    public void setFechaFinVigencia(Date fechaFinVigencia) {
+    public void setFechaFinVigencia(LocalDate fechaFinVigencia) {
         this.fechaFinVigencia = fechaFinVigencia;
     }
 
@@ -270,12 +270,12 @@ public class Poliza {
         this.localidad = localidad;
     }
 
-    public List<HijoPoliza> getHijosPoliza() {
-        return hijosPoliza;
+    public List<Hijo> getHijosPoliza() {
+        return hijos;
     }
 
-    public void setHijosPoliza(List<HijoPoliza> hijosPoliza) {
-        this.hijosPoliza = hijosPoliza;
+    public void setHijosPoliza(List<Hijo> hijosPoliza) {
+        this.hijos = hijosPoliza;
     }
 
     @Override
@@ -299,7 +299,7 @@ public class Poliza {
                 ", cobertura=" + cobertura +
                 ", vehiculo=" + vehiculo +
                 ", localidad=" + localidad +
-                ", hijosPoliza=" + hijosPoliza +
+                ", hijosPoliza=" + hijos +
                 '}';
     }
 }

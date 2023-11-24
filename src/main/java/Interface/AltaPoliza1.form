@@ -198,7 +198,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="275b6" class="javax.swing.JLabel" binding="a999999Label" default-binding="true">
+          <component id="275b6" class="javax.swing.JLabel" binding="nroClientelabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
@@ -231,7 +231,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="173b2" class="javax.swing.JLabel" default-binding="true">
+          <component id="173b2" class="javax.swing.JLabel" binding="localidadLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
@@ -257,7 +257,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="ea681" class="javax.swing.JLabel" default-binding="true">
+          <component id="ea681" class="javax.swing.JLabel" binding="numeroDocumentoLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
@@ -283,7 +283,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="a3464" class="javax.swing.JLabel" default-binding="true">
+          <component id="a3464" class="javax.swing.JLabel" binding="tipoDocumentLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
@@ -309,7 +309,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="bb68" class="javax.swing.JLabel" default-binding="true">
+          <component id="bb68" class="javax.swing.JLabel" binding="provinciaLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
@@ -335,7 +335,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="51c44" class="javax.swing.JLabel" default-binding="true">
+          <component id="51c44" class="javax.swing.JLabel" binding="nombreLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
@@ -361,7 +361,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="d4b5c" class="javax.swing.JLabel" default-binding="true">
+          <component id="d4b5c" class="javax.swing.JLabel" binding="ApellidoLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
@@ -411,7 +411,7 @@
         </properties>
         <border type="line"/>
         <children>
-          <component id="7e7cc" class="javax.swing.JLabel" default-binding="true">
+          <component id="7e7cc" class="javax.swing.JLabel" binding="direccionLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>

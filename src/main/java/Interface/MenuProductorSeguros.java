@@ -25,8 +25,8 @@ public class MenuProductorSeguros {
     private JButton cerrarSesionButton;
     private JLabel idMenu;
     private JPanel idPanelMenu;
-    private PersonaDTO currentPersona;
-    private PolizaDTO currentPoliza;
+    static PersonaDTO currentPersona;
+    static PolizaDTO currentPoliza;
 
 
 
@@ -69,7 +69,7 @@ public class MenuProductorSeguros {
             PersonaDTO personaDTO = cargaPersonaInterface.getPersonaDTO();
             DireccionDTO direccionDTO = dirreccionInterface.getDireccionDTO();
             if (personaDTO != null) {
-                personaDTO.setDireccion(direccionDTO);
+                personaDTO.addDirecion(direccionDTO);
                 GestorPersona.crearCliente(personaDTO);
                 cardLayout.show(cardPanel,"MenuProductorSeguro");
                 cardPanel.setPreferredSize(this.PantallaPrincipal.getPreferredSize());
@@ -84,34 +84,39 @@ public class MenuProductorSeguros {
     private void altaPoliza() {
         currentPersona = null;
         AltaPoliza1 altaPolizaClienteDatos = new AltaPoliza1();
+        AltaPoliza2 cargarDatosPoliza = new AltaPoliza2();
+        cardPanel.add(cargarDatosPoliza.getPantallaPrincipal(),"carga datos poliza");
+        BuscarCliente buscarCliente = new BuscarCliente();
+        cardPanel.add(buscarCliente.getpantallaprincipal(),"buscar cliente");
         cardPanel.add(altaPolizaClienteDatos.getPantallaPrincipal(),"Datos Cliente");
         cardLayout.show(cardPanel,"Datos Cliente");
         cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
+        SeleccionarCobertura cobertura = new SeleccionarCobertura();
+        cardPanel.add(cobertura.getPantallaPrincipal(),"elegir cobertura");
         altaPolizaClienteDatos.getAgregarClienteButton().addActionListener(e -> {
             altaCliente();
         });
         altaPolizaClienteDatos.getBuscarClienteButton().addActionListener(e -> {
-
+            cardLayout.show(cardPanel,"buscar cliente");
+            cardPanel.setPreferredSize(buscarCliente.getpantallaprincipal().getPreferredSize());
+            buscarCliente.confirmarButton.addActionListener(e1 -> {
+                currentPersona = buscarCliente.getSelectedPerson();
+                altaPolizaClienteDatos.setdatos(currentPersona);
+                cargarDatosPoliza.cargarDatos();
+                cardLayout.show(cardPanel,"Datos Cliente");
+                cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
+            });
         });
-    }
-
-
-    private void configureDoneButton(DirreccionInterface dirreccionInterface, CardLayout cardLayout) {
-        dirreccionInterface.doneButton.addActionListener(e -> {
-            cardLayout.show(cardPanel, "CargaPersonaPanel");
-        });
-    }
-
-    private void configureTerminarButton(CargaPersonaInterface cargaPersonaInterface, DirreccionInterface dirreccionInterface) {
-        cargaPersonaInterface.terminarButton.addActionListener(e -> {
-            PersonaDTO personaDTO = cargaPersonaInterface.getPersonaDTO();
-            DireccionDTO direccionDTO = dirreccionInterface.getDireccionDTO();
-            if (personaDTO != null) {
-                personaDTO.setDireccion(direccionDTO);
-                GestorPersona.crearCliente(personaDTO);
+        altaPolizaClienteDatos.confirmarButton.addActionListener(e->{
+            System.out.println(currentPersona.toString());
+            if(currentPersona != null) {
+                cardLayout.show(cardPanel, "carga datos poliza");
+                cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
             }
         });
     }
+
+
 
 
 

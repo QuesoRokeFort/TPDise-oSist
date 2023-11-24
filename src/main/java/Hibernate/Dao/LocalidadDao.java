@@ -1,7 +1,6 @@
 package Hibernate.Dao;
 
 import Hibernate.Model.Localidad;
-import Hibernate.Model.Pais;
 import Hibernate.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

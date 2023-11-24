@@ -4,7 +4,9 @@ package DTO;
 
 import Hibernate.Model.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class PersonaDTO {
 
@@ -27,7 +29,7 @@ public class PersonaDTO {
 	private Date fechaNac;
 
 
-	private DireccionDTO direccion;
+	private List<DireccionDTO> direccion = new ArrayList<>();;
 
 
 	private TipoDocumento tipoDocumento;
@@ -50,7 +52,7 @@ public class PersonaDTO {
 	public PersonaDTO() {
 	}
 
-	public PersonaDTO(Integer idPersona, String nombrePersona, String apellido, Integer nroDocumento, Integer nroCuil, Sexo sexo, Date fechaNac, DireccionDTO direccion, TipoDocumento tipoDocumento, EstadoCivil estadoCivil, Profesion profesion, Usuario usuario) {
+	public PersonaDTO(Integer idPersona, String nombrePersona, String apellido, Integer nroDocumento, Integer nroCuil, Sexo sexo, Date fechaNac, List<DireccionDTO> direccion, TipoDocumento tipoDocumento, EstadoCivil estadoCivil, Profesion profesion, Usuario usuario) {
 		this.idPersona = idPersona;
 		this.nombrePersona = nombrePersona;
 		this.apellido = apellido;
@@ -65,6 +67,7 @@ public class PersonaDTO {
 		this.usuario = new UsuarioDTO(usuario);
 	}
 	public PersonaDTO(Persona persona) {
+		System.out.println(persona.toString());
 		this.idPersona = persona.getIdPersona();
 		this.nombrePersona = persona.getNombrePersona();
 		this.apellido = persona.getApellido();
@@ -72,19 +75,26 @@ public class PersonaDTO {
 		this.nroCuil = persona.getNroCuil();
 		this.sexo = persona.getSexo();
 		this.fechaNac = persona.getFechaNac();
-		this.direccion = new DireccionDTO(persona.getDireccion());
+		if (persona.getDireccion()!=null) persona.getDireccion().forEach(d->this.direccion.add(new DireccionDTO(d)));
 		this.tipoDocumento = persona.getTipoDocumento();
 		this.estadoCivil = persona.getEstadoCivil();
 		this.profesion = persona.getProfesion();
-		this.usuario = new UsuarioDTO(persona.getUsuario());
-		usuario.setPersona(this);
-		this.cliente = new ClienteDTO(persona.getCliente());
-		cliente.setPersona(this);
+		if (persona.getUsuario()!=null){
+			this.usuario = new UsuarioDTO(persona.getUsuario());
+				usuario.setPersona(this);
+		}
+		if (persona.getCliente()!=null) {
+			this.cliente = new ClienteDTO(persona.getCliente());
+			cliente.setPersona(this);
+		}
+	}
+	public void addDirecion(DireccionDTO direccion){
+		this.direccion.add(direccion);
 	}
 
 	@Override
 	public String toString() {
-		return "Persona{" +
+		return "PersonaDTO{" +
 				"idPersona=" + idPersona +
 				", nombrePersona='" + nombrePersona + '\'' +
 				", apellido='" + apellido + '\'' +
@@ -157,11 +167,11 @@ public class PersonaDTO {
 		this.fechaNac = fechaNac;
 	}
 
-	public DireccionDTO getDireccion() {
+	public List<DireccionDTO> getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(DireccionDTO direccion) {
+	public void setDireccion(List<DireccionDTO> direccion) {
 		this.direccion = direccion;
 	}
 

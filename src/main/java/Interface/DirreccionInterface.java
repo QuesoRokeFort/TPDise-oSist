@@ -15,7 +15,6 @@ public class DirreccionInterface {
 	private JPanel panel1;
 	private JComboBox LocComboBox;
 	private JComboBox PaisComboBox;
-
 	private JLabel ProvinciaLabel;
 	private JLabel localidadLabel;
 	private JLabel PaisLabel;
