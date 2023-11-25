@@ -14,16 +14,18 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class GestorInterface {
 	private static JFrame frame;
 	static JPanel cardPanel;
 	static CardLayout cardLayout;
 
-
 	public static void panelCargaCliente() {
 		frame = new JFrame("Carga de Persona");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
 		cardPanel = new JPanel();
 
@@ -74,6 +76,8 @@ public class GestorInterface {
 	public static void AccesoUsuario() {
 		frame = new JFrame("Acceso Usuarios");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ImageIcon icon = new ImageIcon("src/imagenes/b.png");
+		frame.setIconImage(icon.getImage());
 		BufferedImage img = null;
 		try {
 			img = ImageIO.read(new File("src/imagenes/a.png"));
@@ -82,6 +86,7 @@ public class GestorInterface {
 		}
 
 		frame.setContentPane(new JLabel(new ImageIcon(img)));
+
 
 		frame.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
