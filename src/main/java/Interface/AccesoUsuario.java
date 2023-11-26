@@ -63,7 +63,7 @@ public class AccesoUsuario{
     }
 
     private String validateData() {
-        String aviso = "Error en: ";
+        String aviso = "Campos incompletos: ";
         if (idUsuarioText.getText().equals("Escriba su Usuario...")) {
             aviso += " Usuario, ";
         }
@@ -80,13 +80,13 @@ public class AccesoUsuario{
     public UsuarioDTO getUsuario() {
         String aviso = validateData();
         UsuarioDTO usuario = new UsuarioDTO();
-        if(aviso.equals("Error en: ")) {
+        if(aviso.equals("Campos incompletos: ")) {
             usuario.setMail(idUsuarioText.getText());
             usuario.setClave(idContraseñaText.getText());
             return usuario;
         }
         else{
-            JOptionPane.showMessageDialog(null,aviso);
+            JOptionPane.showMessageDialog(null,aviso,"Advertencia",JOptionPane.WARNING_MESSAGE);
         }
         return null;
     }

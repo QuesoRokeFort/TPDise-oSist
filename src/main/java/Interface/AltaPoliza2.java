@@ -34,7 +34,6 @@ public class AltaPoliza2 {
     private JComboBox MarcaBox;
     private JComboBox ModeloBox;
     private JComboBox AñoVehiculoBox;
-    private JButton cancelarButton;
     private JButton confirmarButton;
     private JTextField motorText;
     private JTextField chasisText;
@@ -69,6 +68,7 @@ public class AltaPoliza2 {
     private JCheckBox tuercasAntirobo;
     private JComboBox siniestrosBox;
     private JButton X1;
+    private JButton cancelarButton;
     private List<ModeloDTO> modelos;
     private List<MarcaDTO> marcas;
     private List<AnioFabricacionDTO> años;

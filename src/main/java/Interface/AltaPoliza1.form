@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interface.AltaPoliza1">
-  <grid id="27dc6" binding="PantallaPrincipal" layout-manager="GridLayoutManager" row-count="15" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+  <grid id="27dc6" binding="PantallaPrincipal" layout-manager="GridLayoutManager" row-count="12" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
     <margin top="20" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="20" y="46" width="832" height="494"/>
+      <xy x="20" y="46" width="850" height="601"/>
     </constraints>
     <properties>
       <preferredSize width="800" height="500"/>
@@ -17,6 +17,7 @@
           </grid>
         </constraints>
         <properties>
+          <font name="BankGothic Lt BT"/>
           <text value="Agregar Cliente"/>
         </properties>
       </component>
@@ -27,7 +28,7 @@
           </grid>
         </constraints>
       </hspacer>
-      <grid id="aed25" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="aed25" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -42,349 +43,62 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <font name="BankGothic Lt BT"/>
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="0"/>
-              <text value="Nro Cliente"/>
+              <text value="Nº CLIENTE"/>
             </properties>
           </component>
-        </children>
-      </grid>
-      <vspacer id="500ec">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="30"/>
-          </grid>
-        </constraints>
-      </vspacer>
-      <grid id="4ef89" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties/>
-        <border type="line"/>
-        <children>
-          <component id="ab4b1" class="javax.swing.JLabel">
+          <grid id="71434" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="2">
+            <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="10"/>
+              </grid>
             </constraints>
             <properties>
-              <text value="Nombre"/>
+              <background color="-6710108"/>
             </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="fe7ea" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
+            <border type="none"/>
+            <children>
+              <component id="275b6" class="javax.swing.JLabel" binding="nroClientelabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="999999"/>
+                </properties>
+              </component>
+            </children>
           </grid>
-        </constraints>
-        <properties/>
-        <border type="line"/>
-        <children>
-          <component id="25c27" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Apellido"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="9c1bf" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties/>
-        <border type="line"/>
-        <children>
-          <component id="6fe63" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Tipo de Documento"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="69120" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties/>
-        <border type="line"/>
-        <children>
-          <component id="d653e" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Numero de Documento"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="fd3dd" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties/>
-        <border type="line"/>
-        <children>
-          <component id="7758d" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Provincia"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="8c62a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties/>
-        <border type="line"/>
-        <children>
-          <component id="17690" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Localidad"/>
-            </properties>
-          </component>
         </children>
       </grid>
       <component id="21df7" class="javax.swing.JButton" binding="confirmarButton" default-binding="true">
         <constraints>
-          <grid row="14" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="11" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="20"/>
           </grid>
         </constraints>
         <properties>
+          <font name="BankGothic Lt BT"/>
           <text value="Confirmar"/>
         </properties>
       </component>
-      <grid id="71434" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-6710108"/>
-        </properties>
-        <border type="line"/>
-        <children>
-          <component id="275b6" class="javax.swing.JLabel" binding="nroClientelabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="10"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="999999"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <vspacer id="25abc">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="30"/>
-          </grid>
-        </constraints>
-      </vspacer>
-      <grid id="6cd66" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-6710108"/>
-        </properties>
-        <border type="line"/>
-        <children>
-          <component id="173b2" class="javax.swing.JLabel" binding="localidadLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="10"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="AAAAAAAAAAA"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="b4a46" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-6710108"/>
-        </properties>
-        <border type="line"/>
-        <children>
-          <component id="ea681" class="javax.swing.JLabel" binding="numeroDocumentoLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="10"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="999999999"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="8cc6e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-6710108"/>
-        </properties>
-        <border type="line"/>
-        <children>
-          <component id="a3464" class="javax.swing.JLabel" binding="tipoDocumentLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="10"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="AAAAAAAAAAA"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="4cca7" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-6710108"/>
-        </properties>
-        <border type="line"/>
-        <children>
-          <component id="bb68" class="javax.swing.JLabel" binding="provinciaLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="10"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="AAAAAAAAAAAA"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="703e5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-6710108"/>
-        </properties>
-        <border type="line"/>
-        <children>
-          <component id="51c44" class="javax.swing.JLabel" binding="nombreLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="10"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="AAAAAAAAAAA"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="d4212" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-6710108"/>
-        </properties>
-        <border type="line"/>
-        <children>
-          <component id="d4b5c" class="javax.swing.JLabel" binding="ApellidoLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="10"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="AAAAAAAAA"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <hspacer id="369cb">
         <constraints>
-          <grid row="1" column="3" row-span="6" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="3" row-span="7" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="30" height="-1"/>
           </grid>
         </constraints>
       </hspacer>
       <hspacer id="ed1c7">
         <constraints>
-          <grid row="1" column="1" row-span="6" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="1" row-span="7" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="30" height="-1"/>
           </grid>
         </constraints>
@@ -396,39 +110,229 @@
           </grid>
         </constraints>
         <properties>
+          <font name="BankGothic Lt BT"/>
           <text value="Buscar Cliente"/>
         </properties>
       </component>
-      <grid id="3160f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <component id="59d15" class="javax.swing.JButton" default-binding="true">
         <constraints>
-          <grid row="12" column="4" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="200" height="10"/>
+          <grid row="11" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="1" use-parent-layout="false">
+            <preferred-size width="100" height="20"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-6710108"/>
+          <font name="BankGothic Lt BT"/>
+          <text value="Cancelar"/>
         </properties>
+      </component>
+      <vspacer id="1d645">
+        <constraints>
+          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="15"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <vspacer id="c388b">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="4ef89" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="1"/>
+          </grid>
+        </constraints>
+        <properties/>
         <border type="line"/>
         <children>
-          <component id="7e7cc" class="javax.swing.JLabel" binding="direccionLabel">
+          <component id="ab4b1" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="BankGothic Lt BT"/>
+              <text value="NOMBRE"/>
+            </properties>
+          </component>
+          <grid id="703e5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6710108"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="51c44" class="javax.swing.JLabel" binding="nombreLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="AAAAAAAAAAA"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="fe7ea" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="1"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="line"/>
+        <children>
+          <component id="25c27" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="BankGothic Lt BT"/>
+              <text value="APELLIDO"/>
+            </properties>
+          </component>
+          <grid id="d4212" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6710108"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="d4b5c" class="javax.swing.JLabel" binding="ApellidoLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="AAAAAAAAA"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="fd3dd" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="10"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="line"/>
+        <children>
+          <component id="7758d" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="BankGothic Lt BT"/>
+              <text value="PROVINCIA"/>
+            </properties>
+          </component>
+          <grid id="4cca7" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="10"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-6447198"/>
-              <horizontalAlignment value="0"/>
-              <text value="AAAAAAAAA"/>
+              <background color="-6710108"/>
             </properties>
-          </component>
+            <border type="none"/>
+            <children>
+              <component id="bb68" class="javax.swing.JLabel" binding="provinciaLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="AAAAAAAAAAAA"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
-      <grid id="c5458" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="8c62a" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="11" column="4" row-span="1" col-span="3" vsize-policy="3" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="10"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="line"/>
+        <children>
+          <component id="17690" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="BankGothic Lt BT"/>
+              <text value="LOCALIDAD"/>
+            </properties>
+          </component>
+          <grid id="6cd66" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="10"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6710108"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="173b2" class="javax.swing.JLabel" binding="localidadLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="AAAAAAAAAAA"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="c5458" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="9" column="4" row-span="1" col-span="3" vsize-policy="3" hsize-policy="7" anchor="0" fill="2" indent="0" use-parent-layout="false">
             <preferred-size width="200" height="10"/>
           </grid>
         </constraints>
@@ -440,40 +344,166 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Direccion"/>
+              <font name="BankGothic Lt BT"/>
+              <text value="DIRECCION"/>
             </properties>
           </component>
+          <grid id="3160f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="10"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6710108"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="7e7cc" class="javax.swing.JLabel" binding="direccionLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="AAAAAAAAA"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
-      <component id="59d15" class="javax.swing.JButton" default-binding="true">
+      <grid id="98ff5" layout-manager="GridBagLayout">
         <constraints>
-          <grid row="14" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="1" use-parent-layout="false">
-            <preferred-size width="100" height="20"/>
-          </grid>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties>
-          <text value="Cancelar"/>
-        </properties>
-      </component>
-      <vspacer id="f331f">
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <vspacer id="3905a">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="30"/>
-          </grid>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <vspacer id="6e55a">
+      <vspacer id="fba50">
         <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="30"/>
-          </grid>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <vspacer id="1d645">
+      <vspacer id="de810">
         <constraints>
-          <grid row="13" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="15"/>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="9c1bf" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="10"/>
           </grid>
+        </constraints>
+        <properties/>
+        <border type="line"/>
+        <children>
+          <component id="6fe63" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="BankGothic Lt BT"/>
+              <text value="TIPO DE DOCUMENTO"/>
+            </properties>
+          </component>
+          <grid id="8cc6e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="10"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6710108"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="a3464" class="javax.swing.JLabel" binding="tipoDocumentLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="AAAAAAAAAAA"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="69120" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="10"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="line"/>
+        <children>
+          <component id="d653e" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="BankGothic Lt BT"/>
+              <text value="Nº DOCUMENTO"/>
+            </properties>
+          </component>
+          <grid id="b4a46" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="10"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-6710108"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="ea681" class="javax.swing.JLabel" binding="numeroDocumentoLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="999999999"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <vspacer id="4f3cf">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="b1935">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
     </children>

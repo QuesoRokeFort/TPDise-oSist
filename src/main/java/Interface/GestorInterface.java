@@ -74,6 +74,7 @@ public class GestorInterface {
 	}
 
 	public static void AccesoUsuario() {
+
 		frame = new JFrame("Acceso Usuarios");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ImageIcon icon = new ImageIcon("src/imagenes/b.png");
@@ -108,7 +109,7 @@ public class GestorInterface {
 				usuario = GestorPersona.logInUsuario(usuario);
 				if (usuario != null) {
 				}else{
-					JOptionPane.showMessageDialog(null, "error cuenta o contraseña no valida");
+					JOptionPane.showMessageDialog(null, "Cuenta o contraseña invalida","Error de login",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			switch (usuario.getRol()){
