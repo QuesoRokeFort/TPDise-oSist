@@ -205,7 +205,7 @@
             </constraints>
             <properties>
               <font name="BankGothic Lt BT" size="20" style="1"/>
-              <text value="Menu"/>
+              <text value="Menú Principal"/>
             </properties>
           </component>
         </children>

@@ -36,13 +36,13 @@ public class AccesoUsuario{
             @Override
             public void focusGained(FocusEvent e) {
 
-                if (idUsuarioText.getText().equals("Escriba su Usuario...")) idUsuarioText.setText("");
+                if (idUsuarioText.getText().equals("Escriba su Usuario...       ")) idUsuarioText.setText("");
             }
 
             @Override
             public void focusLost(FocusEvent e) {
                 if (idUsuarioText.getText().equals("")) {
-                    idUsuarioText.setText("Escriba su Usuario...");
+                    idUsuarioText.setText("Escriba su Usuario...       ");
                 }
             }
         });
@@ -64,10 +64,10 @@ public class AccesoUsuario{
 
     private String validateData() {
         String aviso = "Campos incompletos: ";
-        if (idUsuarioText.getText().equals("Escriba su Usuario...")) {
+        if (idUsuarioText.getText().equals("Escriba su Usuario...       ")) {
             aviso += " Usuario, ";
         }
-        if (idContraseñaText.getText().equals("Escriba su Contraseña...")) {
+        if (idContraseñaText.getText().equals("Escriba su Usuario...       ")) {
             aviso += " Contraseña. ";
         }
     return aviso;

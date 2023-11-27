@@ -73,7 +73,7 @@ public class GestorInterface {
 
 	public static void AccesoUsuario() {
 
-		frame = new JFrame("Acceso Usuarios");
+		frame = new JFrame("EL ASEGURADO");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ImageIcon icon = new ImageIcon("src/imagenes/b.png");
 		frame.setIconImage(icon.getImage());

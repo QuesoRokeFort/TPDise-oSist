@@ -126,7 +126,7 @@
                 <properties>
                   <font name="BankGothic Lt BT" size="9"/>
                   <foreground color="-10329502"/>
-                  <text value="Escriba su Usuario..."/>
+                  <text value="Escriba su Usuario...       "/>
                 </properties>
               </component>
               <hspacer id="5b2d4">

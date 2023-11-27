@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="fin creo faltaria terminar los frames quiza">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagenes/a.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagenes/a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,27 +73,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE&quot;: &quot;right&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;219&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;241&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Felipe/IdeaProjects/TPDise-oSist/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_17_2023_6_55_PM_[Changes]1/shelved.patch&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "62",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "241",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Felipe/IdeaProjects/TPDise-oSist/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_17_2023_6_55_PM_[Changes]1/shelved.patch",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Gestores" />
