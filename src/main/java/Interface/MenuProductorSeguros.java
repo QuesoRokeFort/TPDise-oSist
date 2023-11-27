@@ -17,9 +17,9 @@ public class MenuProductorSeguros {
     private JPanel PantallaPrincipal;
     public JButton darDeAltaPolizaButton;
     public JButton darDeAltaClienteButton;
-    public JButton consultarPolizaButton;
+    public JButton consultarPólizaButton;
     public JButton consultarClienteButton;
-    public JButton generarPropuestaRenovacionButton;
+    public JButton generarPropuestaRenovaciónButton;
     public JButton actualizarFactoresButton;
     private JButton cerrarSesionButton;
     private JLabel idMenu;

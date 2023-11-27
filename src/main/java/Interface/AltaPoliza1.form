@@ -345,7 +345,7 @@
             </constraints>
             <properties>
               <font name="BankGothic Lt BT"/>
-              <text value="DIRECCION"/>
+              <text value="DIRECCIÓN"/>
             </properties>
           </component>
           <grid id="3160f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
