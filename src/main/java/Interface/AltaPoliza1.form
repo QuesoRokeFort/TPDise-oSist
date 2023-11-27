@@ -114,7 +114,7 @@
           <text value="Buscar Cliente"/>
         </properties>
       </component>
-      <component id="59d15" class="javax.swing.JButton" default-binding="true">
+      <component id="59d15" class="javax.swing.JButton" binding="cancelarButton">
         <constraints>
           <grid row="12" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="1" use-parent-layout="false">
             <preferred-size width="100" height="20"/>

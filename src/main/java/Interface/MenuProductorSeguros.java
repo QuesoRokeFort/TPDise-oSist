@@ -73,6 +73,7 @@ public class MenuProductorSeguros {
                 cardLayout.show(cardPanel,"MenuProductorSeguro");
                 cardPanel.setPreferredSize(this.PantallaPrincipal.getPreferredSize());
                 currentPersona = personaDTO;
+
             }
         });
 
@@ -83,6 +84,7 @@ public class MenuProductorSeguros {
     private void altaPoliza() {
         currentPersona = null;
         AltaPoliza1 altaPolizaClienteDatos = new AltaPoliza1();
+
         AltaPoliza2 cargarDatosPoliza = new AltaPoliza2();
         cardPanel.add(cargarDatosPoliza.getPantallaPrincipal(),"carga datos poliza");
         BuscarCliente buscarCliente = new BuscarCliente();
@@ -110,6 +112,30 @@ public class MenuProductorSeguros {
                 cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
             }
         });
+        altaPolizaClienteDatos.cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel,"MenuProductorSeguro");
+                cardPanel.setPreferredSize(PantallaPrincipal.getPreferredSize());
+            }
+        });
+
+        cargarDatosPoliza.cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel,"Datos Cliente");
+                cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
+            }
+        });
+
+        buscarCliente.cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel,"Datos Cliente");
+                cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
+            }
+        });
+
     }
 
 

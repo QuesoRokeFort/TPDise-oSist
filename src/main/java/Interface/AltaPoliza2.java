@@ -71,7 +71,7 @@ public class AltaPoliza2 {
     private JCheckBox tuercasAntirobo;
     private JComboBox siniestrosBox;
     private JButton X1;
-    private JButton cancelarButton;
+   public JButton cancelarButton;
     private List<ModeloDTO> modelos;
     private List<MarcaDTO> marcas;
     private List<AnioFabricacionDTO> años;
@@ -140,6 +140,12 @@ public class AltaPoliza2 {
                 fechaText1.setText("Escriba Aqui");
                 Sexo1.setSelectedIndex(-1);
                 Civil1.setSelectedIndex(-1);
+            }
+        });
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }

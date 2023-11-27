@@ -67,7 +67,7 @@ public class AccesoUsuario{
         if (idUsuarioText.getText().equals("Escriba su Usuario...       ")) {
             aviso += " Usuario, ";
         }
-        if (idContraseñaText.getText().equals("Escriba su Usuario...       ")) {
+        if (idContraseñaText.getText().equals("Escriba su Contraseña...")) {
             aviso += " Contraseña. ";
         }
     return aviso;

@@ -3,6 +3,11 @@ package Interface;
 import DTO.PersonaDTO;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import static Interface.GestorInterface.cardLayout;
+import static Interface.GestorInterface.cardPanel;
 
 public class AltaPoliza1 {
     private JButton buscarClienteButton;
@@ -17,6 +22,11 @@ public class AltaPoliza1 {
     private JLabel provinciaLabel;
     private JLabel localidadLabel;
     private JLabel direccionLabel;
+    public JButton cancelarButton;
+
+    public AltaPoliza1() {
+
+    }
 
     public JButton getBuscarClienteButton() {
         return buscarClienteButton;
