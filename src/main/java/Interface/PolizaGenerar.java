@@ -5,11 +5,13 @@ import Gestores.GestorPoliza;
 import javax.swing.*;
 
 import java.awt.event.ActionEvent;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 
 import static Interface.GestorInterface.cardLayout;
 import static Interface.GestorInterface.cardPanel;
 import static Interface.MenuProductorSeguros.currentPoliza;
+
 
 public class PolizaGenerar {
     private JPanel PantallaPrincipal;
@@ -44,8 +46,10 @@ public class PolizaGenerar {
 		confirmarButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				currentPoliza.setMontoTotal(Integer.valueOf(totalAPagarLabel.getText()));
 				GestorPoliza.crearPoliza(currentPoliza);
 				cardLayout.show(cardPanel,"MenuProductorSeguro");
+				cardPanel.setPreferredSize(new Dimension(600, 218));
 			}
 		});
 	}

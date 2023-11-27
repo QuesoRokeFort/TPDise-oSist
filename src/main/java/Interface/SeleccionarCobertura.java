@@ -65,9 +65,9 @@ public class SeleccionarCobertura {
 				cob.setPrecio(selectedPrecio.getPrecio());
 				cob.setProveedor(selectedPrecio.getProveedor());
 				cob.setTipoCobertura(selectedPrecio.getTipoCobertura());
-				System.out.println(cob.toString());
 				currentPoliza.setCobertura(cob);
 				currentPoliza.setFormaDePago((String) formaDePagoBox.getItemAt(formaDePagoBox.getSelectedIndex()));
+				currentPoliza.setEstadoPolizaPdf(false);
 				PolizaGenerar polizaGenerar = new PolizaGenerar();
 				polizaGenerar.cargarDatos();
 				cardPanel.add(polizaGenerar.getPantallaPrincipal(),"poliza a generar");

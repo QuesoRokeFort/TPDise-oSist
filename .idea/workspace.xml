@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="Hice las clases TipoCobertura,Proveedor,Poliza,Hijo,HijoPoliza,Cobetura,CambioPoliza,PrecioProveedorTipo,MedidaSeguridad,Cuota,Pago y MedidaPoliza, tmbn le agregue su DTO y Dao a ModeloAnioFabricacion">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorCoberturas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="fin creo faltaria terminar los frames quiza">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/CoberturaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/CoberturaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/MedidaSeguridadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/MedidaSeguridadDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/VehiculoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/VehiculoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorDirrecciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorDirrecciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPersona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GestorPersonas/GestorVehiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorVehiculos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cobertura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaSeguridad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaSeguridad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/DirreccionInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -263,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700259240709</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fin creo faltaria terminar los frames quiza">
+      <created>1701108372675</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701108372675</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +282,8 @@
     <MESSAGE value="me puse a hacer un menu para cargar personas jaja me aburro y eso" />
     <MESSAGE value="hice muchas cosas&#10;2 interfaces un menu handler de las 2 termine la carga depersonas y hice un monton de DTOS&#10; nose porque no se paso este archivo" />
     <MESSAGE value="Hice las clases TipoCobertura,Proveedor,Poliza,Hijo,HijoPoliza,Cobetura,CambioPoliza,PrecioProveedorTipo,MedidaSeguridad,Cuota,Pago y MedidaPoliza, tmbn le agregue su DTO y Dao a ModeloAnioFabricacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hice las clases TipoCobertura,Proveedor,Poliza,Hijo,HijoPoliza,Cobetura,CambioPoliza,PrecioProveedorTipo,MedidaSeguridad,Cuota,Pago y MedidaPoliza, tmbn le agregue su DTO y Dao a ModeloAnioFabricacion" />
+    <MESSAGE value="fin creo faltaria terminar los frames quiza" />
+    <option name="LAST_COMMIT_MESSAGE" value="fin creo faltaria terminar los frames quiza" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
