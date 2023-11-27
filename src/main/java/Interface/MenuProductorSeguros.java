@@ -3,10 +3,9 @@ package Interface;
 import DTO.DireccionDTO;
 import DTO.PersonaDTO;
 import DTO.PolizaDTO;
-import GestorPersonas.GestorPersona;
+import Gestores.GestorPersona;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -91,8 +90,6 @@ public class MenuProductorSeguros {
         cardPanel.add(altaPolizaClienteDatos.getPantallaPrincipal(),"Datos Cliente");
         cardLayout.show(cardPanel,"Datos Cliente");
         cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
-        SeleccionarCobertura cobertura = new SeleccionarCobertura();
-        cardPanel.add(cobertura.getPantallaPrincipal(),"elegir cobertura");
         altaPolizaClienteDatos.getAgregarClienteButton().addActionListener(e -> {
             altaCliente();
         });
@@ -108,7 +105,6 @@ public class MenuProductorSeguros {
             });
         });
         altaPolizaClienteDatos.confirmarButton.addActionListener(e->{
-            System.out.println(currentPersona.toString());
             if(currentPersona != null) {
                 cardLayout.show(cardPanel, "carga datos poliza");
                 cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());

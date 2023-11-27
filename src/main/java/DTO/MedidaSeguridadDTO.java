@@ -1,10 +1,6 @@
 package DTO;
 
 import Hibernate.Model.*;
-import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MedidaSeguridadDTO{
 
@@ -14,8 +10,6 @@ public class MedidaSeguridadDTO{
 
     private Integer valorPorcentual;
 
-    public MedidaSeguridadDTO() {
-    }
 
     public MedidaSeguridadDTO(int id, String nombreMedida, Integer valorPorcentual) {
         this.id = id;
@@ -28,6 +22,11 @@ public class MedidaSeguridadDTO{
         this.nombreMedida = medidaSeguridad.getNombreMedida();
         this.valorPorcentual = medidaSeguridad.getValorPorcentual();
     }
+
+    public MedidaSeguridadDTO() {
+
+    }
+
 
     public int getId() {
         return id;

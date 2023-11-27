@@ -1,4 +1,4 @@
-package GestorPersonas;
+package Gestores;
 
 import DTO.ClienteDTO;
 import DTO.PersonaDTO;

@@ -35,18 +35,28 @@ public class Cobertura {
 
     @Column(name = "ajusteCantHijos")
     private Integer ajusteCantHijos;
+    @Column (name = "precio")
+    private Integer precio;
 
+    public Integer getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Integer precio) {
+        this.precio = precio;
+    }
 
     public Cobertura() {
     }
 
-    public Cobertura(Integer id, TipoCobertura tipoCobertura, Proveedor proveedor, String ajusteSiniestro, Integer ajustePorKm, Integer ajusteCantHijos) {
+    public Cobertura(Integer id, TipoCobertura tipoCobertura, Proveedor proveedor, String ajusteSiniestro, Integer ajustePorKm, Integer ajusteCantHijos,Integer precio) {
         this.id = id;
         this.tipoCobertura = tipoCobertura;
         this.proveedor = proveedor;
         this.ajusteSiniestro = ajusteSiniestro;
         this.ajustePorKm = ajustePorKm;
         this.ajusteCantHijos = ajusteCantHijos;
+        this.precio = precio;
     }
 
     public Cobertura(CoberturaDTO cobertura) {
@@ -56,6 +66,7 @@ public class Cobertura {
         this.ajusteSiniestro = cobertura.getAjusteSiniestro();
         this.ajustePorKm = cobertura.getAjustePorKm();
         this.ajusteCantHijos = cobertura.getAjusteCantHijos();
+        this.precio = cobertura.getPrecio();
     }
 
 

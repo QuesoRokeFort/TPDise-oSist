@@ -1,4 +1,4 @@
-package GestorPersonas;
+package Gestores;
 
 import DTO.AnioFabricacionDTO;
 import DTO.MarcaDTO;
@@ -7,7 +7,6 @@ import Hibernate.Dao.AnioFabricacionDao;
 import Hibernate.Dao.MarcaDao;
 import Hibernate.Dao.ModeloDao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GestorVehiculos {

@@ -1,7 +1,7 @@
 package Interface;
 
 import DTO.PersonaDTO;
-import GestorPersonas.GestorPersona;
+import Gestores.GestorPersona;
 import Hibernate.Model.TipoDocumento;
 
 import javax.swing.*;

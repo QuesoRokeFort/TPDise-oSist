@@ -3,8 +3,7 @@ package Interface;
 import DTO.DireccionDTO;
 import DTO.PersonaDTO;
 import DTO.UsuarioDTO;
-import GestorPersonas.GestorPersona;
-import Hibernate.Dao.UsuarioDao;
+import Gestores.GestorPersona;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -14,7 +13,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class GestorInterface {

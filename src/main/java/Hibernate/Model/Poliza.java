@@ -1,5 +1,6 @@
 package Hibernate.Model;
 
+import DTO.MedidaSeguridadDTO;
 import DTO.PolizaDTO;
 import jakarta.persistence.*;
 
@@ -77,11 +78,14 @@ public class Poliza {
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Hijo> hijos = new ArrayList<>();
 
+    @OneToMany(mappedBy = "poliza",cascade = CascadeType.ALL,orphanRemoval = true)
+    private  List<MedidaSeguridad> medidas= new ArrayList<>();
+
 
     public Poliza() {
     }
 
-    public Poliza(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijosPoliza) {
+    public Poliza(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijosPoliza,List<MedidaSeguridad> medidas) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -101,6 +105,7 @@ public class Poliza {
         this.vehiculo = vehiculo;
         this.localidad = localidad;
         this.hijos = hijosPoliza;
+        this.medidas = medidas;
     }
 
     public Poliza(PolizaDTO poliza) {
@@ -123,6 +128,7 @@ public class Poliza {
         this.vehiculo = new Vehiculo(poliza.getVehiculo());
         this.localidad = new Localidad(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoDTO -> this.hijos.add(new Hijo(hijoDTO)));
+        poliza.getMedidasSeguradad().forEach(medidas-> this.medidas.add(new MedidaSeguridad(medidas)));
     }
 
     public Integer getId() {
@@ -301,5 +307,16 @@ public class Poliza {
                 ", localidad=" + localidad +
                 ", hijosPoliza=" + hijos +
                 '}';
+    }
+
+    public List<MedidaSeguridad> getMedidas() {
+        return medidas;
+    }
+
+    public void setMedidas(List<MedidaSeguridad> medidas) {
+        this.medidas = medidas;
+    }
+    public void addMedidas(MedidaSeguridad medidaSeguridad){
+        this.medidas.add(medidaSeguridad);
     }
 }

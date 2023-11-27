@@ -4,7 +4,7 @@ import DTO.DireccionDTO;
 import DTO.LocalidadDTO;
 import DTO.PaisDTO;
 import DTO.ProvinciaDTO;
-import GestorPersonas.GestorDirrecciones;
+import Gestores.GestorDirrecciones;
 
 import javax.swing.*;
 import java.awt.event.*;

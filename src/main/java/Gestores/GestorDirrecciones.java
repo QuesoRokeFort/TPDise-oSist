@@ -1,4 +1,4 @@
-package GestorPersonas;
+package Gestores;
 
 import DTO.LocalidadDTO;
 import DTO.PaisDTO;

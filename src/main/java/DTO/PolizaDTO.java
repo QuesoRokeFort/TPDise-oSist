@@ -57,11 +57,12 @@ public class PolizaDTO{
     private LocalidadDTO localidad;
 
     private List<HijoDTO> hijos = new ArrayList<>();
+    private List<MedidaSeguridadDTO> medidas = new ArrayList<>();
 
     public PolizaDTO() {
     }
 
-    public PolizaDTO(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos) {
+    public PolizaDTO(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, List<MedidaSeguridadDTO> medidas) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -81,6 +82,7 @@ public class PolizaDTO{
         this.vehiculo = vehiculo;
         this.localidad = localidad;
         this.hijos = hijos;
+        this.medidas = medidas;
     }
 
     public PolizaDTO(Poliza poliza) {
@@ -103,6 +105,7 @@ public class PolizaDTO{
         this.vehiculo = new VehiculoDTO(poliza.getVehiculo());
         this.localidad = new LocalidadDTO(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoPoliza -> this.hijos.add(new HijoDTO(hijoPoliza)));
+        poliza.getMedidas().forEach(medidas->this.medidas.add(new MedidaSeguridadDTO(medidas)));
     }
 
     public Integer getId() {
@@ -284,6 +287,13 @@ public class PolizaDTO{
 
     public void addHijo(HijoDTO hijoDTO) {
         this.hijos.add(hijoDTO);
+    }
+    public List<MedidaSeguridadDTO> getMedidasSeguradad() {
+        return medidas;
+    }
+
+    public void addMedida(MedidaSeguridadDTO garaje) {
+        this.medidas.add(garaje);
     }
 }
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class VehiculoDTO {
 
-    private int id;
+    private Integer id;
 
     private String chasis;
 
@@ -47,11 +47,11 @@ public class VehiculoDTO {
         this.anioFabricacion = new AnioFabricacionDTO(vehiculo.getAnioFabricacion());
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

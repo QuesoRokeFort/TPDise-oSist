@@ -42,12 +42,17 @@
               <color color="-4473925"/>
             </border>
             <children>
-              <component id="8092" class="javax.swing.JLabel">
+              <component id="dd041" class="javax.swing.JLabel" binding="tiularLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="AAAAAAAAA"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="999999"/>
                 </properties>
               </component>
             </children>
@@ -121,12 +126,17 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="fce0f" class="javax.swing.JLabel">
+                  <component id="aa6d9" class="javax.swing.JLabel" binding="fechaDeInicioLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="10"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="AAAAAAAA"/>
+                      <background color="-6447198"/>
+                      <font name="BankGothic Lt BT"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="999999"/>
                     </properties>
                   </component>
                 </children>
@@ -163,12 +173,17 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="d57a1" class="javax.swing.JLabel">
+                  <component id="81eaa" class="javax.swing.JLabel" binding="fechaDeFinLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="10"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="AAAAAAAAA"/>
+                      <background color="-6447198"/>
+                      <font name="BankGothic Lt BT"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="999999"/>
                     </properties>
                   </component>
                 </children>
@@ -257,12 +272,17 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="e0dca" class="javax.swing.JLabel">
+                  <component id="5cc5" class="javax.swing.JLabel" binding="marcaLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="10"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="AAAAAAAAA"/>
+                      <background color="-6447198"/>
+                      <font name="BankGothic Lt BT"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="999999"/>
                     </properties>
                   </component>
                 </children>
@@ -297,12 +317,17 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="6673" class="javax.swing.JLabel">
+                  <component id="7cf1c" class="javax.swing.JLabel" binding="modeloLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="10"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="AAAAAAAAA"/>
+                      <background color="-6447198"/>
+                      <font name="BankGothic Lt BT"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="999999"/>
                     </properties>
                   </component>
                 </children>
@@ -351,12 +376,17 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="c92fe" class="javax.swing.JLabel">
+                  <component id="14430" class="javax.swing.JLabel" binding="motorLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="10"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="AAAAAAAAA"/>
+                      <background color="-6447198"/>
+                      <font name="BankGothic Lt BT"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="999999"/>
                     </properties>
                   </component>
                 </children>
@@ -398,12 +428,17 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="f9591" class="javax.swing.JLabel">
+                  <component id="bd8c5" class="javax.swing.JLabel" binding="chasisLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="10"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="AAAAAAAAA"/>
+                      <background color="-6447198"/>
+                      <font name="BankGothic Lt BT"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="999999"/>
                     </properties>
                   </component>
                 </children>
@@ -445,12 +480,17 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="9ab97" class="javax.swing.JLabel">
+                  <component id="26742" class="javax.swing.JLabel" binding="patenteLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="10"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="AAAAAAAAA"/>
+                      <background color="-6447198"/>
+                      <font name="BankGothic Lt BT"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="999999"/>
                     </properties>
                   </component>
                 </children>
@@ -498,13 +538,6 @@
           </component>
         </children>
       </grid>
-      <vspacer id="f030">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="10"/>
-          </grid>
-        </constraints>
-      </vspacer>
       <grid id="bf7d8" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
@@ -537,12 +570,17 @@
               <color color="-4473925"/>
             </border>
             <children>
-              <component id="a522b" class="javax.swing.JLabel">
+              <component id="d516a" class="javax.swing.JLabel" binding="sumaAseguradaLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="99999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="999999"/>
                 </properties>
               </component>
             </children>
@@ -590,12 +628,17 @@
               <color color="-4473925"/>
             </border>
             <children>
-              <component id="4eb64" class="javax.swing.JLabel">
+              <component id="20a8" class="javax.swing.JLabel" binding="premioLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="99999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="999999"/>
                 </properties>
               </component>
             </children>
@@ -639,12 +682,17 @@
               <color color="-4473925"/>
             </border>
             <children>
-              <component id="4c527" class="javax.swing.JLabel">
+              <component id="476ca" class="javax.swing.JLabel" binding="ImportePorDescuento">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="99999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="999999"/>
                 </properties>
               </component>
             </children>
@@ -725,12 +773,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="2d71c" class="javax.swing.JLabel">
+              <component id="e1099" class="javax.swing.JLabel" binding="vencimiento1">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="DD / MM / AAAA"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="999999"/>
                 </properties>
               </component>
             </children>
@@ -745,11 +798,16 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="21ce9" class="javax.swing.JLabel">
+              <component id="b2a13" class="javax.swing.JLabel" binding="importe1">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
                   <text value="999999"/>
                 </properties>
               </component>
@@ -783,12 +841,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="11e9a" class="javax.swing.JLabel">
+              <component id="7e146" class="javax.swing.JLabel" binding="vencimiento2">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="DD / MM / AAAA"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -803,12 +866,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="3006f" class="javax.swing.JLabel">
+              <component id="490a3" class="javax.swing.JLabel" binding="importe2">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -841,12 +909,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="d10ff" class="javax.swing.JLabel">
+              <component id="2e8e" class="javax.swing.JLabel" binding="vencimiento3">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="DD / MM / AAAA"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -861,12 +934,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="1f7d6" class="javax.swing.JLabel">
+              <component id="99fc7" class="javax.swing.JLabel" binding="importe3">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -899,12 +977,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="71d03" class="javax.swing.JLabel">
+              <component id="2ed03" class="javax.swing.JLabel" binding="vencimiento4">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="DD / MM / AAAA"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -919,12 +1002,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="627a0" class="javax.swing.JLabel">
+              <component id="8a697" class="javax.swing.JLabel" binding="importe4">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -957,12 +1045,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="149b0" class="javax.swing.JLabel">
+              <component id="aeaeb" class="javax.swing.JLabel" binding="vencimiento5">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="DD / MM / AAAA"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -977,12 +1070,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="a949" class="javax.swing.JLabel">
+              <component id="6689e" class="javax.swing.JLabel" binding="importe5">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -1015,12 +1113,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="e2ab2" class="javax.swing.JLabel">
+              <component id="c2da3" class="javax.swing.JLabel" binding="vencimiento6">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="DD / MM / AAAA"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -1035,12 +1138,17 @@
             </properties>
             <border type="line"/>
             <children>
-              <component id="7c5b6" class="javax.swing.JLabel">
+              <component id="69ad4" class="javax.swing.JLabel" binding="importe6">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="10"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="999999"/>
+                  <background color="-6447198"/>
+                  <font name="BankGothic Lt BT"/>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -1079,12 +1187,17 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="154da" class="javax.swing.JLabel">
+                      <component id="ccfb7" class="javax.swing.JLabel" binding="totalAPagarLabel">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+                            <preferred-size width="200" height="10"/>
+                          </grid>
                         </constraints>
                         <properties>
-                          <text value="999999"/>
+                          <background color="-6447198"/>
+                          <font name="BankGothic Lt BT"/>
+                          <horizontalAlignment value="0"/>
+                          <text value=""/>
                         </properties>
                       </component>
                     </children>

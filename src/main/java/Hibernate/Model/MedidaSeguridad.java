@@ -18,7 +18,9 @@ public class MedidaSeguridad {
 
     @Column(name = "valorPorcentual")
     private Integer valorPorcentual;
-
+    @ManyToOne
+    @JoinColumn(name = "poliza_id") // This is the foreign key column in the MedidaSeguridad table
+    private Poliza poliza;
     public MedidaSeguridad() {
     }
 

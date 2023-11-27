@@ -1,10 +1,9 @@
 package Interface;
 
 import DTO.*;
-import GestorPersonas.GestorVehiculos;
+import Gestores.GestorVehiculos;
 import Hibernate.Model.EstadoCivil;
 import Hibernate.Model.Sexo;
-import com.google.protobuf.ApiOrBuilder;
 
 import javax.swing.*;
 
@@ -25,8 +24,12 @@ import java.util.regex.Pattern;
 import static Interface.GestorInterface.cardLayout;
 import static Interface.GestorInterface.cardPanel;
 import static Interface.MenuProductorSeguros.currentPersona;
-
+import static Interface.MenuProductorSeguros.currentPoliza;
 public class AltaPoliza2 {
+    private static final Integer VALORGARAJE = 5;
+    private static final Integer VALORALARMA = 3;
+    private static final Integer VALORRASTREADOR = 3;
+    private static final Integer VALORTUERCAS = 1;
     private JPanel PanelPrincipal;
     private JComboBox ProvComboBox;
     private JTabbedPane tabbedPane1;
@@ -72,7 +75,6 @@ public class AltaPoliza2 {
     private List<ModeloDTO> modelos;
     private List<MarcaDTO> marcas;
     private List<AnioFabricacionDTO> años;
-    private PolizaDTO currentPoliza;
 
 
     public AltaPoliza2() {
@@ -119,7 +121,12 @@ public class AltaPoliza2 {
                 String aviso = validateData();
                 if (aviso.equals("Error en:")) {
                     currentPoliza = createPoliza();
+                    currentPoliza.setCliente(currentPersona.getCliente());
                     System.out.println(currentPoliza.toString());
+                    SeleccionarCobertura cobertura = new SeleccionarCobertura();
+                    cardPanel.add(cobertura.getPantallaPrincipal(),"elegir cobertura");
+                    cardPanel.setPreferredSize(cobertura.getPantallaPrincipal().getPreferredSize());
+                    cobertura.cargarDatos();
                     cardLayout.show(cardPanel,"elegir cobertura");
                 } else {
                     JOptionPane.showMessageDialog(null, aviso);
@@ -158,9 +165,10 @@ public class AltaPoliza2 {
         vehiculoDTO.setAnioFabricacion(años.get(AñoVehiculoBox.getSelectedIndex()));
         vehiculoDTO.setChasis(chasisText.getText());
         vehiculoDTO.setModelo(modelos.get(ModeloBox.getSelectedIndex()));
-        vehiculoDTO.getModelo().setMotor(motorText.getText());
+        vehiculoDTO.setMotor(motorText.getText());
         vehiculoDTO.setPatente(patenteText.getText());
         vehiculoDTO.setKilometrosAnuales(Integer.parseInt(kmText.getText()));
+        System.out.println(vehiculoDTO.toString());
         polizaDTO.setVehiculo(vehiculoDTO);
         String selectedLocalidadNombre = (String) LocalidadBox.getSelectedItem();
         Optional<LocalidadDTO> localidadOptional = currentPersona.getDireccion().stream()
@@ -340,6 +348,30 @@ public class AltaPoliza2 {
                 aviso += " Estado Civil Hijo4,";
             }
         }
+        if(garaje.isSelected()){
+            MedidaSeguridadDTO garaje = new MedidaSeguridadDTO();
+            garaje.setNombreMedida("garaje");
+            garaje.setValorPorcentual(VALORGARAJE);
+            currentPoliza.addMedida(garaje);
+        }
+        if(alarma.isSelected()){
+            MedidaSeguridadDTO alarma = new MedidaSeguridadDTO();
+            alarma.setNombreMedida("alarma");
+            alarma.setValorPorcentual(VALORALARMA);
+            currentPoliza.addMedida(alarma);
+        }
+        if (rastreador.isSelected()){
+            MedidaSeguridadDTO rastreador = new MedidaSeguridadDTO();
+            rastreador.setNombreMedida("rastreador");
+            rastreador.setValorPorcentual(VALORRASTREADOR);
+            currentPoliza.addMedida(rastreador);
+        }
+        if(tuercasAntirobo.isSelected()){
+            MedidaSeguridadDTO tuercasAntirobo = new MedidaSeguridadDTO();
+            tuercasAntirobo.setNombreMedida("Tuercas Antirobos");
+            tuercasAntirobo.setValorPorcentual(VALORTUERCAS);
+            currentPoliza.addMedida(tuercasAntirobo);
+        }
         return aviso;
     }
     public JPanel getPantallaPrincipal() {
@@ -436,20 +468,6 @@ public class AltaPoliza2 {
         Sexo4.setSelectedIndex(-1);
         Civil4 = new JComboBox<>(EstadoCivil.values());
         Civil4.setSelectedIndex(-1);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("AltaPoliza2 Test");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-            AltaPoliza2 altaPoliza2 = new AltaPoliza2();
-            frame.setContentPane(altaPoliza2.getPantallaPrincipal());
-
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
     }
 }
 
