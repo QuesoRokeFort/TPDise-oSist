@@ -44,7 +44,7 @@
                   <maximumSize width="250" height="30"/>
                   <minimumSize width="250" height="30"/>
                   <preferredSize width="250" height="30"/>
-                  <text value="Dar de Alta Poliza"/>
+                  <text value="Dar de Alta Póliza"/>
                 </properties>
               </component>
             </children>
@@ -57,7 +57,7 @@
             <properties/>
             <border type="line"/>
             <children>
-              <component id="c653c" class="javax.swing.JButton" binding="consultarPolizaButton" default-binding="true">
+              <component id="c653c" class="javax.swing.JButton" binding="consultarPólizaButton" default-binding="true">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="150" height="30"/>
@@ -71,7 +71,7 @@
                   <maximumSize width="250" height="30"/>
                   <minimumSize width="250" height="30"/>
                   <preferredSize width="250" height="30"/>
-                  <text value="Consultar Poliza"/>
+                  <text value="Consultar Póliza"/>
                 </properties>
               </component>
             </children>
@@ -84,7 +84,7 @@
             <properties/>
             <border type="line"/>
             <children>
-              <component id="8fc8a" class="javax.swing.JButton" binding="generarPropuestaRenovacionButton" default-binding="true">
+              <component id="8fc8a" class="javax.swing.JButton" binding="generarPropuestaRenovaciónButton" default-binding="true">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <minimum-size width="150" height="30"/>
@@ -98,7 +98,7 @@
                   <maximumSize width="250" height="30"/>
                   <minimumSize width="250" height="30"/>
                   <preferredSize width="250" height="30"/>
-                  <text value="Generar Propuesta Renovacion"/>
+                  <text value="Generar Propuesta Renovación"/>
                 </properties>
               </component>
             </children>
@@ -221,7 +221,7 @@
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="11"/>
           <margin top="0" left="0" bottom="0" right="0"/>
-          <text value="Cerrar Sesion"/>
+          <text value="Cerrar Sesión"/>
         </properties>
       </component>
       <vspacer id="424ad">

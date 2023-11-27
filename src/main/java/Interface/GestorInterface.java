@@ -109,7 +109,7 @@ public class GestorInterface {
 				usuario = GestorPersona.logInUsuario(usuario);
 				if (usuario != null) {
 				}else{
-					JOptionPane.showMessageDialog(null, "Cuenta o contraseña invalida","Error de login",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Cuenta o contraseña inválida","Error de login",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			switch (usuario.getRol()){

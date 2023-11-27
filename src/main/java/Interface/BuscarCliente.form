@@ -164,6 +164,7 @@
                     </constraints>
                     <properties>
                       <font name="BankGothic Lt BT"/>
+                      <model/>
                     </properties>
                   </component>
                   <hspacer id="4e105">
@@ -235,7 +236,7 @@
                         </constraints>
                         <properties>
                           <font name="BankGothic Lt BT" size="9"/>
-                          <text value=" NRO CLIENTE "/>
+                          <text value="Nº CLIENTE"/>
                         </properties>
                       </component>
                     </children>
@@ -625,7 +626,7 @@
           <font name="BankGothic Lt BT"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
-          <text value="Pagina X"/>
+          <text value="Página X"/>
         </properties>
       </component>
       <vspacer id="805cc">
@@ -713,7 +714,7 @@
             </constraints>
             <properties>
               <font name="BankGothic Lt BT"/>
-              <text value="Resultados por pagina:"/>
+              <text value="Resultados por página:"/>
             </properties>
           </component>
           <hspacer id="8981">
