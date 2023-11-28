@@ -37,7 +37,7 @@ public class SeleccionarCobertura {
 	private List<PrecioProveedorTipoDTO> listaPrecios;
 	private DefaultTableModel modeloTabla;
 	private int selectedRow;
-
+	static CoberturaDTO  cob;
 
 
 	public JPanel getPantallaPrincipal() {
@@ -53,7 +53,7 @@ public class SeleccionarCobertura {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("here");
-				CoberturaDTO  cob=new CoberturaDTO();
+				cob=new CoberturaDTO();
 				cob.setAjusteCantHijos(CalcularAjusteHIJOS());
 				cob.setAjustePorKm(CalcularAjusteKM());
 				cob.setAjusteSiniestro(CalcularAjusteSiniestro());
@@ -65,7 +65,6 @@ public class SeleccionarCobertura {
 				cob.setPrecio(selectedPrecio.getPrecio());
 				cob.setProveedor(selectedPrecio.getProveedor());
 				cob.setTipoCobertura(selectedPrecio.getTipoCobertura());
-				currentPoliza.setCobertura(cob);
 				currentPoliza.setFormaDePago((String) formaDePagoBox.getItemAt(formaDePagoBox.getSelectedIndex()));
 				currentPoliza.setEstadoPolizaPdf(false);
 				PolizaGenerar polizaGenerar = new PolizaGenerar();

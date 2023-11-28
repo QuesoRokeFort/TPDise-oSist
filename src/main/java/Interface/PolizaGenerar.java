@@ -1,6 +1,7 @@
 package Interface;
 
 import Gestores.GestorPoliza;
+import Hibernate.Model.Vehiculo;
 
 import javax.swing.*;
 
@@ -8,9 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 
+import static Interface.AltaPoliza2.localidad;
+import static Interface.AltaPoliza2.vehiculoDTO;
 import static Interface.GestorInterface.cardLayout;
 import static Interface.GestorInterface.cardPanel;
 import static Interface.MenuProductorSeguros.currentPoliza;
+import static Interface.SeleccionarCobertura.cob;
 
 
 public class PolizaGenerar {
@@ -47,7 +51,7 @@ public class PolizaGenerar {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				currentPoliza.setMontoTotal(Integer.valueOf(totalAPagarLabel.getText()));
-				GestorPoliza.crearPoliza(currentPoliza);
+				GestorPoliza.crearPoliza(currentPoliza,localidad,vehiculoDTO,cob);
 				cardLayout.show(cardPanel,"MenuProductorSeguro");
 				cardPanel.setPreferredSize(new Dimension(600, 218));
 			}

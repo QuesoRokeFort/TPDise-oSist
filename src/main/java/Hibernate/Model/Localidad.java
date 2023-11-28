@@ -35,7 +35,6 @@ public class Localidad {
 		this.nombre = localidad.getNombre();
 		this.valorDeRiesgo = localidad.getValorDeRiesgo();
 		this.provincia = new Provincia(localidad.getProvincia());
-
 	}
 
     @Override

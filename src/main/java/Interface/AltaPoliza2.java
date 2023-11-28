@@ -75,6 +75,8 @@ public class AltaPoliza2 {
     private List<ModeloDTO> modelos;
     private List<MarcaDTO> marcas;
     private List<AnioFabricacionDTO> años;
+    static VehiculoDTO vehiculoDTO;
+    static LocalidadDTO localidad;
 
 
     public AltaPoliza2() {
@@ -167,7 +169,7 @@ public class AltaPoliza2 {
         polizaDTO.setDescuentos(calcularDescuentos());
         polizaDTO.setPrima(calcularPrima());
         polizaDTO.setCliente(currentPersona.getCliente());
-        VehiculoDTO vehiculoDTO = new VehiculoDTO();
+        vehiculoDTO = new VehiculoDTO();
         vehiculoDTO.setAnioFabricacion(años.get(AñoVehiculoBox.getSelectedIndex()));
         vehiculoDTO.setChasis(chasisText.getText());
         vehiculoDTO.setModelo(modelos.get(ModeloBox.getSelectedIndex()));
@@ -175,13 +177,12 @@ public class AltaPoliza2 {
         vehiculoDTO.setPatente(patenteText.getText());
         vehiculoDTO.setKilometrosAnuales(Integer.parseInt(kmText.getText()));
         System.out.println(vehiculoDTO.toString());
-        polizaDTO.setVehiculo(vehiculoDTO);
         String selectedLocalidadNombre = (String) LocalidadBox.getSelectedItem();
-        Optional<LocalidadDTO> localidadOptional = currentPersona.getDireccion().stream()
+        localidad = currentPersona.getDireccion().stream()
                 .filter(dir -> dir.getLocalidad().getNombre().equals(selectedLocalidadNombre))
                 .map(DireccionDTO::getLocalidad)
-                .findFirst();
-        localidadOptional.ifPresent(localidad -> polizaDTO.setLocalidad(localidad));
+                .findFirst()
+                .orElse(null);
         if(!fechaText1.getText().equals("Escriba aqui") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0){
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo1.getSelectedItem());
