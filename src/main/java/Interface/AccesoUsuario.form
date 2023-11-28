@@ -144,17 +144,19 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="bda1d" class="javax.swing.JTextField" binding="idContraseñaText">
+              <component id="aeb04" class="javax.swing.JPasswordField" binding="idContraseñaText">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                   <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
+                  <editable value="true"/>
                   <font name="BankGothic Lt BT" size="9"/>
                   <foreground color="-10329502"/>
-                  <text value="Escriba su Contraseña..."/>
+                  <preferredSize width="130" height="15"/>
+                  <text value=""/>
                 </properties>
               </component>
               <vspacer id="31d1">

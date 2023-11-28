@@ -21,7 +21,7 @@ public class MenuProductorSeguros {
     public JButton consultarClienteButton;
     public JButton generarPropuestaRenovaciónButton;
     public JButton actualizarFactoresButton;
-    private JButton cerrarSesionButton;
+    public JButton cerrarSesionButton;
     private JLabel idMenu;
     private JPanel idPanelMenu;
     static PersonaDTO currentPersona;
@@ -36,6 +36,16 @@ public class MenuProductorSeguros {
         });
         darDeAltaPolizaButton.addActionListener(altaPoliza -> {
             altaPoliza();
+        });
+
+        AccesoUsuario accesoUsuario = new AccesoUsuario();
+        cerrarSesionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel,"AccesoUsuario");
+                cardPanel.setPreferredSize(accesoUsuario.getPanel1().getPreferredSize());
+
+            }
         });
 
     }

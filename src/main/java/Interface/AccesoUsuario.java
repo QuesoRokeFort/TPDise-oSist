@@ -18,7 +18,7 @@ public class AccesoUsuario{
     private JLabel idUsuario;
     private JTextField idUsuarioText;
     private JLabel idContraseña;
-    private JTextField idContraseñaText;
+    private JPasswordField idContraseñaText;
     public JButton confirmarMenu;
     private JPanel idPanelLogin;
     private JPanel idPanelUsuario;
@@ -50,13 +50,13 @@ public class AccesoUsuario{
             @Override
             public void focusGained(FocusEvent e) {
 
-                if (idContraseñaText.getText().equals("Escriba su Contraseña...")) idContraseñaText.setText("");
+                if (idContraseñaText.getText().equals("")) idContraseñaText.setText("");
             }
 
             @Override
             public void focusLost(FocusEvent e) {
                 if (idContraseñaText.getText().equals("")) {
-                    idContraseñaText.setText("Escriba su Contraseña...");
+                    idContraseñaText.setText("");
                 }
             }
         });
@@ -67,7 +67,7 @@ public class AccesoUsuario{
         if (idUsuarioText.getText().equals("Escriba su Usuario...       ")) {
             aviso += " Usuario, ";
         }
-        if (idContraseñaText.getText().equals("Escriba su Contraseña...")) {
+        if (idContraseñaText.getText().equals("")) {
             aviso += " Contraseña. ";
         }
     return aviso;
