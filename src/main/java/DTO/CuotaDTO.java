@@ -6,6 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -13,7 +14,7 @@ public class CuotaDTO{
 
     private Integer id;
 
-    private Date ultimoDiaDePago;
+    private LocalDate ultimoDiaDePago;
 
     private Integer importe;
 
@@ -24,7 +25,7 @@ public class CuotaDTO{
     public CuotaDTO() {
     }
 
-    public CuotaDTO(Integer id, Date ultimoDiaDePago, Integer importe, Poliza poliza, Pago pago) {
+    public CuotaDTO(Integer id, LocalDate ultimoDiaDePago, Integer importe, Poliza poliza, Pago pago) {
         this.id = id;
         this.ultimoDiaDePago = ultimoDiaDePago;
         this.importe = importe;
@@ -48,11 +49,11 @@ public class CuotaDTO{
         this.id = id;
     }
 
-    public Date getUltimoDiaDePago() {
+    public LocalDate getUltimoDiaDePago() {
         return ultimoDiaDePago;
     }
 
-    public void setUltimoDiaDePago(Date ultimoDiaDePago) {
+    public void setUltimoDiaDePago(LocalDate ultimoDiaDePago) {
         this.ultimoDiaDePago = ultimoDiaDePago;
     }
 

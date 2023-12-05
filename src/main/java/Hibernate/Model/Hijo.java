@@ -26,6 +26,9 @@ public class Hijo {
     @ManyToOne
     @JoinColumn(name = "poliza_id")
     private Poliza poliza;
+    @ManyToOne
+    @JoinColumn(name= "cambioPoliza_id")
+    private CambioPoliza cambioPoliza;
 
     public Hijo() {
     }

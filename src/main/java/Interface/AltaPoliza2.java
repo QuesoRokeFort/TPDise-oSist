@@ -1,7 +1,7 @@
 package Interface;
 
 import DTO.*;
-import Gestores.GestorVehiculos;
+import Gestores.GestorPoliza;
 import Hibernate.Model.EstadoCivil;
 import Hibernate.Model.Sexo;
 
@@ -17,7 +17,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -157,7 +156,7 @@ public class AltaPoliza2 {
         polizaDTO.setNroSiniestrosAnuales((Integer) siniestrosBox.getSelectedItem());
         polizaDTO.setSumaAsegurada(calcularSumaAsegurada());
         // TODO ver estados poliza y suma asegurada y premio y derecho de emision y descuento
-        polizaDTO.setEstadoPoliza("Pendiente");
+        polizaDTO.setEstadoPoliza("Generada");
         LocalDate nextDay = LocalDate.now().plusDays(1);
         LocalDateTime midnight = nextDay.atStartOfDay();
         polizaDTO.setFechaInicioVigencia(midnight.toLocalDate());
@@ -401,9 +400,9 @@ public class AltaPoliza2 {
         siniestrosBox.setSelectedIndex(-1);
         hijosPanelPrincipal = new JPanel();
         tabbedPane1 = new JTabbedPane();
-        modelos= GestorVehiculos.getModelos();
-        marcas= GestorVehiculos.getMarcas();
-        años= GestorVehiculos.getAños();
+        modelos= GestorPoliza.getModelos();
+        marcas= GestorPoliza.getMarcas();
+        años= GestorPoliza.getAños();
         ProvComboBox = new JComboBox<>();
         ProvComboBox.setSelectedIndex(-1);
         MarcaBox = new JComboBox<>();

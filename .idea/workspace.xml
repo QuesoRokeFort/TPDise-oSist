@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="Cambio de imagen para que quede un tamaño mayor, agregado de encabezado para saber en que menu se esta, cambio a AltaPoliza2 nueva y otros detalles">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="post correcion final">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/ClienteDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPersona.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Localidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Localidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorVehiculos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PersonaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PersonaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PolizaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PolizaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/CambioPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/CambioPoliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cuota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cuota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Hijo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Hijo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +101,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Hibernate.Dao" />
       <recent name="Gestores" />
       <recent name="DTO" />
     </key>
@@ -260,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701120567741</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="post correcion final">
+      <created>1701208912245</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701208912245</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +312,8 @@
     <MESSAGE value="Hice las clases TipoCobertura,Proveedor,Poliza,Hijo,HijoPoliza,Cobetura,CambioPoliza,PrecioProveedorTipo,MedidaSeguridad,Cuota,Pago y MedidaPoliza, tmbn le agregue su DTO y Dao a ModeloAnioFabricacion" />
     <MESSAGE value="fin creo faltaria terminar los frames quiza" />
     <MESSAGE value="Cambio de imagen para que quede un tamaño mayor, agregado de encabezado para saber en que menu se esta, cambio a AltaPoliza2 nueva y otros detalles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio de imagen para que quede un tamaño mayor, agregado de encabezado para saber en que menu se esta, cambio a AltaPoliza2 nueva y otros detalles" />
+    <MESSAGE value="post correcion final" />
+    <option name="LAST_COMMIT_MESSAGE" value="post correcion final" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

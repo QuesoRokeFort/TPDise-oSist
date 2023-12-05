@@ -10,7 +10,7 @@ public class PolizaDTO{
 
     private Integer id; //en etapa 4 pone nroPoliza
 
-
+    private Integer nroPoliza;
     private Integer sumaAsegurada;
 
 
@@ -46,7 +46,7 @@ public class PolizaDTO{
 
     private Integer prima;
 
-    private List<CambioPoliza> cambiosPoliza = new ArrayList<>();
+    private CambioPoliza cambiosPoliza ;
 
     private ClienteDTO cliente;
 
@@ -62,7 +62,7 @@ public class PolizaDTO{
     public PolizaDTO() {
     }
 
-    public PolizaDTO(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, List<MedidaSeguridadDTO> medidas) {
+    public PolizaDTO(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, List<MedidaSeguridadDTO> medidas) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -106,6 +106,14 @@ public class PolizaDTO{
         this.localidad = new LocalidadDTO(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoPoliza -> this.hijos.add(new HijoDTO(hijoPoliza)));
         poliza.getMedidas().forEach(medidas->this.medidas.add(new MedidaSeguridadDTO(medidas)));
+    }
+
+    public Integer getNroPoliza() {
+        return nroPoliza;
+    }
+
+    public void setNroPoliza(Integer nroPoliza) {
+        this.nroPoliza = nroPoliza;
     }
 
     public Integer getId() {
@@ -212,11 +220,11 @@ public class PolizaDTO{
         this.prima = prima;
     }
 
-    public List<CambioPoliza> getCambiosPoliza() {
+    public CambioPoliza getCambiosPoliza() {
         return cambiosPoliza;
     }
 
-    public void setCambiosPoliza(List<CambioPoliza> cambiosPoliza) {
+    public void setCambiosPoliza(CambioPoliza cambiosPoliza) {
         this.cambiosPoliza = cambiosPoliza;
     }
 

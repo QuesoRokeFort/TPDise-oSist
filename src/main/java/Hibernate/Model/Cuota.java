@@ -2,9 +2,9 @@ package Hibernate.Model;
 
 import DTO.CuotaDTO;
 import jakarta.persistence.*;
-import java.util.ArrayList;
+
+import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "Cuota")
@@ -14,12 +14,12 @@ public class Cuota {
     @Column(name = "id")
     private Integer id;
     @Column(name = "ultimoDiaDePago")
-    private Date ultimoDiaDePago;
+    private LocalDate ultimoDiaDePago;
     @Column(name = "importe")
     private Integer importe;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idPoliza") //en el informe esta como NroPoliza, le pongo id para que quede igual al resto
+    @JoinColumn(name = "idPoliza")
     private Poliza poliza;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -30,7 +30,7 @@ public class Cuota {
     public Cuota() {
     }
 
-    public Cuota(Integer id, Date ultimoDiaDePago, Integer importe, Poliza poliza, Pago pago) {
+    public Cuota(Integer id, LocalDate ultimoDiaDePago, Integer importe, Poliza poliza, Pago pago) {
         this.id = id;
         this.ultimoDiaDePago = ultimoDiaDePago;
         this.importe = importe;
@@ -54,11 +54,11 @@ public class Cuota {
         this.id = id;
     }
 
-    public Date getUltimoDiaDePago() {
+    public LocalDate getUltimoDiaDePago() {
         return ultimoDiaDePago;
     }
 
-    public void setUltimoDiaDePago(Date ultimoDiaDePago) {
+    public void setUltimoDiaDePago(LocalDate ultimoDiaDePago) {
         this.ultimoDiaDePago = ultimoDiaDePago;
     }
 

@@ -95,4 +95,8 @@ public class PolizaDao {
         }
     }
 
+	public static Integer GenerateNro() {
+        //TODO
+        return 0;
+	}
 }

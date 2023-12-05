@@ -1,6 +1,5 @@
 package Hibernate.Model;
 
-import DTO.MedidaSeguridadDTO;
 import DTO.PolizaDTO;
 import jakarta.persistence.*;
 
@@ -16,6 +15,8 @@ public class Poliza {
     @Column(name = "id")
     private Integer id;
     //en etapa 4 pone nroPoliza
+    @Column(name = "nroPoliza", nullable = false,unique = true)
+    private Integer nroPoliza;
 
     // saque derechosEmision asumiendo que era lo mismo que derechoDeEmision
 
@@ -56,8 +57,8 @@ public class Poliza {
     private Integer prima;
 
 
-    @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL, orphanRemoval = true) // cambio Etapa 4 segun profe
-    private List<CambioPoliza> cambiosPoliza = new ArrayList<>();                   // antes era OneToOne
+    @OneToOne(mappedBy = "poliza")// cambio Etapa 4 segun profe
+    private CambioPoliza cambiosPoliza;                 // antes era OneToOne
 
     @ManyToOne
     @JoinColumn(name = "idCliente")
@@ -80,13 +81,15 @@ public class Poliza {
 
     @OneToMany(mappedBy = "poliza",cascade = CascadeType.ALL,orphanRemoval = true)
     private  List<MedidaSeguridad> medidas= new ArrayList<>();
-
+    @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
+    private List<Cuota> cuotas;
 
     public Poliza() {
     }
 
-    public Poliza(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, List<CambioPoliza> cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijosPoliza,List<MedidaSeguridad> medidas) {
+    public Poliza(Integer id, Integer nroPoliza, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, List<MedidaSeguridad> medidas, List<Cuota> cuotas) {
         this.id = id;
+        this.nroPoliza = nroPoliza;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
         this.estadoPoliza = estadoPoliza;
@@ -104,12 +107,14 @@ public class Poliza {
         this.cobertura = cobertura;
         this.vehiculo = vehiculo;
         this.localidad = localidad;
-        this.hijos = hijosPoliza;
+        this.hijos = hijos;
         this.medidas = medidas;
+        this.cuotas = cuotas;
     }
 
     public Poliza(PolizaDTO poliza) {
         this.id = poliza.getId();
+        this.nroPoliza= poliza.getNroPoliza();
         this.sumaAsegurada = poliza.getSumaAsegurada();
         this.nroSiniestrosAnuales = poliza.getNroSiniestrosAnuales();
         this.estadoPoliza = poliza.getEstadoPoliza();
@@ -129,6 +134,17 @@ public class Poliza {
         this.localidad = new Localidad(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoDTO -> this.hijos.add(new Hijo(hijoDTO)));
         poliza.getMedidasSeguradad().forEach(medidas-> this.medidas.add(new MedidaSeguridad(medidas)));
+    }
+
+    public List<Cuota> getCuotas() {
+        return cuotas;
+    }
+
+    public void setCuotas(List<Cuota> cuotas) {
+        this.cuotas = cuotas;
+    }
+    public void addCuota(Cuota cuota){
+        this.cuotas.add(cuota);
     }
 
     public Integer getId() {
@@ -236,11 +252,11 @@ public class Poliza {
     }
 
 
-    public List<CambioPoliza> getCambiosPoliza() {
+    public CambioPoliza getCambiosPoliza() {
         return cambiosPoliza;
     }
 
-    public void setCambiosPoliza(List<CambioPoliza> cambiosPoliza) {
+    public void setCambiosPoliza(CambioPoliza cambiosPoliza) {
         this.cambiosPoliza = cambiosPoliza;
     }
 
@@ -284,6 +300,7 @@ public class Poliza {
         this.hijos = hijosPoliza;
     }
 
+
     @Override
     public String toString() {
         return "Poliza{" +
@@ -309,6 +326,14 @@ public class Poliza {
                 '}';
     }
 
+    public Integer getNroPoliza() {
+        return nroPoliza;
+    }
+
+    public void setNroPoliza(Integer nroPoliza) {
+        this.nroPoliza = nroPoliza;
+    }
+
     public List<MedidaSeguridad> getMedidas() {
         return medidas;
     }
@@ -318,5 +343,9 @@ public class Poliza {
     }
     public void addMedidas(MedidaSeguridad medidaSeguridad){
         this.medidas.add(medidaSeguridad);
+    }
+
+    public void addHijo(Hijo hijo) {
+        this.hijos.add(hijo);
     }
 }

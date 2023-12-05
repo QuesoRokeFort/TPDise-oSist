@@ -7,6 +7,7 @@ import Hibernate.Dao.PersonaDao;
 import Hibernate.Dao.UsuarioDao;
 import Hibernate.Model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GestorPersona {
@@ -40,4 +41,12 @@ public class GestorPersona {
                 .map(p-> new PersonaDTO(p)).toList();
         return lista;
 	}
+
+    public static List<PersonaDTO> getClientes(String nombre, String apellido, TipoDocumento tipoDocumento, int documento, int nroCliente) {
+        List<PersonaDTO> lista = new ArrayList<>();
+        lista = PersonaDao.getPersonaByCriteria(nombre,apellido,tipoDocumento,documento,nroCliente).stream()
+                .filter(persona -> persona.getCliente() != null)
+                .map(p -> new PersonaDTO(p)).toList();
+        return lista;
+    }
 }

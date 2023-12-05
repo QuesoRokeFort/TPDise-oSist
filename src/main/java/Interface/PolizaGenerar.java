@@ -51,6 +51,7 @@ public class PolizaGenerar {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				currentPoliza.setMontoTotal(Integer.valueOf(totalAPagarLabel.getText()));
+				currentPoliza.getCliente().setEstadoCliente("Normal");
 				GestorPoliza.crearPoliza(currentPoliza,localidad,vehiculoDTO,cob);
 				cardLayout.show(cardPanel,"MenuProductorSeguro");
 				cardPanel.setPreferredSize(new Dimension(600, 218));

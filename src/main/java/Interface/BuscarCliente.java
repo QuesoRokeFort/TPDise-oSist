@@ -36,9 +36,9 @@ public class BuscarCliente {
     private List <PersonaDTO> lista;
     private DefaultTableModel modeloTabla;
     private int selectedRow = -1;
+    private boolean defaultTable;
 
     public BuscarCliente(){
-        lista = GestorPersona.getPersonas();
         String[] columnas = {"NroCliente", "Apellido", "Nombre", "TipoDocumento", "NroDocumento", "Select"};
         modeloTabla = new DefaultTableModel(null, columnas) {
             @Override
@@ -75,21 +75,14 @@ public class BuscarCliente {
                 nroCliente = 0;
             }
             if (nombre != null || apellido != null || tipoDocumento != null || documento > 0 || nroCliente > 0) {
-                // Filter the list based on the criteria
-                List<PersonaDTO> aux = lista.stream()
-                        .filter(personaDTO ->
-                                (nombre == null || personaDTO.getNombrePersona().equals(nombre)) &&
-                                        (apellido == null || personaDTO.getApellido().equals(apellido)) &&
-                                        (tipoDocumento == null || personaDTO.getTipoDocumento().equals(tipoDocumento)) &&
-                                        (documento <= 0 || personaDTO.getNroDocumento() == documento) &&
-                                        (nroCliente <= 0 || personaDTO.getCliente().getNroCliente() == nroCliente))
-                        .toList();
+                defaultTable=false;
+                lista = GestorPersona.getClientes(nombre,apellido,tipoDocumento,documento,nroCliente);
 
                 // Clear the existing data in the table
                 modeloTabla.setRowCount(0);
 
                 // Now, you can update the table with the filtered list
-                for (PersonaDTO persona : aux) {
+                for (PersonaDTO persona : lista) {
                     Object[] fila = {persona.getCliente().getNroCliente(), persona.getApellido(), persona.getNombrePersona(),
                             persona.getTipoDocumento(), persona.getNroDocumento(), false};
                     modeloTabla.addRow(fila);
@@ -97,13 +90,15 @@ public class BuscarCliente {
                 tablaClientes.setModel(modeloTabla);
                 tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
                 tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
-            } else {
-                defaulttable();
+            }else {
+                if (!defaultTable) defaulttable();
             }
         });
     }
 
     private void defaulttable() {
+        defaultTable=true;
+        lista=GestorPersona.getClientes(null,null,null,0,0);
         modeloTabla.setRowCount(0);
         for (PersonaDTO persona : lista) {
             Object[] fila = {persona.getCliente().getNroCliente(), persona.getApellido(), persona.getNombrePersona(),

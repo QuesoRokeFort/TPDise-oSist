@@ -33,10 +33,11 @@ public class CambioPoliza {
     @JoinColumn(name = "idTipoCobertura")
     private TipoCobertura tipoCobertura;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "poliza_id")
     private Poliza poliza;
-
+    @OneToMany(mappedBy = "cambioPoliza", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Hijo> hijos = new ArrayList<>();
     public CambioPoliza() {
     }
 
