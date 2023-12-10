@@ -3,6 +3,7 @@ package Interface;
 import DTO.CoberturaDTO;
 import DTO.PrecioProveedorTipoDTO;
 import Gestores.GestorCoberturas;
+import Gestores.GestorPoliza;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -67,6 +68,9 @@ public class SeleccionarCobertura {
 				cob.setTipoCobertura(selectedPrecio.getTipoCobertura());
 				currentPoliza.setFormaDePago((String) formaDePagoBox.getItemAt(formaDePagoBox.getSelectedIndex()));
 				currentPoliza.setEstadoPolizaPdf(false);
+				currentPoliza.setDescuentos(GestorPoliza.calcularDescuentos(currentPoliza.getMedidasSeguradad(),currentPoliza.getCliente(),currentPoliza.getFormaDePago()));
+				currentPoliza.setPrima(GestorPoliza.calcularPrima(cob,currentPoliza.getLocalidad(),currentPoliza.getVehiculo(),currentPoliza.getMedidasSeguradad(),currentPoliza.getNroSiniestrosAnuales(),currentPoliza.getHijosPoliza()));
+				currentPoliza.setPremio(GestorPoliza.calcularPremio(currentPoliza.getDerechoDeEmision(),currentPoliza.getPrima()));
 				PolizaGenerar polizaGenerar = new PolizaGenerar();
 				polizaGenerar.cargarDatos();
 				cardPanel.add(polizaGenerar.getPantallaPrincipal(),"poliza a generar");

@@ -106,11 +106,6 @@ public class PersonaDao {
 
 	public static List<Persona> getPersonaByCriteria(String nombre, String apellido, TipoDocumento tipoDocumento, Integer nroDocumento, Integer idCliente) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-
-		// Your existing code goes here
-		// Use session to access the Hibernate Session
-
-		// Create a dynamic HQL query
 		StringBuilder queryString = new StringBuilder("FROM Persona p WHERE 1=1");
 
 		if (nombre != null || apellido != null || tipoDocumento != null || nroDocumento != null || idCliente != null) {
@@ -132,7 +127,6 @@ public class PersonaDao {
 				queryString.append("p.cliente.nroCliente = :idCliente OR ");
 			}
 
-			// Remove the last " OR " from the query
 			queryString.setLength(queryString.length() - 4);
 			queryString.append(")");
 		}

@@ -4,6 +4,7 @@ import DTO.*;
 import Hibernate.Dao.*;
 import Hibernate.Model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -344,8 +345,27 @@ public class GestorPoliza {
 	}
 
 	public static List<ModeloDTO> getModelosByMarca(MarcaDTO marcaDTO) {
-		List<ModeloDTO> modelos;
-		modelos = ModeloDao.getModelosByMarca(marcaDTO.getId());
+		List<ModeloDTO> modelos = new ArrayList<>();
+		ModeloDao.getModelosByMarca(marcaDTO.getId()).forEach(m->modelos.add(new ModeloDTO(m)));
 		return modelos;
+	}
+
+	public static Integer calcularSumaAsegurada(VehiculoDTO vehiculoDTO) {
+		return 0;
+	}
+
+	public static Integer calcularDerechoEmision() {
+		return 0;
+	}
+	public static Integer calcularPrima(CoberturaDTO coberturaDTO, LocalidadDTO localidad, VehiculoDTO vehiculo, List<MedidaSeguridadDTO> medidaSeguridads, Integer nroSiniestrosAnuales, List<HijoDTO> hijosPoliza){
+		return 0;
+	}
+
+	public static Integer calcularDescuentos(List<MedidaSeguridadDTO> medidasSeguradad, ClienteDTO cliente, String formaDePago) {
+		return 0;
+	}
+
+	public static Integer calcularPremio(Integer derechoDeEmision, Integer prima) {
+		return 0;
 	}
 }

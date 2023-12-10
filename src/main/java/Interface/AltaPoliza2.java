@@ -156,8 +156,6 @@ public class AltaPoliza2 {
     private PolizaDTO createPoliza() {
         PolizaDTO polizaDTO = new PolizaDTO();
         polizaDTO.setNroSiniestrosAnuales((Integer) siniestrosBox.getSelectedItem());
-        polizaDTO.setSumaAsegurada(calcularSumaAsegurada());
-        // TODO ver estados poliza y suma asegurada y premio y derecho de emision y descuento
         polizaDTO.setEstadoPoliza("Generada");
         LocalDate nextDay = LocalDate.now().plusDays(1);
         LocalDateTime midnight = nextDay.atStartOfDay();
@@ -165,10 +163,6 @@ public class AltaPoliza2 {
         midnight= midnight.plusMonths(6);
         polizaDTO.setFechaFinVigencia(midnight.toLocalDate());
         polizaDTO.setEstadoPolizaPdf(true);
-        polizaDTO.setPremio(calcularPremio());
-        polizaDTO.setDerechoDeEmision(calcularDerechoEmision());
-        polizaDTO.setDescuentos(calcularDescuentos());
-        polizaDTO.setPrima(calcularPrima());
         polizaDTO.setCliente(currentPersona.getCliente());
         vehiculoDTO = new VehiculoDTO();
         vehiculoDTO.setAnioFabricacion(años.get(AñoVehiculoBox.getSelectedIndex()));
@@ -178,6 +172,32 @@ public class AltaPoliza2 {
         vehiculoDTO.setPatente(patenteText.getText());
         vehiculoDTO.setKilometrosAnuales(Integer.parseInt(kmText.getText()));
         System.out.println(vehiculoDTO.toString());
+        polizaDTO.setSumaAsegurada(GestorPoliza.calcularSumaAsegurada(vehiculoDTO));
+        if(garaje.isSelected()){
+            MedidaSeguridadDTO garaje = new MedidaSeguridadDTO();
+            garaje.setNombreMedida("garaje");
+            garaje.setValorPorcentual(VALORGARAJE);
+            currentPoliza.addMedida(garaje);
+        }
+        if(alarma.isSelected()){
+            MedidaSeguridadDTO alarma = new MedidaSeguridadDTO();
+            alarma.setNombreMedida("alarma");
+            alarma.setValorPorcentual(VALORALARMA);
+            currentPoliza.addMedida(alarma);
+        }
+        if (rastreador.isSelected()){
+            MedidaSeguridadDTO rastreador = new MedidaSeguridadDTO();
+            rastreador.setNombreMedida("rastreador");
+            rastreador.setValorPorcentual(VALORRASTREADOR);
+            currentPoliza.addMedida(rastreador);
+        }
+        if(tuercasAntirobo.isSelected()){
+            MedidaSeguridadDTO tuercasAntirobo = new MedidaSeguridadDTO();
+            tuercasAntirobo.setNombreMedida("Tuercas Antirobos");
+            tuercasAntirobo.setValorPorcentual(VALORTUERCAS);
+            currentPoliza.addMedida(tuercasAntirobo);
+        }
+        polizaDTO.setDerechoDeEmision(GestorPoliza.calcularDerechoEmision());
         String selectedLocalidadNombre = (String) LocalidadBox.getSelectedItem();
         localidad = currentPersona.getDireccion().stream()
                 .filter(dir -> dir.getLocalidad().getNombre().equals(selectedLocalidadNombre))
@@ -237,26 +257,6 @@ public class AltaPoliza2 {
             polizaDTO.addHijo(hijoDTO);
         }
         return polizaDTO;
-    }
-
-    private Integer calcularPrima() {
-        return 0;
-    }
-
-    private Integer calcularDescuentos() {
-        return 0;
-    }
-
-    private Integer calcularDerechoEmision() {
-        return 0;
-    }
-
-    private Integer calcularPremio() {
-        return 0;
-    }
-
-    private Integer calcularSumaAsegurada() {
-        return 0;
     }
 
     private String validateData() {
@@ -356,30 +356,6 @@ public class AltaPoliza2 {
                 aviso += " Estado Civil Hijo4,";
             }
         }
-        if(garaje.isSelected()){
-            MedidaSeguridadDTO garaje = new MedidaSeguridadDTO();
-            garaje.setNombreMedida("garaje");
-            garaje.setValorPorcentual(VALORGARAJE);
-            currentPoliza.addMedida(garaje);
-        }
-        if(alarma.isSelected()){
-            MedidaSeguridadDTO alarma = new MedidaSeguridadDTO();
-            alarma.setNombreMedida("alarma");
-            alarma.setValorPorcentual(VALORALARMA);
-            currentPoliza.addMedida(alarma);
-        }
-        if (rastreador.isSelected()){
-            MedidaSeguridadDTO rastreador = new MedidaSeguridadDTO();
-            rastreador.setNombreMedida("rastreador");
-            rastreador.setValorPorcentual(VALORRASTREADOR);
-            currentPoliza.addMedida(rastreador);
-        }
-        if(tuercasAntirobo.isSelected()){
-            MedidaSeguridadDTO tuercasAntirobo = new MedidaSeguridadDTO();
-            tuercasAntirobo.setNombreMedida("Tuercas Antirobos");
-            tuercasAntirobo.setValorPorcentual(VALORTUERCAS);
-            currentPoliza.addMedida(tuercasAntirobo);
-        }
         return aviso;
     }
     public JPanel getPantallaPrincipal() {
@@ -445,14 +421,10 @@ public class AltaPoliza2 {
             public void itemStateChanged(ItemEvent event) {
                 if (event.getStateChange() == ItemEvent.SELECTED) {
                     Object selectedMarcaObject = MarcaBox.getSelectedItem();
-                    System.out.println(selectedMarcaObject);
-                    List<ModeloDTO> modSelecionadas = GestorPoliza.getModelosByMarca(marcas.stream().filter(m->m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
-                    for (ModeloDTO modSelecionada : modSelecionadas) {
-                        System.out.println(modSelecionada.getNombreModelo());
-                    }
+                    modelos = GestorPoliza.getModelosByMarca(marcas.stream().filter(m->m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
                     DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
                     ModeloBox.setModel(modComboBoxModel);
-                    modSelecionadas.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
+                    modelos.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
                     ModeloBox.setSelectedIndex(-1);
                 }
             }

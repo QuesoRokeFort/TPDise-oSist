@@ -97,20 +97,19 @@ public class ModeloDao {
         }
     }
 
-    public static List<ModeloDTO> getModelosByMarca(int idMarca) {
+    public static List<Modelo> getModelosByMarca(int idMarca) {
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
 
-            String hql = "SELECT new your.package.ModeloDTO(m.id, m.nombreModelo, m.valorPorcentualRiesgo) " +
-                    "FROM Modelo m " +
+            String hql = "FROM Modelo m " +  // Added space after 'm'
                     "WHERE m.marca.id = :idMarca";
 
-            Query<ModeloDTO> query = session.createQuery(hql, ModeloDTO.class);
+            Query<Modelo> query = session.createQuery(hql, Modelo.class);
             query.setParameter("idMarca", idMarca);
 
-            List<ModeloDTO> modelos = query.getResultList();
+            List<Modelo> modelos = query.getResultList();
 
             session.getTransaction().commit();
             return modelos;
@@ -118,7 +117,7 @@ public class ModeloDao {
             if (session != null && session.getTransaction().isActive()) {
                 session.getTransaction().rollback();
             }
-            e.printStackTrace(); // Manejo adecuado de la excepción, puedes personalizarlo según tus necesidades.
+            e.printStackTrace(); // Handle the exception appropriately according to your needs.
             return null;
         } finally {
             if (session != null) {
