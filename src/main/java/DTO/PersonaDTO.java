@@ -67,7 +67,6 @@ public class PersonaDTO {
 		this.usuario = new UsuarioDTO(usuario);
 	}
 	public PersonaDTO(Persona persona) {
-		System.out.println(persona.toString());
 		this.idPersona = persona.getIdPersona();
 		this.nombrePersona = persona.getNombrePersona();
 		this.apellido = persona.getApellido();

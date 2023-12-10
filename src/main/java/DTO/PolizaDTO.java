@@ -303,6 +303,10 @@ public class PolizaDTO{
     public void addMedida(MedidaSeguridadDTO garaje) {
         this.medidas.add(garaje);
     }
+
+	public boolean getEstadoPolizaPdf() {
+        return estadoPolizaPdf;
+	}
 }
 
 

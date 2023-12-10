@@ -98,7 +98,7 @@ public class BuscarCliente {
 
     private void defaulttable() {
         defaultTable=true;
-        lista=GestorPersona.getClientes(null,null,null,0,0);
+        lista=GestorPersona.getPersonas();
         modeloTabla.setRowCount(0);
         for (PersonaDTO persona : lista) {
             Object[] fila = {persona.getCliente().getNroCliente(), persona.getApellido(), persona.getNombrePersona(),

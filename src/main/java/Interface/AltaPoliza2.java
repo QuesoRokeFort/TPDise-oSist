@@ -3,6 +3,7 @@ package Interface;
 import DTO.*;
 import Gestores.GestorPoliza;
 import Hibernate.Model.EstadoCivil;
+import Hibernate.Model.Marca;
 import Hibernate.Model.Sexo;
 
 import javax.swing.*;
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.ObjectInputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -400,9 +402,7 @@ public class AltaPoliza2 {
         siniestrosBox.setSelectedIndex(-1);
         hijosPanelPrincipal = new JPanel();
         tabbedPane1 = new JTabbedPane();
-        modelos= GestorPoliza.getModelos();
-        marcas= GestorPoliza.getMarcas();
-        años= GestorPoliza.getAños();
+
         ProvComboBox = new JComboBox<>();
         ProvComboBox.setSelectedIndex(-1);
         MarcaBox = new JComboBox<>();
@@ -412,8 +412,10 @@ public class AltaPoliza2 {
         AñoVehiculoBox= new JComboBox<>();
         DefaultComboBoxModel<Integer> añoComboBoxModel = new DefaultComboBoxModel<>();
         AñoVehiculoBox.setModel(añoComboBoxModel);
+        marcas= GestorPoliza.getMarcas();
         marcas.forEach(marcaDTO -> marcaComboBoxModel.addElement(marcaDTO.getNombreMarca()));
         MarcaBox.setSelectedIndex(-1);
+        años = GestorPoliza.getAños();
         años.forEach(anioFabricacionDTO -> añoComboBoxModel.addElement(anioFabricacionDTO.getAnio()));
         AñoVehiculoBox.setSelectedIndex(-1);
         hijoPanel1 = new JPanel();
@@ -443,14 +445,10 @@ public class AltaPoliza2 {
             public void itemStateChanged(ItemEvent event) {
                 if (event.getStateChange() == ItemEvent.SELECTED) {
                     Object selectedMarcaObject = MarcaBox.getSelectedItem();
-                    List<String> modSelecionadas = modelos.stream()
-                            .filter(modeloDTO -> modeloDTO.getMarca().getNombreMarca().equals(selectedMarcaObject))
-                            .map(modeloDTO -> modeloDTO.getNombreModelo())
-                            .distinct()
-                            .toList();
+                    List<ModeloDTO> modSelecionadas = GestorPoliza.getModelosByMarca(marcas.stream().filter(m->m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
                     DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
                     ModeloBox.setModel(modComboBoxModel);
-                    modSelecionadas.forEach(m -> modComboBoxModel.addElement(m));
+                    modSelecionadas.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
                     ModeloBox.setSelectedIndex(-1);
                 }
             }
