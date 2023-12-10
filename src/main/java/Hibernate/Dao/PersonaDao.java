@@ -113,20 +113,28 @@ public class PersonaDao {
 		// Create a dynamic HQL query
 		StringBuilder queryString = new StringBuilder("FROM Persona p WHERE 1=1");
 
-		if (nombre != null) {
-			queryString.append(" AND p.nombrePersona = :nombre");
-		}
-		if (apellido != null) {
-			queryString.append(" AND p.apellido = :apellido");
-		}
-		if (tipoDocumento != null) {
-			queryString.append(" AND p.idTipoDocumento = :tipoDocumento");
-		}
-		if (nroDocumento != null) {
-			queryString.append(" AND p.nroDocumento = :nroDocumento");
-		}
-		if (idCliente != null) {
-			queryString.append(" AND p.cliente.nroCliente = :idCliente");
+		if (nombre != null || apellido != null || tipoDocumento != null || nroDocumento != null || idCliente != null) {
+			queryString.append(" AND (");
+
+			if (nombre != null) {
+				queryString.append("p.nombrePersona = :nombre OR ");
+			}
+			if (apellido != null) {
+				queryString.append("p.apellido = :apellido OR ");
+			}
+			if (tipoDocumento != null) {
+				queryString.append("p.idTipoDocumento = :tipoDocumento OR ");
+			}
+			if (nroDocumento != null) {
+				queryString.append("p.nroDocumento = :nroDocumento OR ");
+			}
+			if (idCliente != null) {
+				queryString.append("p.cliente.nroCliente = :idCliente OR ");
+			}
+
+			// Remove the last " OR " from the query
+			queryString.setLength(queryString.length() - 4);
+			queryString.append(")");
 		}
 
 		Query<Persona> query = session.createQuery(queryString.toString(), Persona.class);
@@ -146,7 +154,7 @@ public class PersonaDao {
 		if (idCliente != null) {
 			query.setParameter("idCliente", idCliente);
 		}
-		System.out.println(query);
+		System.out.println(queryString);
 
 		return query.getResultList();
 	}

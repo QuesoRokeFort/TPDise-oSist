@@ -445,7 +445,11 @@ public class AltaPoliza2 {
             public void itemStateChanged(ItemEvent event) {
                 if (event.getStateChange() == ItemEvent.SELECTED) {
                     Object selectedMarcaObject = MarcaBox.getSelectedItem();
+                    System.out.println(selectedMarcaObject);
                     List<ModeloDTO> modSelecionadas = GestorPoliza.getModelosByMarca(marcas.stream().filter(m->m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
+                    for (ModeloDTO modSelecionada : modSelecionadas) {
+                        System.out.println(modSelecionada.getNombreModelo());
+                    }
                     DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
                     ModeloBox.setModel(modComboBoxModel);
                     modSelecionadas.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
