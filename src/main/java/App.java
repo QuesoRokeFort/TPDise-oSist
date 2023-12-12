@@ -21,7 +21,7 @@ public class App {
 
         SwingUtilities.invokeLater(() -> {
             try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                UIManager.setLookAndFeel("Metal");
             } catch (Exception e) {
                 e.printStackTrace();
             }
