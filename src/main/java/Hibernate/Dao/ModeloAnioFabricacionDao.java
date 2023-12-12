@@ -1,11 +1,13 @@
 package Hibernate.Dao;
 
 
+import DTO.ModeloDTO;
 import Hibernate.Model.ModeloAnioFabricacion;
 import Hibernate.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModeloAnioFabricacionDao{
@@ -93,5 +95,29 @@ public class ModeloAnioFabricacionDao{
             }
         }
     }
+
+    public static List<ModeloAnioFabricacion> getAñoByModelo(ModeloDTO modeloDTO) {
+        Transaction transaction = null;
+        List<ModeloAnioFabricacion> modelosAniosFabricacion = new ArrayList<>();
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            modelosAniosFabricacion = session.createQuery("from ModeloAnioFabricacion where modelo.id = :modeloId", ModeloAnioFabricacion.class)
+                    .setParameter("modeloId", modeloDTO.getId())
+                    .list();
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            // Log the exception or handle it in a more appropriate way
+            e.printStackTrace();
+            throw new RuntimeException("Error retrieving ModelosAniosFabricacion for ModeloDTO", e);
+        }
+        return modelosAniosFabricacion;
+    }
+
 
 }

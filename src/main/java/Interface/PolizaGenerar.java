@@ -74,15 +74,15 @@ public class PolizaGenerar {
 		//tiularLabel = new JLabel();
 		tiularLabel.setText(currentPoliza.getCliente().getPersona().getNombrePersona()+" "+currentPoliza.getCliente().getPersona().getApellido());
 		//marcaLabel = new JLabel();
-		marcaLabel.setText(currentPoliza.getVehiculo().getModelo().getMarca().getNombreMarca());
+		marcaLabel.setText(vehiculoDTO.getModelo().getMarca().getNombreMarca());
 		//modeloLabel = new JLabel();
-		modeloLabel.setText(currentPoliza.getVehiculo().getModelo().getNombreModelo());
+		modeloLabel.setText(vehiculoDTO.getModelo().getNombreModelo());
 		//motorLabel = new JLabel();
-		motorLabel.setText(currentPoliza.getVehiculo().getMotor());
+		motorLabel.setText(vehiculoDTO.getMotor());
 		//chasisLabel = new JLabel();
-		chasisLabel.setText(currentPoliza.getVehiculo().getChasis());
+		chasisLabel.setText(vehiculoDTO.getChasis());
 		//patenteLabel = new JLabel();
-		patenteLabel.setText(currentPoliza.getVehiculo().getPatente());
+		patenteLabel.setText(vehiculoDTO.getPatente());
 		//fechaDeFinLabel = new JLabel();
 		fechaDeFinLabel.setText(String.valueOf(currentPoliza.getFechaFinVigencia()));
 		//fechaDeInicioLabel = new JLabel();
@@ -96,31 +96,21 @@ public class PolizaGenerar {
 		//vencimiento1 = new JLabel();
 		vencimiento1.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(1)));
 		//importe1 = new JLabel();
-		importe1.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()));
+		importe1.setText(String.valueOf(cob.getPrecio()));
 		//totalAPagarLabel = new JLabel();
-		totalAPagarLabel.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()));
-		/*vencimiento2 = new JLabel();
-		vencimiento3 = new JLabel();
-		vencimiento4 = new JLabel();
-		vencimiento5 = new JLabel();
-		vencimiento6 = new JLabel();
-		importe2 = new JLabel();
-		importe3 = new JLabel();
-		importe4 = new JLabel();
-		importe5 = new JLabel();
-		importe6 = new JLabel();*/
+		totalAPagarLabel.setText(String.valueOf(cob.getPrecio()));
 		if(currentPoliza.getFormaDePago().equals("Semestral")){
 			vencimiento2.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(2)));
 			vencimiento3.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(3)));
 			vencimiento4.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(4)));
 			vencimiento5.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(5)));
 			vencimiento6.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(6)));
-			importe2.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()));
-			importe3.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()));
-			importe4.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()));
-			importe5.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()));
-			importe6.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()));
-			totalAPagarLabel.setText(String.valueOf(currentPoliza.getCobertura().getPrecio()*6));
+			importe2.setText(String.valueOf(cob.getPrecio()));
+			importe3.setText(String.valueOf(cob.getPrecio()));
+			importe4.setText(String.valueOf(cob.getPrecio()));
+			importe5.setText(String.valueOf(cob.getPrecio()));
+			importe6.setText(String.valueOf(cob.getPrecio()));
+			totalAPagarLabel.setText(String.valueOf(cob.getPrecio()*6));
 		}
 	}
 }

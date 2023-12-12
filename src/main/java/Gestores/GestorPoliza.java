@@ -11,6 +11,11 @@ import java.util.List;
 public class GestorPoliza {
 	public static void crearPoliza(PolizaDTO currentPoliza, LocalidadDTO l, VehiculoDTO vehiculoDTO, CoberturaDTO c) {
 		Poliza poliza = new Poliza();
+		System.out.println("here");
+		System.out.println(currentPoliza.toString());
+		System.out.println(l.toString());
+		System.out.println(vehiculoDTO.toString());
+		System.out.println(c.toString());
 		if(validateDatosVehiculo(vehiculoDTO)) {
 			Vehiculo vehiculo = new Vehiculo();
 			vehiculo.setModelo(ModeloDao.getModeloById(vehiculoDTO.getModelo().getId()));
@@ -21,6 +26,7 @@ public class GestorPoliza {
 			vehiculo.setKilometrosAnuales(vehiculoDTO.getKilometrosAnuales());
 			poliza.setVehiculo(vehiculo);
 		}
+		System.out.println("here");
 		currentPoliza.getHijosPoliza().forEach(hijoDTO -> {
 			if (validateHijoDTO(hijoDTO)) {
 				Hijo hijo = new Hijo();
@@ -30,13 +36,19 @@ public class GestorPoliza {
 				poliza.addHijo(hijo);
 			}
 		});
-		if (validateDatosCobertura(currentPoliza.getCobertura())){
+
+		System.out.println("here");
+
+		if (validateDatosCobertura(c)){
 			Cobertura cobertura = new Cobertura();
 			cobertura.setProveedor(ProveedorDao.getProveedorById(c.getProveedor().getId()));
 			cobertura.setTipoCobertura(TipoCoberturaDao.getTipoCoberturaById(c.getTipoCobertura().getId()));
 			cobertura.setPrecio(c.getPrecio());
 			poliza.setCobertura(cobertura);
 		}
+
+		System.out.println("here");
+
 		if (currentPoliza.getFormaDePago().equals("Semestral")){
 			for (int i = 0; i < 6; i++) {
 				Cuota cuota = new Cuota();
@@ -52,6 +64,9 @@ public class GestorPoliza {
 			cuota.setPoliza(poliza);
 			poliza.addCuota(cuota);
 		}
+
+		System.out.println("here");
+
 		currentPoliza.getMedidasSeguradad().forEach(m-> poliza.addMedidas(new MedidaSeguridad(m)));
 		if (validatePolizaDTO(currentPoliza)) {
 			poliza.setDerechoDeEmision(currentPoliza.getDerechoDeEmision());
@@ -70,8 +85,11 @@ public class GestorPoliza {
 			poliza.setEstadoPoliza("Vigente");
 			poliza.setNroPoliza(PolizaDao.GenerateNro());
 		}
+
+		System.out.println("here");
+
 		System.out.println(poliza.toString());
-		PolizaDao.savePoliza(poliza);
+		//PolizaDao.savePoliza(poliza);
 	}
 
 	private static boolean validateDatosCobertura(CoberturaDTO cobertura) {
@@ -171,10 +189,6 @@ public class GestorPoliza {
 
 		if (modeloDTO.getNombreModelo() == null || modeloDTO.getNombreModelo().isEmpty()) {
 			throw new IllegalArgumentException("El nombre del modelo no puede ser nulo o vacío");
-		}
-
-		if (modeloDTO.getMotor() == null || modeloDTO.getMotor().isEmpty()) {
-			throw new IllegalArgumentException("El motor no puede ser nulo o vacío");
 		}
 
 		if (modeloDTO.getValorPorcentualRiesgo() == null || modeloDTO.getValorPorcentualRiesgo() < 0) {
@@ -367,5 +381,13 @@ public class GestorPoliza {
 
 	public static Integer calcularPremio(Integer derechoDeEmision, Integer prima) {
 		return 0;
+	}
+
+	public static List<AnioFabricacionDTO> getañosByModelo(ModeloDTO modeloDTO) {
+		List<AnioFabricacionDTO> anio = new ArrayList<>();
+		ModeloAnioFabricacionDao.getAñoByModelo(modeloDTO).forEach(modeloAnioFabricacion -> {
+			anio.add(new AnioFabricacionDTO(modeloAnioFabricacion.getAnio()));
+		});
+		return anio;
 	}
 }

@@ -12,9 +12,11 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.Enumeration;
 import java.util.List;
 
+import static Interface.AltaPoliza2.vehiculoDTO;
 import static Interface.GestorInterface.cardLayout;
 import static Interface.GestorInterface.cardPanel;
 import static Interface.MenuProductorSeguros.currentPoliza;
@@ -49,7 +51,6 @@ public class SeleccionarCobertura {
 	private void createUIComponents() {
 		selectedRow = -1;
 		confirmarButton = new JButton();
-		listaPrecios = GestorCoberturas.getPrecios();
 		confirmarButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -58,11 +59,9 @@ public class SeleccionarCobertura {
 				cob.setAjusteCantHijos(CalcularAjusteHIJOS());
 				cob.setAjustePorKm(CalcularAjusteKM());
 				cob.setAjusteSiniestro(CalcularAjusteSiniestro());
-				PrecioProveedorTipoDTO selectedPrecio = listaPrecios
-						.stream()
-						.filter(precioProveedorTipoDTO -> precioProveedorTipoDTO.getId() == selectedRow+1)
-						.findFirst()
-						.orElse(null);
+				listaPrecios.forEach(c-> System.out.println(c.toString()));
+				System.out.println(selectedRow);
+				PrecioProveedorTipoDTO selectedPrecio = listaPrecios.get(selectedRow);
 				cob.setPrecio(selectedPrecio.getPrecio());
 				cob.setProveedor(selectedPrecio.getProveedor());
 				cob.setTipoCobertura(selectedPrecio.getTipoCobertura());
@@ -113,12 +112,17 @@ public class SeleccionarCobertura {
 		NroCliente.setText(String.valueOf(currentPoliza.getCliente().getNroCliente()));
 		Nombre.setText(currentPoliza.getCliente().getPersona().getNombrePersona());
 		Apellido.setText(currentPoliza.getCliente().getPersona().getApellido());
-
 		FechaInicio.setText(String.valueOf(currentPoliza.getFechaInicioVigencia()));
 		FechaVencimiento.setText(String.valueOf(currentPoliza.getFechaFinVigencia()));
 	}
 	private void defaulttable() {
 		modeloTabla.setRowCount(0);
+		listaPrecios = GestorCoberturas.getPrecios();
+		int todayYear = LocalDate.now().getYear();
+		//System.out.println(todayYear-vehiculoDTO.getAnioFabricacion().getAnio());
+		if (todayYear-vehiculoDTO.getAnioFabricacion().getAnio()>10){
+			listaPrecios=listaPrecios.stream().filter(c-> c.getTipoCobertura().getNombreTipo().equals("ResponsabilidadCivil")).toList();
+		}
 		for (PrecioProveedorTipoDTO cobertura : listaPrecios) {
 			Object[] fila = {cobertura.getProveedor().getNombreProv(), cobertura.getTipoCobertura().getNombreTipo(), cobertura.getPrecio(), false};
 			modeloTabla.addRow(fila);

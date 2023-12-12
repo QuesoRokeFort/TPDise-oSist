@@ -14,7 +14,7 @@ public class TipoCobertura{
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "nombreTipo", length = 20)
+    @Column(name = "nombreTipo", length = 30)
     private String nombreTipo;
 
     public TipoCobertura() {

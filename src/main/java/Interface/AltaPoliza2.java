@@ -4,6 +4,7 @@ import DTO.*;
 import Gestores.GestorPoliza;
 import Hibernate.Model.EstadoCivil;
 import Hibernate.Model.Marca;
+import Hibernate.Model.Modelo;
 import Hibernate.Model.Sexo;
 
 import javax.swing.*;
@@ -78,6 +79,7 @@ public class AltaPoliza2 {
     private List<AnioFabricacionDTO> años;
     static VehiculoDTO vehiculoDTO;
     static LocalidadDTO localidad;
+    private boolean bloquearCargaAño = false;
 
 
     public AltaPoliza2() {
@@ -386,14 +388,9 @@ public class AltaPoliza2 {
         MarcaBox.setModel(marcaComboBoxModel);
         ModeloBox= new JComboBox<>();
         AñoVehiculoBox= new JComboBox<>();
-        DefaultComboBoxModel<Integer> añoComboBoxModel = new DefaultComboBoxModel<>();
-        AñoVehiculoBox.setModel(añoComboBoxModel);
         marcas= GestorPoliza.getMarcas();
         marcas.forEach(marcaDTO -> marcaComboBoxModel.addElement(marcaDTO.getNombreMarca()));
         MarcaBox.setSelectedIndex(-1);
-        años = GestorPoliza.getAños();
-        años.forEach(anioFabricacionDTO -> añoComboBoxModel.addElement(anioFabricacionDTO.getAnio()));
-        AñoVehiculoBox.setSelectedIndex(-1);
         hijoPanel1 = new JPanel();
         hijoPanel2 = new JPanel();
         hijoPanel3 = new JPanel();
@@ -420,12 +417,33 @@ public class AltaPoliza2 {
             @Override
             public void itemStateChanged(ItemEvent event) {
                 if (event.getStateChange() == ItemEvent.SELECTED) {
-                    Object selectedMarcaObject = MarcaBox.getSelectedItem();
-                    modelos = GestorPoliza.getModelosByMarca(marcas.stream().filter(m->m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
-                    DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
-                    ModeloBox.setModel(modComboBoxModel);
-                    modelos.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
-                    ModeloBox.setSelectedIndex(-1);
+                    if (!bloquearCargaAño) {
+                        bloquearCargaAño = true;
+                        Object selectedMarcaObject = MarcaBox.getSelectedItem();
+                        modelos = GestorPoliza.getModelosByMarca(marcas.stream().filter(m -> m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
+                        DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
+                        modelos.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
+                        ModeloBox.setModel(modComboBoxModel);
+                        ModeloBox.setSelectedIndex(-1);
+                        bloquearCargaAño = false;
+                    }
+                }
+            }
+        });
+        ModeloBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    if (!bloquearCargaAño) {
+                        bloquearCargaAño = true;
+                        Object selectedModeloObject = ModeloBox.getSelectedItem();
+                        años = GestorPoliza.getañosByModelo(modelos.stream().filter(m -> m.getNombreModelo().equals(selectedModeloObject)).findFirst().orElse(null));
+                        DefaultComboBoxModel<Integer> añoComboBoxModel = new DefaultComboBoxModel<>();
+                        años.forEach(a -> añoComboBoxModel.addElement(a.getAnio()));
+                        AñoVehiculoBox.setModel(añoComboBoxModel);
+                        AñoVehiculoBox.setSelectedIndex(-1);
+                        bloquearCargaAño = false;
+                    }
                 }
             }
         });

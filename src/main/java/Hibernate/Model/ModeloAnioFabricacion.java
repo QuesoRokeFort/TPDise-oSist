@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "ModeloAnioFabricacion")
 public class ModeloAnioFabricacion {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
@@ -71,5 +72,4 @@ public class ModeloAnioFabricacion {
                 ", anio=" + anio +
                 '}';
     }
-// Otros campos y métodos getters/setters
 }

@@ -3,6 +3,8 @@ import Hibernate.Model.*;
 import Interface.GestorInterface;
 
 import javax.swing.*;
+import java.util.List;
+import java.util.Random;
 
 //Backdoor profiles
 // gerente mail ("gerente@gmail.com");
@@ -18,7 +20,6 @@ import javax.swing.*;
 public class App {
 
     public static void main(String[] args) {
-
         SwingUtilities.invokeLater(() -> {
             try {
                 UIManager.setLookAndFeel("Metal");
