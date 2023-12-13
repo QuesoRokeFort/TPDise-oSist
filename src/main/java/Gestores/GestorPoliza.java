@@ -181,9 +181,6 @@ public class GestorPoliza {
 				throw new IllegalArgumentException("El chasis no puede ser nulo o vacío");
 			}
 
-			if (vehiculoDTO.getPatente() == null || vehiculoDTO.getPatente().isEmpty()) {
-				throw new IllegalArgumentException("La patente no puede ser nula o vacía");
-			}
 
 			if (vehiculoDTO.getKilometrosAnuales() < 0) {
 				throw new IllegalArgumentException("Los kilómetros anuales deben ser un valor no negativo");

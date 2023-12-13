@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="post correcion final4">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Felipe.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AccesoUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/MenuProductorSeguros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,64 +326,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="post correcion final4" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java</url>
-          <line>72</line>
-          <properties>
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="c" />
+        <watch expression="c" />
+        <watch expression="cuota" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
