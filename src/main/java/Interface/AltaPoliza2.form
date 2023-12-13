@@ -201,7 +201,7 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <text value="Escriba aquí..."/>
+                          <text value="Escriba aqui..."/>
                         </properties>
                       </component>
                       <component id="d00ed" class="javax.swing.JLabel">
@@ -292,7 +292,7 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <text value="Escriba aquí..."/>
+                          <text value="Escriba aqui..."/>
                         </properties>
                       </component>
                       <component id="261c2" class="javax.swing.JLabel">
@@ -434,7 +434,7 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <text value="Escriba aquí..."/>
+                          <text value="Escriba aqui..."/>
                         </properties>
                       </component>
                       <component id="f6500" class="javax.swing.JLabel">
@@ -546,7 +546,7 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <text value="Escriba aquí..."/>
+                          <text value="Escriba aqui..."/>
                         </properties>
                       </component>
                       <component id="59d5b" class="javax.swing.JLabel">

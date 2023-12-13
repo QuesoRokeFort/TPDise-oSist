@@ -92,7 +92,8 @@ public class PolizaGenerar {
 		//patenteLabel = new JLabel();
 		patenteLabel.setText(vehiculoDTO.getPatente());
 		//fechaDeFinLabel = new JLabel();
-		fechaDeFinLabel.setText(String.valueOf(currentPoliza.getFechaFinVigencia()));
+		if(currentPoliza.getFormaDePago().equals("Mensual"))
+			fechaDeFinLabel.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(1)));
 		//fechaDeInicioLabel = new JLabel();
 		fechaDeInicioLabel.setText(String.valueOf(currentPoliza.getFechaInicioVigencia()));
 		//sumaAseguradaLabel = new JLabel();
@@ -108,6 +109,7 @@ public class PolizaGenerar {
 		//totalAPagarLabel = new JLabel();
 		totalAPagarLabel.setText(String.valueOf(cob.getPrecio()));
 		if(currentPoliza.getFormaDePago().equals("Semestral")){
+			fechaDeFinLabel.setText(String.valueOf(currentPoliza.getFechaFinVigencia()));
 			vencimiento2.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(2)));
 			vencimiento3.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(3)));
 			vencimiento4.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(4)));
