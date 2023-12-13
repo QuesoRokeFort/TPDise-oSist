@@ -690,6 +690,7 @@
           <component id="2e49d" class="javax.swing.JTable" binding="tablaClientes">
             <constraints/>
             <properties>
+              <font name="BankGothic Lt BT"/>
               <intercellSpacing width="10" height="5"/>
               <rowHeight value="30"/>
               <rowMargin value="5"/>

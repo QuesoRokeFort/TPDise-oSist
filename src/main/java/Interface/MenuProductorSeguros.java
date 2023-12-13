@@ -29,7 +29,6 @@ public class MenuProductorSeguros {
 
 
 
-
     public MenuProductorSeguros() {
         darDeAltaClienteButton.addActionListener(altaCliente -> {
             altaCliente();
@@ -145,6 +144,8 @@ public class MenuProductorSeguros {
                 cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
             }
         });
+
+
 
     }
 

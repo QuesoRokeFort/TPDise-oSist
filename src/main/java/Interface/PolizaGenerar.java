@@ -45,6 +45,8 @@ public class PolizaGenerar {
 	private JLabel importe5;
 	private JLabel importe6;
 
+	public JButton cancelarButton;
+
 
 	public PolizaGenerar() {
 		confirmarButton.addActionListener(new ActionListener() {
@@ -61,6 +63,14 @@ public class PolizaGenerar {
 				}
 				cardLayout.show(cardPanel,"MenuProductorSeguro");
 				cardPanel.setPreferredSize(new Dimension(600, 218));
+			}
+		});
+		cancelarButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AltaPoliza1 altaPolizaClienteDatos = new AltaPoliza1();
+				cardLayout.show(cardPanel,"Datos Cliente");
+				cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
 			}
 		});
 	}

@@ -41,7 +41,7 @@ public class BuscarCliente {
     private boolean defaultTable;
     private int filas;
     public BuscarCliente(){
-        String[] columnas = {"NroCliente", "Apellido", "Nombre", "TipoDocumento", "NroDocumento", "Select"};
+        String[] columnas = {"NRO CLIENTE", "APELLIDO", "NOMBRE", "TIPO DOCUMENTO", "NRO DOCUEMENTO", "SELECCIONAR"};
         modeloTabla = new DefaultTableModel(null, columnas) {
             @Override
             public Class<?> getColumnClass(int columnIndex) {

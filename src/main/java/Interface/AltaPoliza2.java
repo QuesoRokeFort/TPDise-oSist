@@ -6,10 +6,7 @@ import Hibernate.Model.*;
 
 import javax.swing.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 import java.io.ObjectInputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -139,7 +136,7 @@ public class AltaPoliza2 {
         X1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fechaText1.setText("Escriba Aqui");
+                fechaText1.setText("Escriba aquí...");
                 Sexo1.setSelectedIndex(-1);
                 Civil1.setSelectedIndex(-1);
             }
@@ -148,6 +145,61 @@ public class AltaPoliza2 {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+        fechaText1.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (fechaText1.getText().equals("Escriba aquí...")) fechaText1.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (fechaText1.getText().equals("")) {
+                    fechaText1.setText("Escriba aquí...");
+                }
+            }
+        });
+
+        fechaText2.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (fechaText2.getText().equals("Escriba aquí...")) fechaText2.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (fechaText2.getText().equals("")) {
+                    fechaText2.setText("Escriba aquí...");
+                }
+            }
+        });
+
+        fechaText3.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (fechaText3.getText().equals("Escriba aquí...")) fechaText3.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (fechaText3.getText().equals("")) {
+                    fechaText3.setText("Escriba aquí...");
+                }
+            }
+        });
+
+        fechaText4.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (fechaText4.getText().equals("Escriba aquí...")) fechaText4.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (fechaText4.getText().equals("")) {
+                    fechaText4.setText("Escriba aquí...");
+                }
             }
         });
     }
@@ -296,7 +348,7 @@ public class AltaPoliza2 {
 
         Pattern pattern = Pattern.compile(patronFecha);
 
-        if(!fechaText1.getText().equals("Escriba aqui") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0) {
+        if(!fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0) {
             String textoFecha = fechaText1.getText();
 
             Matcher matcher = pattern.matcher(textoFecha);
@@ -464,5 +516,7 @@ public class AltaPoliza2 {
         Civil4 = new JComboBox<>(EstadoCivil.values());
         Civil4.setSelectedIndex(-1);
     }
+
+
 }
 

@@ -395,6 +395,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <font name="BankGothic Lt BT"/>
           <text value="Confirmar"/>
         </properties>
       </component>

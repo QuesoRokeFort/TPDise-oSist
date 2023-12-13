@@ -40,8 +40,19 @@ public class SeleccionarCobertura {
 	private List<PrecioProveedorTipoDTO> listaPrecios;
 	private DefaultTableModel modeloTabla;
 	private int selectedRow;
-	static CoberturaDTO  cob;
+	static CoberturaDTO cob;
 
+
+	public SeleccionarCobertura() {
+		cancelarButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AltaPoliza1 altaPolizaClienteDatos = new AltaPoliza1();
+				cardLayout.show(cardPanel,"Datos Cliente");
+				cardPanel.setPreferredSize(altaPolizaClienteDatos.getPantallaPrincipal().getPreferredSize());
+			}
+		});
+	}
 
 	public JPanel getPantallaPrincipal() {
 		return PantallPrincipal;
