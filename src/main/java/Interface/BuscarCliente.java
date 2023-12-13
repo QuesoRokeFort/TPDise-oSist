@@ -41,7 +41,7 @@ public class BuscarCliente {
     private boolean defaultTable;
     private int filas;
     public BuscarCliente(){
-        String[] columnas = {"NRO CLIENTE", "APELLIDO", "NOMBRE", "TIPO DOCUMENTO", "NRO DOCUEMENTO", "SELECCIONAR"};
+        String[] columnas = {"NRO CLIENTE", "APELLIDO", "NOMBRE", "TIPO DOCUMENTO", "NRO DOCUMENTO", "SELECCIONAR"};
         modeloTabla = new DefaultTableModel(null, columnas) {
             @Override
             public Class<?> getColumnClass(int columnIndex) {
@@ -133,6 +133,20 @@ public class BuscarCliente {
         }*/
 
         tablaClientes.setModel(modeloTabla);
+        // Crear el renderizador de celdas
+        DefaultTableCellRenderer renderizador = new DefaultTableCellRenderer();
+
+        // Centrar el contenido en todas las columnas
+        renderizador.setHorizontalAlignment(SwingConstants.CENTER);
+
+        // Aplicar el renderizador a todas las columnas
+        for (int i = 0; i < tablaClientes.getColumnCount(); i++) {
+            tablaClientes.getColumnModel().getColumn(i).setCellRenderer(renderizador);
+        }
+
+        // Configurar el renderizador de la columna de selección
+        tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
+        tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this));
         tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
         tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
     }

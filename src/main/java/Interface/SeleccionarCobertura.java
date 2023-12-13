@@ -33,7 +33,6 @@ public class SeleccionarCobertura {
 	private JLabel NroCliente;
 	private JLabel Nombre;
 	private JLabel Apellido;
-	private JLabel FechaVencimiento;
 	private JLabel FechaInicio;
 	private JComboBox formaDePagoBox;
 	private JScrollPane scrollPane;
@@ -103,7 +102,7 @@ public class SeleccionarCobertura {
 		NroCliente = new JLabel();
 		Nombre = new JLabel();
 		Apellido = new JLabel();
-		String[] columnas = {"Proveedores", "Cobertura", "Precio", "Select"};
+		String[] columnas = {"PROVEEDORES", "COBERUTRA", "PRECIO", "SELECCIONAR"};
 		modeloTabla = new DefaultTableModel(null, columnas) {
 			@Override
 			public Class<?> getColumnClass(int columnIndex) {
@@ -123,7 +122,6 @@ public class SeleccionarCobertura {
 		Nombre.setText(currentPoliza.getCliente().getPersona().getNombrePersona());
 		Apellido.setText(currentPoliza.getCliente().getPersona().getApellido());
 		FechaInicio.setText(String.valueOf(currentPoliza.getFechaInicioVigencia()));
-		FechaVencimiento.setText(String.valueOf(currentPoliza.getFechaFinVigencia()));
 	}
 	private void defaulttable() {
 		modeloTabla.setRowCount(0);
@@ -137,6 +135,15 @@ public class SeleccionarCobertura {
 			modeloTabla.addRow(fila);
 		}
 		tablaCoberturas.setModel(modeloTabla);
+		// Crear el renderizador de celdas
+		DefaultTableCellRenderer renderizador = new DefaultTableCellRenderer();
+		// Centrar el contenido en todas las columnas
+		renderizador.setHorizontalAlignment(SwingConstants.CENTER);
+
+		// Aplicar el renderizador a todas las columnas
+		for (int i = 0; i < tablaCoberturas.getColumnCount(); i++) {
+			tablaCoberturas.getColumnModel().getColumn(i).setCellRenderer(renderizador);
+		}
 		tablaCoberturas.getColumnModel().getColumn(3).setCellRenderer(new RadioButtonRenderer());
 		tablaCoberturas.getColumnModel().getColumn(3).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
 	}
