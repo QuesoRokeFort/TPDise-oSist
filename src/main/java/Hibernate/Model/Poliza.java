@@ -16,7 +16,7 @@ public class Poliza {
     private Integer id;
     //en etapa 4 pone nroPoliza
     @Column(name = "nroPoliza", nullable = false,unique = true)
-    private Integer nroPoliza;
+    private String nroPoliza;
 
     // saque derechosEmision asumiendo que era lo mismo que derechoDeEmision
 
@@ -82,12 +82,12 @@ public class Poliza {
     @OneToMany(mappedBy = "poliza",cascade = CascadeType.ALL,orphanRemoval = true)
     private  List<MedidaSeguridad> medidas= new ArrayList<>();
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
-    private List<Cuota> cuotas;
+    private List<Cuota> cuotas = new ArrayList<>();
 
     public Poliza() {
     }
 
-    public Poliza(Integer id, Integer nroPoliza, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, List<MedidaSeguridad> medidas, List<Cuota> cuotas) {
+    public Poliza(Integer id, String nroPoliza, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, List<MedidaSeguridad> medidas, List<Cuota> cuotas) {
         this.id = id;
         this.nroPoliza = nroPoliza;
         this.sumaAsegurada = sumaAsegurada;
@@ -326,11 +326,11 @@ public class Poliza {
                 '}';
     }
 
-    public Integer getNroPoliza() {
+    public String getNroPoliza() {
         return nroPoliza;
     }
 
-    public void setNroPoliza(Integer nroPoliza) {
+    public void setNroPoliza(String nroPoliza) {
         this.nroPoliza = nroPoliza;
     }
 

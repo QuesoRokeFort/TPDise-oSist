@@ -10,7 +10,7 @@ public class PolizaDTO{
 
     private Integer id; //en etapa 4 pone nroPoliza
 
-    private Integer nroPoliza;
+    private String nroPoliza;
     private Integer sumaAsegurada;
 
 
@@ -108,11 +108,11 @@ public class PolizaDTO{
         poliza.getMedidas().forEach(medidas->this.medidas.add(new MedidaSeguridadDTO(medidas)));
     }
 
-    public Integer getNroPoliza() {
+    public String getNroPoliza() {
         return nroPoliza;
     }
 
-    public void setNroPoliza(Integer nroPoliza) {
+    public void setNroPoliza(String nroPoliza) {
         this.nroPoliza = nroPoliza;
     }
 
@@ -272,6 +272,7 @@ public class PolizaDTO{
     public String toString() {
         return "PolizaDTO{" +
                 "id=" + id +
+                ", nroPoliza='" + nroPoliza + '\'' +
                 ", sumaAsegurada=" + sumaAsegurada +
                 ", nroSiniestrosAnuales=" + nroSiniestrosAnuales +
                 ", estadoPoliza='" + estadoPoliza + '\'' +
@@ -289,7 +290,8 @@ public class PolizaDTO{
                 ", cobertura=" + cobertura +
                 ", vehiculo=" + vehiculo +
                 ", localidad=" + localidad +
-                ", hijosPoliza=" + hijos +
+                ", hijos=" + hijos +
+                ", medidas=" + medidas +
                 '}';
     }
 

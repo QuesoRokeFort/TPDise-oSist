@@ -256,7 +256,7 @@ public class AltaPoliza2 {
                 .map(DireccionDTO::getLocalidad)
                 .findFirst()
                 .orElse(null);
-        if(!fechaText1.getText().equals("Escriba aqui") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0){
+        if(!(fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0)){
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo1.getSelectedItem());
             hijoDTO.setEstadoCivil((EstadoCivil) Civil1.getSelectedItem());
@@ -348,7 +348,7 @@ public class AltaPoliza2 {
 
         Pattern pattern = Pattern.compile(patronFecha);
 
-        if(!fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0) {
+        if(!(fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0)) {
             String textoFecha = fechaText1.getText();
 
             Matcher matcher = pattern.matcher(textoFecha);

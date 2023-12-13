@@ -58,8 +58,6 @@ public class PolizaGenerar {
 					GestorPoliza.crearPoliza(currentPoliza, localidad, vehiculoDTO, cob);
 				} catch (IllegalArgumentException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "Ha ocurrido un error", "Error", JOptionPane.ERROR_MESSAGE);
 				}
 				cardLayout.show(cardPanel,"MenuProductorSeguro");
 				cardPanel.setPreferredSize(new Dimension(600, 218));

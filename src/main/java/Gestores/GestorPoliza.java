@@ -9,6 +9,8 @@ import java.util.List;
 
 
 public class GestorPoliza {
+	private static final String NUMERO_SUCURSAR = "0001";
+
 	public static void crearPoliza(PolizaDTO currentPoliza, LocalidadDTO l, VehiculoDTO vehiculoDTO, CoberturaDTO c) {
 		Poliza poliza = new Poliza();
 		System.out.println("here");
@@ -44,16 +46,18 @@ public class GestorPoliza {
 			cobertura.setProveedor(ProveedorDao.getProveedorById(c.getProveedor().getId()));
 			cobertura.setTipoCobertura(TipoCoberturaDao.getTipoCoberturaById(c.getTipoCobertura().getId()));
 			cobertura.setPrecio(c.getPrecio());
+			cobertura.setAjusteCantHijos(c.getAjusteCantHijos());
+			cobertura.setAjusteSiniestro(c.getAjusteSiniestro());
+			cobertura.setAjustePorKm(c.getAjustePorKm());
 			poliza.setCobertura(cobertura);
 		}
 
 		System.out.println("here");
-		System.out.println(currentPoliza.getFormaDePago());
 		int cantidadDeCuotas = 1;
 		if (currentPoliza.getFormaDePago().equals("Semestral")){
 			cantidadDeCuotas=6;
 		}
-		System.out.println("inicio");
+
 		for (int i = 0; i < cantidadDeCuotas; i++) {
 			Cuota cuota = new Cuota();
 			cuota.setImporte(c.getPrecio());
@@ -61,10 +65,8 @@ public class GestorPoliza {
 			cuota.setPoliza(poliza);
 			poliza.addCuota(cuota);
 		}
-		System.out.println("fin");
-		//TODO seguir con esto
-		System.out.println("here");
 
+		currentPoliza.setNroPoliza(generarNroPoliza(vehiculoDTO,currentPoliza));
 		currentPoliza.getMedidasSeguradad().forEach(m-> poliza.addMedidas(new MedidaSeguridad(m)));
 		if (validatePolizaDTO(currentPoliza)) {
 			poliza.setDerechoDeEmision(currentPoliza.getDerechoDeEmision());
@@ -78,16 +80,41 @@ public class GestorPoliza {
 			poliza.setMontoTotal(currentPoliza.getMontoTotal());
 			poliza.setFechaInicioVigencia(currentPoliza.getFechaInicioVigencia());
 			poliza.setFechaFinVigencia(currentPoliza.getFechaFinVigencia());
-			poliza.setLocalidad(LocalidadDao.getLocalidadById(currentPoliza.getLocalidad().getId()));
+			poliza.setLocalidad(LocalidadDao.getLocalidadById(l.getId()));
 			poliza.setCliente(ClienteDao.getClienteById(currentPoliza.getCliente().getNroCliente()));
 			poliza.setEstadoPoliza("Vigente");
-			poliza.setNroPoliza(PolizaDao.GenerateNro());
+			poliza.setEstadoPolizaPdf(true);
+			poliza.setNroPoliza(currentPoliza.getNroPoliza());
 		}
 
 		System.out.println("here");
 
 		System.out.println(poliza.toString());
 		//PolizaDao.savePoliza(poliza);
+	}
+
+	private static String generarNroPoliza(VehiculoDTO vehiculoDTO, PolizaDTO currentPoliza) {
+		String nroPoliza = "";
+		nroPoliza+= GestorPoliza.getNumeroSucursal();
+		nroPoliza+="-";
+		nroPoliza+= GestorPoliza.solicitudPoliza(vehiculoDTO,currentPoliza);
+		nroPoliza+="-";
+		nroPoliza+= GestorPoliza.generarNroRenovacion(currentPoliza.getCliente());
+		return nroPoliza;
+	}
+
+	private static String generarNroRenovacion(ClienteDTO cliente) {
+		//TODO
+		return "00";
+	}
+
+	private static String solicitudPoliza(VehiculoDTO vehiculoDTO, PolizaDTO currentPoliza) {
+		//TODO
+		return "0000000";
+	}
+
+	private static String getNumeroSucursal() {
+		return NUMERO_SUCURSAR;
 	}
 
 	private static boolean validateDatosCobertura(CoberturaDTO cobertura) {
@@ -223,8 +250,8 @@ public class GestorPoliza {
 			throw new IllegalArgumentException("El objeto PolizaDTO no puede ser nulo");
 		}
 
-		if (polizaDTO.getNroPoliza() == null || polizaDTO.getNroPoliza() <= 0) {
-			throw new IllegalArgumentException("El número de póliza debe ser un valor positivo");
+		if (polizaDTO.getNroPoliza() == null|| polizaDTO.getNroPoliza().isEmpty()){
+			throw new IllegalArgumentException("El número de póliza no puede ser nulo");
 		}
 
 		if (polizaDTO.getSumaAsegurada() == null || polizaDTO.getSumaAsegurada() < 0) {
@@ -258,9 +285,6 @@ public class GestorPoliza {
 			throw new IllegalArgumentException("El cliente de la póliza no es válido");
 		}
 
-		if (polizaDTO.getLocalidad() == null || !validateLocalidadDTO(polizaDTO.getLocalidad())) {
-			throw new IllegalArgumentException("La localidad de la póliza no es válida");
-		}
 
 		for (MedidaSeguridadDTO medida : polizaDTO.getMedidasSeguradad()) {
 			if (medida == null || !validateMedidaSeguridadDTO(medida)) {
