@@ -53,18 +53,17 @@ public class SeleccionarCobertura {
 		confirmarButton = new JButton();
 		confirmarButton.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("here");
+			public void actionPerformed(ActionEvent e) {;
 				cob=new CoberturaDTO();
 				cob.setAjusteCantHijos(CalcularAjusteHIJOS());
 				cob.setAjustePorKm(CalcularAjusteKM());
 				cob.setAjusteSiniestro(CalcularAjusteSiniestro());
 				listaPrecios.forEach(c-> System.out.println(c.toString()));
-				System.out.println(selectedRow);
 				PrecioProveedorTipoDTO selectedPrecio = listaPrecios.get(selectedRow);
 				cob.setPrecio(selectedPrecio.getPrecio());
 				cob.setProveedor(selectedPrecio.getProveedor());
 				cob.setTipoCobertura(selectedPrecio.getTipoCobertura());
+				cob.setAjusteSiniestro(GestorPoliza.calcularAjusteSiniestro(currentPoliza.getNroSiniestrosAnuales()));
 				currentPoliza.setFormaDePago((String) formaDePagoBox.getItemAt(formaDePagoBox.getSelectedIndex()));
 				currentPoliza.setEstadoPolizaPdf(false);
 				currentPoliza.setDescuentos(GestorPoliza.calcularDescuentos(currentPoliza.getMedidasSeguradad(),currentPoliza.getCliente(),currentPoliza.getFormaDePago()));
@@ -119,7 +118,6 @@ public class SeleccionarCobertura {
 		modeloTabla.setRowCount(0);
 		listaPrecios = GestorCoberturas.getPrecios();
 		int todayYear = LocalDate.now().getYear();
-		//System.out.println(todayYear-vehiculoDTO.getAnioFabricacion().getAnio());
 		if (todayYear-vehiculoDTO.getAnioFabricacion().getAnio()>10){
 			listaPrecios=listaPrecios.stream().filter(c-> c.getTipoCobertura().getNombreTipo().equals("ResponsabilidadCivil")).toList();
 		}

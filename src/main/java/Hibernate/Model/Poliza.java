@@ -24,7 +24,7 @@ public class Poliza {
     private Integer sumaAsegurada;
 
     @Column(name = "nroSiniestrosAnuales")
-    private Integer nroSiniestrosAnuales;
+    private Siniestros nroSiniestrosAnuales;
 
     @Column(name = "estadoPoliza", length = 20)
     private String estadoPoliza;
@@ -87,7 +87,7 @@ public class Poliza {
     public Poliza() {
     }
 
-    public Poliza(Integer id, Integer nroPoliza, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, List<MedidaSeguridad> medidas, List<Cuota> cuotas) {
+    public Poliza(Integer id, Integer nroPoliza, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, List<MedidaSeguridad> medidas, List<Cuota> cuotas) {
         this.id = id;
         this.nroPoliza = nroPoliza;
         this.sumaAsegurada = sumaAsegurada;
@@ -163,11 +163,11 @@ public class Poliza {
         this.sumaAsegurada = sumaAsegurada;
     }
 
-    public Integer getNroSiniestrosAnuales() {
+    public Siniestros getNroSiniestrosAnuales() {
         return nroSiniestrosAnuales;
     }
 
-    public void setNroSiniestrosAnuales(Integer nroSiniestrosAnuales) {
+    public void setNroSiniestrosAnuales(Siniestros nroSiniestrosAnuales) {
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
     }
 

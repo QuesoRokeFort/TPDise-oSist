@@ -48,23 +48,21 @@ public class GestorPoliza {
 		}
 
 		System.out.println("here");
-
+		System.out.println(currentPoliza.getFormaDePago());
+		int cantidadDeCuotas = 1;
 		if (currentPoliza.getFormaDePago().equals("Semestral")){
-			for (int i = 0; i < 6; i++) {
-				Cuota cuota = new Cuota();
-				cuota.setImporte(currentPoliza.getCobertura().getPrecio());
-				cuota.setUltimoDiaDePago(currentPoliza.getFechaInicioVigencia().plusMonths(i+1));
-				cuota.setPoliza(poliza);
-				poliza.addCuota(cuota);
-			}
-		}else{
+			cantidadDeCuotas=6;
+		}
+		System.out.println("inicio");
+		for (int i = 0; i < cantidadDeCuotas; i++) {
 			Cuota cuota = new Cuota();
-			cuota.setImporte(currentPoliza.getCobertura().getPrecio());
-			cuota.setUltimoDiaDePago(currentPoliza.getFechaInicioVigencia().plusMonths(1));
+			cuota.setImporte(c.getPrecio());
+			cuota.setUltimoDiaDePago(currentPoliza.getFechaInicioVigencia().plusMonths(i+1));
 			cuota.setPoliza(poliza);
 			poliza.addCuota(cuota);
 		}
-
+		System.out.println("fin");
+		//TODO seguir con esto
 		System.out.println("here");
 
 		currentPoliza.getMedidasSeguradad().forEach(m-> poliza.addMedidas(new MedidaSeguridad(m)));
@@ -233,7 +231,7 @@ public class GestorPoliza {
 			throw new IllegalArgumentException("La suma asegurada debe ser un valor no negativo");
 		}
 
-		if (polizaDTO.getNroSiniestrosAnuales() == null || polizaDTO.getNroSiniestrosAnuales() < 0) {
+		if (polizaDTO.getNroSiniestrosAnuales() == null ) {
 			throw new IllegalArgumentException("El número de siniestros anuales debe ser un valor no negativo");
 		}
 
@@ -371,7 +369,7 @@ public class GestorPoliza {
 	public static Integer calcularDerechoEmision() {
 		return 0;
 	}
-	public static Integer calcularPrima(CoberturaDTO coberturaDTO, LocalidadDTO localidad, VehiculoDTO vehiculo, List<MedidaSeguridadDTO> medidaSeguridads, Integer nroSiniestrosAnuales, List<HijoDTO> hijosPoliza){
+	public static Integer calcularPrima(CoberturaDTO coberturaDTO, LocalidadDTO localidad, VehiculoDTO vehiculo, List<MedidaSeguridadDTO> medidaSeguridads, Siniestros nroSiniestrosAnuales, List<HijoDTO> hijosPoliza){
 		return 0;
 	}
 
@@ -389,5 +387,9 @@ public class GestorPoliza {
 			anio.add(new AnioFabricacionDTO(modeloAnioFabricacion.getAnio()));
 		});
 		return anio;
+	}
+
+	public static String calcularAjusteSiniestro(Siniestros nroSiniestrosAnuales) {
+		return "cero";
 	}
 }

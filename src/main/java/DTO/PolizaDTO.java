@@ -14,7 +14,7 @@ public class PolizaDTO{
     private Integer sumaAsegurada;
 
 
-    private Integer nroSiniestrosAnuales;
+    private Siniestros nroSiniestrosAnuales;
 
 
     private String estadoPoliza;
@@ -62,7 +62,7 @@ public class PolizaDTO{
     public PolizaDTO() {
     }
 
-    public PolizaDTO(Integer id, Integer sumaAsegurada, Integer nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, List<MedidaSeguridadDTO> medidas) {
+    public PolizaDTO(Integer id, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, List<MedidaSeguridadDTO> medidas) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -132,11 +132,11 @@ public class PolizaDTO{
         this.sumaAsegurada = sumaAsegurada;
     }
 
-    public Integer getNroSiniestrosAnuales() {
+    public Siniestros getNroSiniestrosAnuales() {
         return nroSiniestrosAnuales;
     }
 
-    public void setNroSiniestrosAnuales(Integer nroSiniestrosAnuales) {
+    public void setNroSiniestrosAnuales(Siniestros nroSiniestrosAnuales) {
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
     }
 

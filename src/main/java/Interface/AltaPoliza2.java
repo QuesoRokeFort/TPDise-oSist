@@ -2,10 +2,7 @@ package Interface;
 
 import DTO.*;
 import Gestores.GestorPoliza;
-import Hibernate.Model.EstadoCivil;
-import Hibernate.Model.Marca;
-import Hibernate.Model.Modelo;
-import Hibernate.Model.Sexo;
+import Hibernate.Model.*;
 
 import javax.swing.*;
 
@@ -157,7 +154,8 @@ public class AltaPoliza2 {
 
     private PolizaDTO createPoliza() {
         PolizaDTO polizaDTO = new PolizaDTO();
-        polizaDTO.setNroSiniestrosAnuales((Integer) siniestrosBox.getSelectedItem());
+        polizaDTO.setNroSiniestrosAnuales((Siniestros) siniestrosBox.getSelectedItem());
+        System.out.println(polizaDTO.getNroSiniestrosAnuales());
         polizaDTO.setEstadoPoliza("Generada");
         LocalDate nextDay = LocalDate.now().plusDays(1);
         LocalDateTime midnight = nextDay.atStartOfDay();
@@ -364,6 +362,8 @@ public class AltaPoliza2 {
         return PanelPrincipal;
     }
     public void cargarDatos(){
+        ProvComboBox.removeAllItems();
+        ProvComboBox.setSelectedIndex(-1);
         List<String> uniqueProvinces = currentPersona.getDireccion().stream()
                 .map(direccionDTO -> direccionDTO.getLocalidad().getProvincia().getNombre())
                 .distinct()
@@ -373,14 +373,11 @@ public class AltaPoliza2 {
     }
     public void createUIComponents() {
         cargarHijos();
-        siniestrosBox = new JComboBox<>();
-        for (int i = 0; i < 6; i++) {
-            siniestrosBox.addItem(i);
-        }
+        siniestrosBox = new JComboBox<>(Siniestros.values());
+
         siniestrosBox.setSelectedIndex(-1);
         hijosPanelPrincipal = new JPanel();
         tabbedPane1 = new JTabbedPane();
-
         ProvComboBox = new JComboBox<>();
         ProvComboBox.setSelectedIndex(-1);
         MarcaBox = new JComboBox<>();

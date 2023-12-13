@@ -10,13 +10,15 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.Enumeration;
 import java.util.List;
 
 public class BuscarCliente {
 
     private JPanel PantallaPrincipal;
-    private JComboBox comboBox1;
+    private JComboBox largoBox;
     private JTable tablaClientes;
     public JButton buscarButton;
     private JTextField nombreText;
@@ -37,7 +39,7 @@ public class BuscarCliente {
     private DefaultTableModel modeloTabla;
     private int selectedRow = -1;
     private boolean defaultTable;
-
+    private int filas;
     public BuscarCliente(){
         String[] columnas = {"NroCliente", "Apellido", "Nombre", "TipoDocumento", "NroDocumento", "Select"};
         modeloTabla = new DefaultTableModel(null, columnas) {
@@ -82,11 +84,7 @@ public class BuscarCliente {
                 modeloTabla.setRowCount(0);
 
                 // Now, you can update the table with the filtered list
-                for (PersonaDTO persona : lista) {
-                    Object[] fila = {persona.getCliente().getNroCliente(), persona.getApellido(), persona.getNombrePersona(),
-                            persona.getTipoDocumento(), persona.getNroDocumento(), false};
-                    modeloTabla.addRow(fila);
-                }
+                cargarTabla(lista);
                 tablaClientes.setModel(modeloTabla);
                 tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
                 tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
@@ -94,17 +92,45 @@ public class BuscarCliente {
                 if (!defaultTable) defaulttable();
             }
         });
+
+        largoBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    filas = (int) largoBox.getSelectedItem();
+                    defaulttable();
+                }
+            }
+        });
+    }
+
+    private void cargarTabla(List<PersonaDTO> lista) {
+        for (int i = 0; i < filas && i < lista.size(); i++) {
+            PersonaDTO persona = lista.get(i);
+
+            Object[] fila = {
+                    persona.getCliente().getNroCliente(),
+                    persona.getApellido(),
+                    persona.getNombrePersona(),
+                    persona.getTipoDocumento(),
+                    persona.getNroDocumento(),
+                    false
+            };
+
+            modeloTabla.addRow(fila);
+        }
     }
 
     private void defaulttable() {
         defaultTable=true;
         lista=GestorPersona.getPersonas();
         modeloTabla.setRowCount(0);
-        for (PersonaDTO persona : lista) {
+        cargarTabla(lista);
+        /*for (PersonaDTO persona : lista) {
             Object[] fila = {persona.getCliente().getNroCliente(), persona.getApellido(), persona.getNombrePersona(),
                     persona.getTipoDocumento(), persona.getNroDocumento(), false};
             modeloTabla.addRow(fila);
-        }
+        }*/
 
         tablaClientes.setModel(modeloTabla);
         tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
@@ -114,6 +140,9 @@ public class BuscarCliente {
     private void createUIComponents() {
         tipoDocumentobox = new JComboBox<>(TipoDocumento.values());
         tipoDocumentobox.setSelectedIndex(-1);
+        Integer valores[] ={5,10,15};
+        largoBox = new JComboBox<>(valores);
+        filas = 5;
     }
 
     class RadioButtonRenderer extends DefaultTableCellRenderer {

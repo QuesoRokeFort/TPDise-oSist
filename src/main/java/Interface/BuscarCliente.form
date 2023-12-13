@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="PantallaPrincipal" layout-manager="GridLayoutManager" row-count="8" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="1223" height="393"/>
+      <xy x="20" y="20" width="1223" height="421"/>
     </constraints>
     <properties>
       <preferredSize width="1000" height="500"/>
@@ -157,16 +157,6 @@
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                   </vspacer>
-                  <component id="c9593" class="javax.swing.JComboBox" binding="tipoDocumentobox" custom-create="true">
-                    <constraints>
-                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                      <gridbag weightx="1.0" weighty="0.0"/>
-                    </constraints>
-                    <properties>
-                      <font name="BankGothic Lt BT"/>
-                      <model/>
-                    </properties>
-                  </component>
                   <hspacer id="4e105">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -185,6 +175,15 @@
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                   </vspacer>
+                  <component id="7e8d3" class="javax.swing.JComboBox" binding="tipoDocumentobox" custom-create="true">
+                    <constraints>
+                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="200" height="20"/>
+                      </grid>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties/>
+                  </component>
                 </children>
               </grid>
               <grid id="ed5ff" layout-manager="GridBagLayout">
@@ -723,30 +722,14 @@
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </hspacer>
-          <vspacer id="3f78a">
+          <component id="3261" class="javax.swing.JComboBox" binding="largoBox" custom-create="true">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-          </vspacer>
-          <component id="1d6bc" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
-            <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="60" height="30"/>
-                <preferred-size width="60" height="29"/>
-                <maximum-size width="60" height="30"/>
+              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="20"/>
               </grid>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
-            <properties>
-              <editable value="false"/>
-              <model>
-                <item value="5"/>
-                <item value="10"/>
-                <item value="20"/>
-              </model>
-              <name value="X"/>
-            </properties>
+            <properties/>
           </component>
         </children>
       </grid>
