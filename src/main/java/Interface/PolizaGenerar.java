@@ -53,7 +53,6 @@ public class PolizaGenerar {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				currentPoliza.setMontoTotal(Integer.valueOf(totalAPagarLabel.getText()));
-				currentPoliza.getCliente().setEstadoCliente("Normal");
 				try {
 					GestorPoliza.crearPoliza(currentPoliza, localidad, vehiculoDTO, cob);
 				} catch (IllegalArgumentException e1) {

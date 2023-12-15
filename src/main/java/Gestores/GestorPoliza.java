@@ -4,6 +4,7 @@ import DTO.*;
 import Hibernate.Dao.*;
 import Hibernate.Model.*;
 
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +14,7 @@ public class GestorPoliza {
 
 	public static void crearPoliza(PolizaDTO currentPoliza, LocalidadDTO l, VehiculoDTO vehiculoDTO, CoberturaDTO c) {
 		Poliza poliza = new Poliza();
-		System.out.println("here");
-		System.out.println(currentPoliza.toString());
-		System.out.println(l.toString());
-		System.out.println(vehiculoDTO.toString());
-		System.out.println(c.toString());
+		System.out.println(currentPoliza);
 		if(validateDatosVehiculo(vehiculoDTO)) {
 			Vehiculo vehiculo = new Vehiculo();
 			vehiculo.setModelo(ModeloDao.getModeloById(vehiculoDTO.getModelo().getId()));
@@ -28,7 +25,6 @@ public class GestorPoliza {
 			vehiculo.setKilometrosAnuales(vehiculoDTO.getKilometrosAnuales());
 			poliza.setVehiculo(vehiculo);
 		}
-		System.out.println("here");
 		currentPoliza.getHijosPoliza().forEach(hijoDTO -> {
 			if (validateHijoDTO(hijoDTO)) {
 				Hijo hijo = new Hijo();
@@ -39,7 +35,6 @@ public class GestorPoliza {
 			}
 		});
 
-		System.out.println("here");
 
 		if (validateDatosCobertura(c)){
 			Cobertura cobertura = new Cobertura();
@@ -52,7 +47,6 @@ public class GestorPoliza {
 			poliza.setCobertura(cobertura);
 		}
 
-		System.out.println("here");
 		int cantidadDeCuotas = 1;
 		if (currentPoliza.getFormaDePago().equals("Semestral")){
 			cantidadDeCuotas=6;
@@ -82,16 +76,32 @@ public class GestorPoliza {
 			poliza.setFechaFinVigencia(currentPoliza.getFechaFinVigencia());
 			poliza.setLocalidad(LocalidadDao.getLocalidadById(l.getId()));
 			poliza.setCliente(ClienteDao.getClienteById(currentPoliza.getCliente().getNroCliente()));
+			if(CalcularEstado(poliza.getCliente(),currentPoliza.getNroSiniestrosAnuales())){
+				poliza.getCliente().setEstadoCliente("Plata");
+			}else{
+				poliza.getCliente().setEstadoCliente("Normal");
+			}
 			poliza.setEstadoPoliza("Vigente");
 			poliza.setEstadoPolizaPdf(true);
 			poliza.setNroPoliza(currentPoliza.getNroPoliza());
 		}
-
-		System.out.println("here");
-
 		System.out.println(poliza.toString());
 		//PolizaDao.savePoliza(poliza);
 	}
+
+	private static boolean CalcularEstado(Cliente cliente, Siniestros nroSiniestrosAnuales) {
+		boolean plata=false;
+		int currentYear = Year.now().getValue();
+		if (currentYear-cliente.getAnioRegistro() >=2 && nroSiniestrosAnuales.equals(Siniestros.CERO) && EstadoCuotas(cliente)){
+			plata=true;
+		}
+	return plata;
+	}
+	private static boolean EstadoCuotas (Cliente cliente){
+		//TODO A IMPLEMENTAR CUANDO ESTE ESCHO LA PARTE DE CUOTAS
+		return true;
+	}
+
 
 	private static String generarNroPoliza(VehiculoDTO vehiculoDTO, PolizaDTO currentPoliza) {
 		String nroPoliza = "";

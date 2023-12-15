@@ -201,7 +201,7 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <text value="Escriba aqui..."/>
+                          <text value="Escriba aquí..."/>
                         </properties>
                       </component>
                       <component id="d00ed" class="javax.swing.JLabel">
@@ -486,7 +486,7 @@
                     </constraints>
                     <properties>
                       <enabled value="true"/>
-                      <visible value="true"/>
+                      <visible value="false"/>
                     </properties>
                     <border type="line"/>
                     <children>

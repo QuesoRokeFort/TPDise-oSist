@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="post correcion final4">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="patente no necesaria now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/MedidaSeguridadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/MedidaSeguridadDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PersonaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PersonaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cuota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cuota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaSeguridad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaSeguridad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -285,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702411732895</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="patente no necesaria now">
+      <created>1702507601196</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702507601196</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -323,9 +334,15 @@
     <MESSAGE value="Cambio de imagen para que quede un tamaño mayor, agregado de encabezado para saber en que menu se esta, cambio a AltaPoliza2 nueva y otros detalles" />
     <MESSAGE value="post correcion final" />
     <MESSAGE value="post correcion final4" />
-    <option name="LAST_COMMIT_MESSAGE" value="post correcion final4" />
+    <MESSAGE value="patente no necesaria now" />
+    <option name="LAST_COMMIT_MESSAGE" value="patente no necesaria now" />
   </component>
   <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="DTO.PolizaDTO" memberName="medidas" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="c" />

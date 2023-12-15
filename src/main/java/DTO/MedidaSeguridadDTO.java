@@ -4,7 +4,7 @@ import Hibernate.Model.*;
 
 public class MedidaSeguridadDTO{
 
-    private int id;
+    private Integer id;
 
     private String nombreMedida;
 
@@ -63,7 +63,6 @@ public class MedidaSeguridadDTO{
 }
 
 
-//tostring
-//getter setters
+
 
 

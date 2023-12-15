@@ -305,6 +305,7 @@ public class Poliza {
     public String toString() {
         return "Poliza{" +
                 "id=" + id +
+                ", nroPoliza='" + nroPoliza + '\'' +
                 ", sumaAsegurada=" + sumaAsegurada +
                 ", nroSiniestrosAnuales=" + nroSiniestrosAnuales +
                 ", estadoPoliza='" + estadoPoliza + '\'' +
@@ -322,7 +323,9 @@ public class Poliza {
                 ", cobertura=" + cobertura +
                 ", vehiculo=" + vehiculo +
                 ", localidad=" + localidad +
-                ", hijosPoliza=" + hijos +
+                ", hijos=" + hijos +
+                ", medidas=" + medidas +
+                ", cuotas=" + cuotas +
                 '}';
     }
 

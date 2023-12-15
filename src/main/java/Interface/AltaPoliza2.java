@@ -74,6 +74,8 @@ public class AltaPoliza2 {
     static VehiculoDTO vehiculoDTO;
     static LocalidadDTO localidad;
     private boolean bloquearCargaAño = false;
+    private boolean bloquearCargaLoc = false;
+    private boolean bloquearCargaMod = false;
 
 
     public AltaPoliza2() {
@@ -202,6 +204,58 @@ public class AltaPoliza2 {
                 }
             }
         });
+        ProvComboBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent event) {
+                if (event.getStateChange() == ItemEvent.SELECTED) {
+                    if (!bloquearCargaLoc){
+                        Object selectedProvObject = ProvComboBox.getSelectedItem();
+                        List<String> locSelecionadas = currentPersona.getDireccion().stream()
+                                .filter(direccionDTO -> direccionDTO.getLocalidad().getProvincia().getNombre().equals(selectedProvObject))
+                                .map(direccionDTO -> direccionDTO.getLocalidad().getNombre())
+                                .distinct()
+                                .toList();
+                        DefaultComboBoxModel<String> locComboBoxModel = new DefaultComboBoxModel<>();
+                        LocalidadBox.setModel(locComboBoxModel);
+                        locSelecionadas.forEach(l -> locComboBoxModel.addElement(l));
+                        LocalidadBox.setSelectedIndex(-1);
+                    }
+                }
+
+            }
+        });
+        MarcaBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent event) {
+                if (event.getStateChange() == ItemEvent.SELECTED) {
+                    if (!bloquearCargaMod) {
+                        bloquearCargaAño = true;
+                        Object selectedMarcaObject = MarcaBox.getSelectedItem();
+                        modelos = GestorPoliza.getModelosByMarca(marcas.stream().filter(m -> m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
+                        DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
+                        modelos.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
+                        ModeloBox.setModel(modComboBoxModel);
+                        ModeloBox.setSelectedIndex(-1);
+                        bloquearCargaAño = false;
+                    }
+                }
+            }
+        });
+        ModeloBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    if (!bloquearCargaAño) {
+                        Object selectedModeloObject = ModeloBox.getSelectedItem();
+                        años = GestorPoliza.getañosByModelo(modelos.stream().filter(m -> m.getNombreModelo().equals(selectedModeloObject)).findFirst().orElse(null));
+                        DefaultComboBoxModel<Integer> añoComboBoxModel = new DefaultComboBoxModel<>();
+                        años.forEach(a -> añoComboBoxModel.addElement(a.getAnio()));
+                        AñoVehiculoBox.setModel(añoComboBoxModel);
+                        AñoVehiculoBox.setSelectedIndex(-1);
+                    }
+                }
+            }
+        });
     }
 
     private PolizaDTO createPoliza() {
@@ -229,25 +283,25 @@ public class AltaPoliza2 {
             MedidaSeguridadDTO garaje = new MedidaSeguridadDTO();
             garaje.setNombreMedida("garaje");
             garaje.setValorPorcentual(VALORGARAJE);
-            currentPoliza.addMedida(garaje);
+            polizaDTO.addMedida(garaje);
         }
         if(alarma.isSelected()){
             MedidaSeguridadDTO alarma = new MedidaSeguridadDTO();
             alarma.setNombreMedida("alarma");
             alarma.setValorPorcentual(VALORALARMA);
-            currentPoliza.addMedida(alarma);
+            polizaDTO.addMedida(alarma);
         }
         if (rastreador.isSelected()){
             MedidaSeguridadDTO rastreador = new MedidaSeguridadDTO();
             rastreador.setNombreMedida("rastreador");
             rastreador.setValorPorcentual(VALORRASTREADOR);
-            currentPoliza.addMedida(rastreador);
+            polizaDTO.addMedida(rastreador);
         }
         if(tuercasAntirobo.isSelected()){
             MedidaSeguridadDTO tuercasAntirobo = new MedidaSeguridadDTO();
             tuercasAntirobo.setNombreMedida("Tuercas Antirobos");
             tuercasAntirobo.setValorPorcentual(VALORTUERCAS);
-            currentPoliza.addMedida(tuercasAntirobo);
+            polizaDTO.addMedida(tuercasAntirobo);
         }
         polizaDTO.setDerechoDeEmision(GestorPoliza.calcularDerechoEmision());
         String selectedLocalidadNombre = (String) LocalidadBox.getSelectedItem();
@@ -256,7 +310,7 @@ public class AltaPoliza2 {
                 .map(DireccionDTO::getLocalidad)
                 .findFirst()
                 .orElse(null);
-        if(!(fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0)){
+        if(fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0){
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo1.getSelectedItem());
             hijoDTO.setEstadoCivil((EstadoCivil) Civil1.getSelectedItem());
@@ -414,88 +468,38 @@ public class AltaPoliza2 {
         return PanelPrincipal;
     }
     public void cargarDatos(){
+        bloquearCargaLoc = true;
         ProvComboBox.removeAllItems();
-        ProvComboBox.setSelectedIndex(-1);
         List<String> uniqueProvinces = currentPersona.getDireccion().stream()
                 .map(direccionDTO -> direccionDTO.getLocalidad().getProvincia().getNombre())
                 .distinct()
                 .toList();
         uniqueProvinces.forEach(p->ProvComboBox.addItem(p));
         ProvComboBox.setSelectedIndex(-1);
+        bloquearCargaLoc=false;
+        bloquearCargaMod =true;
+        DefaultComboBoxModel<String> marcaComboBoxModel = new DefaultComboBoxModel<>();
+        MarcaBox.setModel(marcaComboBoxModel);
+        marcas= GestorPoliza.getMarcas();
+        marcas.forEach(marcaDTO -> marcaComboBoxModel.addElement(marcaDTO.getNombreMarca()));
+        MarcaBox.setSelectedIndex(-1);
+        bloquearCargaMod =false;
     }
     public void createUIComponents() {
         cargarHijos();
         siniestrosBox = new JComboBox<>(Siniestros.values());
-
         siniestrosBox.setSelectedIndex(-1);
         hijosPanelPrincipal = new JPanel();
         tabbedPane1 = new JTabbedPane();
+        ModeloBox= new JComboBox<>();
         ProvComboBox = new JComboBox<>();
         ProvComboBox.setSelectedIndex(-1);
-        MarcaBox = new JComboBox<>();
-        DefaultComboBoxModel<String> marcaComboBoxModel = new DefaultComboBoxModel<>();
-        MarcaBox.setModel(marcaComboBoxModel);
-        ModeloBox= new JComboBox<>();
         AñoVehiculoBox= new JComboBox<>();
-        marcas= GestorPoliza.getMarcas();
-        marcas.forEach(marcaDTO -> marcaComboBoxModel.addElement(marcaDTO.getNombreMarca()));
-        MarcaBox.setSelectedIndex(-1);
         hijoPanel1 = new JPanel();
         hijoPanel2 = new JPanel();
         hijoPanel3 = new JPanel();
         hijoPanel4 = new JPanel();
-
-        ProvComboBox.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent event) {
-                if (event.getStateChange() == ItemEvent.SELECTED) {
-                    Object selectedProvObject = ProvComboBox.getSelectedItem();
-                    List<String> locSelecionadas = currentPersona.getDireccion().stream()
-                            .filter(direccionDTO -> direccionDTO.getLocalidad().getProvincia().getNombre().equals(selectedProvObject))
-                            .map(direccionDTO -> direccionDTO.getLocalidad().getNombre())
-                            .distinct()
-                            .toList();
-                    DefaultComboBoxModel<String> locComboBoxModel = new DefaultComboBoxModel<>();
-                    LocalidadBox.setModel(locComboBoxModel);
-                    locSelecionadas.forEach(l -> locComboBoxModel.addElement(l));
-                    LocalidadBox.setSelectedIndex(-1);
-                }
-            }
-        });
-        MarcaBox.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent event) {
-                if (event.getStateChange() == ItemEvent.SELECTED) {
-                    if (!bloquearCargaAño) {
-                        bloquearCargaAño = true;
-                        Object selectedMarcaObject = MarcaBox.getSelectedItem();
-                        modelos = GestorPoliza.getModelosByMarca(marcas.stream().filter(m -> m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
-                        DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
-                        modelos.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
-                        ModeloBox.setModel(modComboBoxModel);
-                        ModeloBox.setSelectedIndex(-1);
-                        bloquearCargaAño = false;
-                    }
-                }
-            }
-        });
-        ModeloBox.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (!bloquearCargaAño) {
-                        bloquearCargaAño = true;
-                        Object selectedModeloObject = ModeloBox.getSelectedItem();
-                        años = GestorPoliza.getañosByModelo(modelos.stream().filter(m -> m.getNombreModelo().equals(selectedModeloObject)).findFirst().orElse(null));
-                        DefaultComboBoxModel<Integer> añoComboBoxModel = new DefaultComboBoxModel<>();
-                        años.forEach(a -> añoComboBoxModel.addElement(a.getAnio()));
-                        AñoVehiculoBox.setModel(añoComboBoxModel);
-                        AñoVehiculoBox.setSelectedIndex(-1);
-                        bloquearCargaAño = false;
-                    }
-                }
-            }
-        });
+        MarcaBox = new JComboBox<>();
     }
 
     private void cargarHijos() {

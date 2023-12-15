@@ -213,12 +213,11 @@ public class BuscarCliente {
         }
     }
 
-    // Getter method to retrieve the selected person
     public PersonaDTO getSelectedPerson() {
         if (selectedRow != -1 && selectedRow < lista.size()) {
             return lista.get(selectedRow);
         }
-        return null; // No person selected
+        return null;
     }
 
     public JPanel getpantallaprincipal() {

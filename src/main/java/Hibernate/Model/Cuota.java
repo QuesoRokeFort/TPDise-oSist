@@ -92,7 +92,6 @@ public class Cuota {
                 "id=" + id +
                 ", ultimoDiaDePago=" + ultimoDiaDePago +
                 ", importe=" + importe +
-                ", poliza=" + poliza +
                 ", pago=" + pago +
                 '}';
     }

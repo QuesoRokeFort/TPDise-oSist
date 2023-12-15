@@ -68,5 +68,4 @@ public class MedidaSeguridad {
                 '}';
     }
 
-// Otros campos y métodos getters/setters
 }
