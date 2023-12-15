@@ -14,7 +14,6 @@ public class GestorPoliza {
 
 	public static void crearPoliza(PolizaDTO currentPoliza, LocalidadDTO l, VehiculoDTO vehiculoDTO, CoberturaDTO c) {
 		Poliza poliza = new Poliza();
-		System.out.println(currentPoliza);
 		if(validateDatosVehiculo(vehiculoDTO)) {
 			Vehiculo vehiculo = new Vehiculo();
 			vehiculo.setModelo(ModeloDao.getModeloById(vehiculoDTO.getModelo().getId()));
@@ -429,5 +428,17 @@ public class GestorPoliza {
 
 	public static String calcularAjusteSiniestro(Siniestros nroSiniestrosAnuales) {
 		return "cero";
+	}
+
+    public static String CalcularAjusteSiniestro(Siniestros nroSiniestrosAnuales) {
+			return "";
+    }
+
+	public static Integer CalcularAjusteHIJOS(List<HijoDTO> hijosPoliza) {
+		return 0;
+	}
+
+	public static Integer CalcularAjusteKM(int kilometrosAnuales) {
+		return 0;
 	}
 }

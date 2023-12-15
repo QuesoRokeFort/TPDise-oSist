@@ -1060,7 +1060,7 @@
               <grid row="21" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value=" Posee dispositivo de raastreo vehicular"/>
+              <text value=" Posee dispositivo de rastreo vehicular"/>
             </properties>
           </component>
           <component id="9d8ec" class="javax.swing.JComboBox" binding="siniestrosBox" custom-create="true">
@@ -1258,6 +1258,7 @@
               </grid>
             </constraints>
             <properties>
+              <font name="BankGothic Lt BT"/>
               <text value="Confirmar"/>
             </properties>
           </component>
@@ -1268,6 +1269,7 @@
               </grid>
             </constraints>
             <properties>
+              <font name="BankGothic Lt BT"/>
               <text value="Cancelar"/>
             </properties>
           </component>

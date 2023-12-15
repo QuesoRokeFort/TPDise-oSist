@@ -66,10 +66,9 @@ public class SeleccionarCobertura {
 			@Override
 			public void actionPerformed(ActionEvent e) {;
 				cob=new CoberturaDTO();
-				cob.setAjusteCantHijos(CalcularAjusteHIJOS());
-				cob.setAjustePorKm(CalcularAjusteKM());
-				cob.setAjusteSiniestro(CalcularAjusteSiniestro());
-				listaPrecios.forEach(c-> System.out.println(c.toString()));
+				cob.setAjusteCantHijos(GestorPoliza.CalcularAjusteHIJOS(currentPoliza.getHijosPoliza()));
+				cob.setAjustePorKm(GestorPoliza.CalcularAjusteKM(vehiculoDTO.getKilometrosAnuales()));
+				cob.setAjusteSiniestro(GestorPoliza.CalcularAjusteSiniestro(currentPoliza.getNroSiniestrosAnuales()));
 				PrecioProveedorTipoDTO selectedPrecio = listaPrecios.get(selectedRow);
 				cob.setPrecio(selectedPrecio.getPrecio());
 				cob.setProveedor(selectedPrecio.getProveedor());
@@ -97,21 +96,13 @@ public class SeleccionarCobertura {
 				cardPanel.revalidate();
 			}
 
-			private String CalcularAjusteSiniestro() {
-				return "";
-			}
 
-			private Integer CalcularAjusteHIJOS() {
-				return 0;
-			}
-			private Integer CalcularAjusteKM() {
-				return 0;
-			}
+
 		});
 		NroCliente = new JLabel();
 		Nombre = new JLabel();
 		Apellido = new JLabel();
-		String[] columnas = {"PROVEEDORES", "COBERUTRA", "PRECIO", "SELECCIONAR"};
+		String[] columnas = {"PROVEEDORES", "COBERTURA", "PRECIO", "SELECCIONAR"};
 		modeloTabla = new DefaultTableModel(null, columnas) {
 			@Override
 			public Class<?> getColumnClass(int columnIndex) {
