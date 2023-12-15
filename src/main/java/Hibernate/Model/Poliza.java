@@ -15,7 +15,7 @@ public class Poliza {
     @Column(name = "id")
     private Integer id;
     //en etapa 4 pone nroPoliza
-    @Column(name = "nroPoliza", nullable = false,unique = true)
+    @Column(name = "nroPoliza", nullable = false)
     private String nroPoliza;
 
     // saque derechosEmision asumiendo que era lo mismo que derechoDeEmision
@@ -76,10 +76,10 @@ public class Poliza {
     @JoinColumn(name = "idLocalidad")
     private Localidad localidad;
 
-    @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
     private List<Hijo> hijos = new ArrayList<>();
 
-    @OneToMany(mappedBy = "poliza",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "poliza",cascade = CascadeType.ALL)
     private  List<MedidaSeguridad> medidas= new ArrayList<>();
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
     private List<Cuota> cuotas = new ArrayList<>();

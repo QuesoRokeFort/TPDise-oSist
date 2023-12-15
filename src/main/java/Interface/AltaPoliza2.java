@@ -263,13 +263,11 @@ public class AltaPoliza2 {
         polizaDTO.setNroSiniestrosAnuales((Siniestros) siniestrosBox.getSelectedItem());
         System.out.println(polizaDTO.getNroSiniestrosAnuales());
         polizaDTO.setEstadoPoliza("Generada");
+        polizaDTO.setEstadoPolizaPdf(true);
+        polizaDTO.setCliente(currentPersona.getCliente());
         LocalDate nextDay = LocalDate.now().plusDays(1);
         LocalDateTime midnight = nextDay.atStartOfDay();
         polizaDTO.setFechaInicioVigencia(midnight.toLocalDate());
-        midnight= midnight.plusMonths(6);
-        polizaDTO.setFechaFinVigencia(midnight.toLocalDate());
-        polizaDTO.setEstadoPolizaPdf(true);
-        polizaDTO.setCliente(currentPersona.getCliente());
         vehiculoDTO = new VehiculoDTO();
         vehiculoDTO.setAnioFabricacion(años.get(AñoVehiculoBox.getSelectedIndex()));
         vehiculoDTO.setChasis(chasisText.getText());

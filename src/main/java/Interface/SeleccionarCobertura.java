@@ -13,6 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -75,6 +76,14 @@ public class SeleccionarCobertura {
 				cob.setTipoCobertura(selectedPrecio.getTipoCobertura());
 				cob.setAjusteSiniestro(GestorPoliza.calcularAjusteSiniestro(currentPoliza.getNroSiniestrosAnuales()));
 				currentPoliza.setFormaDePago((String) formaDePagoBox.getItemAt(formaDePagoBox.getSelectedIndex()));
+				LocalDate nextDay = LocalDate.now().plusDays(1);
+				LocalDateTime midnight = nextDay.atStartOfDay();
+				if(currentPoliza.getFormaDePago().equals("Mensual")){
+					midnight= midnight.plusMonths(1);
+				}else{
+					midnight= midnight.plusMonths(6);
+				}
+				currentPoliza.setFechaFinVigencia(midnight.toLocalDate());
 				currentPoliza.setEstadoPolizaPdf(false);
 				currentPoliza.setDescuentos(GestorPoliza.calcularDescuentos(currentPoliza.getMedidasSeguradad(),currentPoliza.getCliente(),currentPoliza.getFormaDePago()));
 				currentPoliza.setPrima(GestorPoliza.calcularPrima(cob,currentPoliza.getLocalidad(),currentPoliza.getVehiculo(),currentPoliza.getMedidasSeguradad(),currentPoliza.getNroSiniestrosAnuales(),currentPoliza.getHijosPoliza()));

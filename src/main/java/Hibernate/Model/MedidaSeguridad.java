@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "MedidaSeguridad")
 public class MedidaSeguridad {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
@@ -19,7 +20,7 @@ public class MedidaSeguridad {
     @Column(name = "valorPorcentual")
     private Integer valorPorcentual;
     @ManyToOne
-    @JoinColumn(name = "poliza_id") // This is the foreign key column in the MedidaSeguridad table
+    @JoinColumn(name = "idPoliza")
     private Poliza poliza;
     public MedidaSeguridad() {
     }
@@ -30,7 +31,6 @@ public class MedidaSeguridad {
         this.valorPorcentual = valorPorcentual;
     }
     public MedidaSeguridad(MedidaSeguridadDTO medidaSeguridad) {
-        this.id = medidaSeguridad.getId();
         this.nombreMedida = medidaSeguridad.getNombreMedida();
         this.valorPorcentual = medidaSeguridad.getValorPorcentual();
     }
@@ -68,4 +68,11 @@ public class MedidaSeguridad {
                 '}';
     }
 
+    public Poliza getPoliza() {
+        return poliza;
+    }
+
+    public void setPoliza(Poliza poliza) {
+        this.poliza = poliza;
+    }
 }

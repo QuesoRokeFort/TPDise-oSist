@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "Hijo")
 public class Hijo {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
@@ -24,7 +25,7 @@ public class Hijo {
     @Column(name = "idEstadoCivil")
     private EstadoCivil estadoCivil;
     @ManyToOne
-    @JoinColumn(name = "poliza_id")
+    @JoinColumn(name = "poliza_id") // Use the actual column name
     private Poliza poliza;
     @ManyToOne
     @JoinColumn(name= "cambioPoliza_id")
@@ -76,6 +77,22 @@ public class Hijo {
 
     public void setEstadoCivil(EstadoCivil estadoCivil) {
         this.estadoCivil = estadoCivil;
+    }
+
+    public Poliza getPoliza() {
+        return poliza;
+    }
+
+    public void setPoliza(Poliza poliza) {
+        this.poliza = poliza;
+    }
+
+    public CambioPoliza getCambioPoliza() {
+        return cambioPoliza;
+    }
+
+    public void setCambioPoliza(CambioPoliza cambioPoliza) {
+        this.cambioPoliza = cambioPoliza;
     }
 
     @Override

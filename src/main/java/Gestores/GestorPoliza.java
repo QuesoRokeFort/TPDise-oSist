@@ -31,6 +31,7 @@ public class GestorPoliza {
 				hijo.setEstadoCivil(hijo.getEstadoCivil());
 				hijo.setSexoHijo(hijoDTO.getSexoHijo());
 				hijo.setFechaDeNacimiento(hijoDTO.getFechaDeNacimiento());
+				hijo.setPoliza(poliza);
 				poliza.addHijo(hijo);
 			}
 		});
@@ -61,7 +62,13 @@ public class GestorPoliza {
 		}
 
 		currentPoliza.setNroPoliza(generarNroPoliza(vehiculoDTO,currentPoliza));
-		currentPoliza.getMedidasSeguradad().forEach(m-> poliza.addMedidas(new MedidaSeguridad(m)));
+		currentPoliza.getMedidasSeguradad().forEach(m->{
+			MedidaSeguridad medidaSeguridad = new MedidaSeguridad();
+			medidaSeguridad.setValorPorcentual(m.getValorPorcentual());
+			medidaSeguridad.setNombreMedida(m.getNombreMedida());
+			medidaSeguridad.setPoliza(poliza);
+			poliza.addMedidas(medidaSeguridad);
+		});
 		if (validatePolizaDTO(currentPoliza)) {
 			poliza.setDerechoDeEmision(currentPoliza.getDerechoDeEmision());
 			poliza.setFormaDePago(currentPoliza.getFormaDePago());
@@ -86,7 +93,7 @@ public class GestorPoliza {
 			poliza.setNroPoliza(currentPoliza.getNroPoliza());
 		}
 		System.out.println(poliza.toString());
-		//PolizaDao.savePoliza(poliza);
+		PolizaDao.savePoliza(poliza);
 	}
 
 	private static boolean CalcularEstado(Cliente cliente, Siniestros nroSiniestrosAnuales) {

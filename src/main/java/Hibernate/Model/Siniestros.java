@@ -2,7 +2,7 @@ package Hibernate.Model;
 
 public enum Siniestros {
 	CERO,
-	UNO(),
+	UNO,
 	DOS,
 	MAS
 }
