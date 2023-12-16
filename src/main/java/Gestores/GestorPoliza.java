@@ -87,7 +87,7 @@ public class GestorPoliza {
 			}else{
 				poliza.getCliente().setEstadoCliente("Normal");
 			}
-			poliza.setEstadoPoliza("Vigente");
+			poliza.setEstadoPoliza("Generada");
 			poliza.setEstadoPolizaPdf(true);
 			poliza.setNroPoliza(currentPoliza.getNroPoliza());
 		}
@@ -429,10 +429,6 @@ public class GestorPoliza {
 	public static String calcularAjusteSiniestro(Siniestros nroSiniestrosAnuales) {
 		return "cero";
 	}
-
-    public static String CalcularAjusteSiniestro(Siniestros nroSiniestrosAnuales) {
-			return "";
-    }
 
 	public static Integer CalcularAjusteHIJOS(List<HijoDTO> hijosPoliza) {
 		return 0;

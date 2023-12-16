@@ -68,7 +68,7 @@ public class SeleccionarCobertura {
 				cob=new CoberturaDTO();
 				cob.setAjusteCantHijos(GestorPoliza.CalcularAjusteHIJOS(currentPoliza.getHijosPoliza()));
 				cob.setAjustePorKm(GestorPoliza.CalcularAjusteKM(vehiculoDTO.getKilometrosAnuales()));
-				cob.setAjusteSiniestro(GestorPoliza.CalcularAjusteSiniestro(currentPoliza.getNroSiniestrosAnuales()));
+				cob.setAjusteSiniestro(GestorPoliza.calcularAjusteSiniestro(currentPoliza.getNroSiniestrosAnuales()));
 				PrecioProveedorTipoDTO selectedPrecio = listaPrecios.get(selectedRow);
 				cob.setPrecio(selectedPrecio.getPrecio());
 				cob.setProveedor(selectedPrecio.getProveedor());

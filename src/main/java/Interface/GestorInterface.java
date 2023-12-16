@@ -104,15 +104,12 @@ public class GestorInterface {
 		accesoUsuario.confirmarMenu.addActionListener(e -> {
 			UsuarioDTO usuario = accesoUsuario.getUsuario();
 			if (usuario != null) {
-				MenuProductorSeguros menuProductorSeguros = new MenuProductorSeguros();
-				cardPanel.add(menuProductorSeguros.getPanel1(),"MenuProductorSeguro");
-				cardLayout.show(cardPanel,"MenuProductorSeguro");
-				cardPanel.setPreferredSize(menuProductorSeguros.getPanel1().getPreferredSize());
-				//usuario = GestorPersona.logInUsuario(usuario);
-				//if (usuario != null) {
-				//    }else{
-				//        JOptionPane.showMessageDialog(null, "Cuenta o contraseña inválida","Error de login",JOptionPane.ERROR_MESSAGE);
-				//    }
+
+				usuario = GestorPersona.logInUsuario(usuario);
+				if (usuario != null) {
+				    }else{
+				        JOptionPane.showMessageDialog(null, "Cuenta o contraseña inválida","Error de login",JOptionPane.ERROR_MESSAGE);
+				    }
 			}
 			switch (usuario.getRol()){
 				case GERENTE -> {
