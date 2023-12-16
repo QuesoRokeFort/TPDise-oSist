@@ -84,8 +84,9 @@ public class SeleccionarCobertura {
 				}
 				currentPoliza.setFechaFinVigencia(midnight.toLocalDate());
 				currentPoliza.setEstadoPolizaPdf(false);
-				currentPoliza.setDescuentos(GestorPoliza.calcularDescuentos(currentPoliza.getMedidasSeguradad(),currentPoliza.getCliente(),currentPoliza.getFormaDePago()));
-				currentPoliza.setPrima(GestorPoliza.calcularPrima(cob,currentPoliza.getLocalidad(),currentPoliza.getVehiculo(),currentPoliza.getMedidasSeguradad(),currentPoliza.getNroSiniestrosAnuales(),currentPoliza.getHijosPoliza()));
+				//currentPoliza.setDescuentos(GestorPoliza.calcularDescuentos(currentPoliza.getMedidasSeguradad(),currentPoliza.getCliente(),currentPoliza.getFormaDePago()));
+				//currentPoliza.setPrima(GestorPoliza.calcularPrima(cob,currentPoliza.getLocalidad(),currentPoliza.getVehiculo(),currentPoliza.getMedidasSeguradad(),currentPoliza.getNroSiniestrosAnuales(),currentPoliza.getHijosPoliza()));
+				//todo there is always more to seee
 				currentPoliza.setPremio(GestorPoliza.calcularPremio(currentPoliza.getDerechoDeEmision(),currentPoliza.getPrima()));
 				PolizaGenerar polizaGenerar = new PolizaGenerar();
 				polizaGenerar.cargarDatos();

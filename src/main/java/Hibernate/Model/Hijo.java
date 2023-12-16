@@ -28,7 +28,7 @@ public class Hijo {
     @JoinColumn(name = "poliza_id") // Use the actual column name
     private Poliza poliza;
     @ManyToOne
-    @JoinColumn(name= "cambioPoliza_id")
+    @JoinColumn(name = "cambioPoliza_id")
     private CambioPoliza cambioPoliza;
 
     public Hijo() {
@@ -85,14 +85,6 @@ public class Hijo {
 
     public void setPoliza(Poliza poliza) {
         this.poliza = poliza;
-    }
-
-    public CambioPoliza getCambioPoliza() {
-        return cambioPoliza;
-    }
-
-    public void setCambioPoliza(CambioPoliza cambioPoliza) {
-        this.cambioPoliza = cambioPoliza;
     }
 
     @Override

@@ -56,10 +56,6 @@ public class Poliza {
     @Column(name = "prima")
     private Integer prima;
 
-
-    @OneToOne(mappedBy = "poliza")// cambio Etapa 4 segun profe
-    private CambioPoliza cambiosPoliza;                 // antes era OneToOne
-
     @ManyToOne
     @JoinColumn(name = "idCliente")
     private Cliente cliente;
@@ -79,15 +75,15 @@ public class Poliza {
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
     private List<Hijo> hijos = new ArrayList<>();
 
-    @OneToMany(mappedBy = "poliza",cascade = CascadeType.ALL)
-    private  List<MedidaSeguridad> medidas= new ArrayList<>();
+    @OneToOne(mappedBy = "poliza",cascade = CascadeType.ALL)
+    private  MedidaPoliza medidas;
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
     private List<Cuota> cuotas = new ArrayList<>();
 
     public Poliza() {
     }
 
-    public Poliza(Integer id, String nroPoliza, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, List<MedidaSeguridad> medidas, List<Cuota> cuotas) {
+    public Poliza(Integer id, String nroPoliza, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, MedidaPoliza medidas, List<Cuota> cuotas) {
         this.id = id;
         this.nroPoliza = nroPoliza;
         this.sumaAsegurada = sumaAsegurada;
@@ -102,7 +98,6 @@ public class Poliza {
         this.descuentos = descuentos;
         this.montoTotal = montoTotal;
         this.prima = prima;
-        this.cambiosPoliza = cambiosPoliza;
         this.cliente = cliente;
         this.cobertura = cobertura;
         this.vehiculo = vehiculo;
@@ -127,13 +122,12 @@ public class Poliza {
         this.descuentos = poliza.getDescuentos();
         this.montoTotal = poliza.getMontoTotal();
         this.prima = poliza.getPrima();
-        this.cambiosPoliza = poliza.getCambiosPoliza();
         this.cliente = new Cliente( poliza.getCliente());
         this.cobertura = new Cobertura(poliza.getCobertura());
         this.vehiculo = new Vehiculo(poliza.getVehiculo());
         this.localidad = new Localidad(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoDTO -> this.hijos.add(new Hijo(hijoDTO)));
-        poliza.getMedidasSeguradad().forEach(medidas-> this.medidas.add(new MedidaSeguridad(medidas)));
+        this.medidas = new MedidaPoliza(poliza.getMedidasSeguradad());
     }
 
     public List<Cuota> getCuotas() {
@@ -252,13 +246,6 @@ public class Poliza {
     }
 
 
-    public CambioPoliza getCambiosPoliza() {
-        return cambiosPoliza;
-    }
-
-    public void setCambiosPoliza(CambioPoliza cambiosPoliza) {
-        this.cambiosPoliza = cambiosPoliza;
-    }
 
     public Cliente getCliente() {
         return cliente;
@@ -318,7 +305,6 @@ public class Poliza {
                 ", descuentos=" + descuentos +
                 ", montoTotal=" + montoTotal +
                 ", prima=" + prima +
-                ", cambiosPoliza=" + cambiosPoliza +
                 ", cliente=" + cliente +
                 ", cobertura=" + cobertura +
                 ", vehiculo=" + vehiculo +
@@ -337,15 +323,12 @@ public class Poliza {
         this.nroPoliza = nroPoliza;
     }
 
-    public List<MedidaSeguridad> getMedidas() {
+    public MedidaPoliza getMedidas() {
         return medidas;
     }
 
-    public void setMedidas(List<MedidaSeguridad> medidas) {
+    public void setMedidas(MedidaPoliza medidas) {
         this.medidas = medidas;
-    }
-    public void addMedidas(MedidaSeguridad medidaSeguridad){
-        this.medidas.add(medidaSeguridad);
     }
 
     public void addHijo(Hijo hijo) {

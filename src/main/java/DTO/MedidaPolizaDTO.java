@@ -9,7 +9,7 @@ public class MedidaPolizaDTO{
 
     private int id;
 
-    private MedidaSeguridad medidaSeguridad;
+    private List<MedidaSeguridadDTO> medidaSeguridad;
 
     private Poliza poliza;
 
@@ -17,7 +17,7 @@ public class MedidaPolizaDTO{
     public MedidaPolizaDTO() {
     }
 
-    public MedidaPolizaDTO(int id, MedidaSeguridad medidaSeguridad, Poliza poliza) {
+    public MedidaPolizaDTO(int id, List<MedidaSeguridadDTO> medidaSeguridad, Poliza poliza) {
         this.id = id;
         this.medidaSeguridad = medidaSeguridad;
         this.poliza = poliza;
@@ -25,7 +25,7 @@ public class MedidaPolizaDTO{
 
     public MedidaPolizaDTO(MedidaPoliza medidaPoliza) {
         this.id = medidaPoliza.getId();
-        this.medidaSeguridad = medidaPoliza.getMedidaSeguridad();
+        medidaPoliza.getMedidaSeguridad().forEach(m->this.medidaSeguridad.add(new MedidaSeguridadDTO(m)));
         this.poliza = medidaPoliza.getPoliza();
     }
 
@@ -37,11 +37,11 @@ public class MedidaPolizaDTO{
         this.id = id;
     }
 
-    public MedidaSeguridad getMedidaSeguridad() {
+    public List<MedidaSeguridadDTO> getMedidaSeguridad() {
         return medidaSeguridad;
     }
 
-    public void setMedidaSeguridad(MedidaSeguridad medidaSeguridad) {
+    public void setMedidaSeguridad(List<MedidaSeguridadDTO> medidaSeguridad) {
         this.medidaSeguridad = medidaSeguridad;
     }
 

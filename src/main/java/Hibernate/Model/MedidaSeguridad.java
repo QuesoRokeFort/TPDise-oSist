@@ -19,9 +19,7 @@ public class MedidaSeguridad {
 
     @Column(name = "valorPorcentual")
     private Integer valorPorcentual;
-    @ManyToOne
-    @JoinColumn(name = "idPoliza")
-    private Poliza poliza;
+
     public MedidaSeguridad() {
     }
 
@@ -66,13 +64,5 @@ public class MedidaSeguridad {
                 ", nombreMedida='" + nombreMedida + '\'' +
                 ", valorPorcentual=" + valorPorcentual +
                 '}';
-    }
-
-    public Poliza getPoliza() {
-        return poliza;
-    }
-
-    public void setPoliza(Poliza poliza) {
-        this.poliza = poliza;
     }
 }

@@ -277,7 +277,7 @@ public class AltaPoliza2 {
         vehiculoDTO.setKilometrosAnuales(Integer.parseInt(kmText.getText()));
         System.out.println(vehiculoDTO.toString());
         polizaDTO.setSumaAsegurada(GestorPoliza.calcularSumaAsegurada(vehiculoDTO));
-        if(garaje.isSelected()){
+        /*if(garaje.isSelected()){
             MedidaSeguridadDTO garaje = new MedidaSeguridadDTO();
             garaje.setNombreMedida("garaje");
             garaje.setValorPorcentual(VALORGARAJE);
@@ -300,7 +300,8 @@ public class AltaPoliza2 {
             tuercasAntirobo.setNombreMedida("Tuercas Antirobos");
             tuercasAntirobo.setValorPorcentual(VALORTUERCAS);
             polizaDTO.addMedida(tuercasAntirobo);
-        }
+        }*/
+        //todo ver todo esto
         polizaDTO.setDerechoDeEmision(GestorPoliza.calcularDerechoEmision());
         String selectedLocalidadNombre = (String) LocalidadBox.getSelectedItem();
         localidad = currentPersona.getDireccion().stream()
@@ -380,16 +381,16 @@ public class AltaPoliza2 {
         if (AñoVehiculoBox.getSelectedIndex()<0){
             aviso+= " AñoVehiculo,";
         }
-        if (motorText.getText().equals("Escriba aqui")){
+        if (motorText.getText().equals("")||motorText.getText().length()<20){
             aviso+= " Motor,";
         }
-        if(chasisText.getText().equals("Escriba aqui")){
+        if(chasisText.getText().equals("")||chasisText.getText().length()<20){
             aviso+= " Chasis,";
         }
-        if(patenteText.getText().equals("Escriba aqui")){
+        if(patenteText.getText().equals("")||patenteText.getText().length()<20){
             aviso+= " Patente,";
         }
-        if(kmText.getText().equals("Escriba aqui")){
+        if(kmText.getText().equals("")||kmText.getText().length()<20|| !kmText.getText().matches("\\d+")){
             aviso+= " Km,";
         }
         if (siniestrosBox.getSelectedIndex()<0){
@@ -402,7 +403,7 @@ public class AltaPoliza2 {
 
         if(!(fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0)) {
             String textoFecha = fechaText1.getText();
-
+            validateFecha(textoFecha);
             Matcher matcher = pattern.matcher(textoFecha);
 
             if (!matcher.matches()) {
@@ -462,6 +463,11 @@ public class AltaPoliza2 {
         }
         return aviso;
     }
+
+    private void validateFecha(String textoFecha) {
+        //todo
+    }
+
     public JPanel getPantallaPrincipal() {
         return PanelPrincipal;
     }

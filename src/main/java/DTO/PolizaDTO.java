@@ -46,7 +46,6 @@ public class PolizaDTO{
 
     private Integer prima;
 
-    private CambioPoliza cambiosPoliza ;
 
     private ClienteDTO cliente;
 
@@ -57,12 +56,11 @@ public class PolizaDTO{
     private LocalidadDTO localidad;
 
     private List<HijoDTO> hijos = new ArrayList<>();
-    private List<MedidaSeguridadDTO> medidas = new ArrayList<>();
-
+    private MedidaPolizaDTO medidas;
     public PolizaDTO() {
     }
 
-    public PolizaDTO(Integer id, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, CambioPoliza cambiosPoliza, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, List<MedidaSeguridadDTO> medidas) {
+    public PolizaDTO(Integer id, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, MedidaPolizaDTO medidas) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -76,7 +74,6 @@ public class PolizaDTO{
         this.descuentos = descuentos;
         this.montoTotal = montoTotal;
         this.prima = prima;
-        this.cambiosPoliza = cambiosPoliza;
         this.cliente = cliente;
         this.cobertura = cobertura;
         this.vehiculo = vehiculo;
@@ -99,13 +96,12 @@ public class PolizaDTO{
         this.descuentos = poliza.getDescuentos();
         this.montoTotal = poliza.getMontoTotal();
         this.prima = poliza.getPrima();
-        this.cambiosPoliza = poliza.getCambiosPoliza();
         this.cliente = new ClienteDTO(poliza.getCliente());
         this.cobertura = new CoberturaDTO(poliza.getCobertura());
         this.vehiculo = new VehiculoDTO(poliza.getVehiculo());
         this.localidad = new LocalidadDTO(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoPoliza -> this.hijos.add(new HijoDTO(hijoPoliza)));
-        poliza.getMedidas().forEach(medidas->this.medidas.add(new MedidaSeguridadDTO(medidas)));
+        this.medidas=new MedidaPolizaDTO(poliza.getMedidas());
     }
 
     public String getNroPoliza() {
@@ -220,13 +216,6 @@ public class PolizaDTO{
         this.prima = prima;
     }
 
-    public CambioPoliza getCambiosPoliza() {
-        return cambiosPoliza;
-    }
-
-    public void setCambiosPoliza(CambioPoliza cambiosPoliza) {
-        this.cambiosPoliza = cambiosPoliza;
-    }
 
     public ClienteDTO getCliente() {
         return cliente;
@@ -285,7 +274,6 @@ public class PolizaDTO{
                 ", descuentos=" + descuentos +
                 ", montoTotal=" + montoTotal +
                 ", prima=" + prima +
-                ", cambiosPoliza=" + cambiosPoliza +
                 ", cliente=" + cliente +
                 ", cobertura=" + cobertura +
                 ", vehiculo=" + vehiculo +
@@ -298,13 +286,10 @@ public class PolizaDTO{
     public void addHijo(HijoDTO hijoDTO) {
         this.hijos.add(hijoDTO);
     }
-    public List<MedidaSeguridadDTO> getMedidasSeguradad() {
+    public MedidaPolizaDTO getMedidasSeguradad() {
         return medidas;
     }
 
-    public void addMedida(MedidaSeguridadDTO garaje) {
-        this.medidas.add(garaje);
-    }
 
 	public boolean getEstadoPolizaPdf() {
         return estadoPolizaPdf;

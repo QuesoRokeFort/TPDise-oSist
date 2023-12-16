@@ -16,9 +16,6 @@ public class Pais {
 	@Column (name = "nombre", length = 20)
 	private String nombre;
 
-	@OneToMany(mappedBy = "pais", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Provincia> provincias = new ArrayList<>();
-
 	public Pais(PaisDTO paisDTO) {
 		this.id = paisDTO.getId();
 		this.nombre = paisDTO.getNombre();
@@ -56,7 +53,4 @@ public class Pais {
 		this.nombre = nombre;
 	}
 
-	public List<Provincia> getProvincias() {
-		return provincias;
-	}
 }

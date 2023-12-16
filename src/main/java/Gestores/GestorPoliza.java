@@ -61,13 +61,14 @@ public class GestorPoliza {
 		}
 
 		currentPoliza.setNroPoliza(generarNroPoliza(vehiculoDTO,currentPoliza));
-		currentPoliza.getMedidasSeguradad().forEach(m->{
+		/*currentPoliza.getMedidasSeguradad().forEach(m->{
 			MedidaSeguridad medidaSeguridad = new MedidaSeguridad();
 			medidaSeguridad.setValorPorcentual(m.getValorPorcentual());
 			medidaSeguridad.setNombreMedida(m.getNombreMedida());
 			medidaSeguridad.setPoliza(poliza);
 			poliza.addMedidas(medidaSeguridad);
-		});
+		});*/
+		//TODO VER ESTO
 		if (validatePolizaDTO(currentPoliza)) {
 			poliza.setDerechoDeEmision(currentPoliza.getDerechoDeEmision());
 			poliza.setFormaDePago(currentPoliza.getFormaDePago());
@@ -299,11 +300,12 @@ public class GestorPoliza {
 		}
 
 
-		for (MedidaSeguridadDTO medida : polizaDTO.getMedidasSeguradad()) {
+		/*for (MedidaSeguridadDTO medida : polizaDTO.getMedidasSeguradad()) {
 			if (medida == null || !validateMedidaSeguridadDTO(medida)) {
 				throw new IllegalArgumentException("Una de las medidas de seguridad de la póliza no es válida");
 			}
-		}
+		}*/
+		//TODO VER ESTO TAMBIEN
 
 		return true;
 	}

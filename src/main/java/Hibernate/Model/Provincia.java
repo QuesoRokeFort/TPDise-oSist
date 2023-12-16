@@ -20,8 +20,6 @@ public class Provincia {
     @ManyToOne
     @JoinColumn(name = "pais_id")
     private Pais pais;
-    @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL, orphanRemoval = true) // no seria mapped by= idProvincia?
-    private List<Localidad> localidades  = new ArrayList<>();
 
     public Provincia(ProvinciaDTO provincia) {
         this.id = provincia.getId();

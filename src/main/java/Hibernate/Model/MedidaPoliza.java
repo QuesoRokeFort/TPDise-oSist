@@ -14,25 +14,25 @@ public class MedidaPoliza {
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "idMedida")
-    private MedidaSeguridad medidaSeguridad;
+    private List<MedidaSeguridad> medidaSeguridad;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "idPoliza")
     private Poliza poliza;
 
     public MedidaPoliza() {
     }
 
-    public MedidaPoliza(Integer id, MedidaSeguridad medidaSeguridad, Poliza poliza) {
+    public MedidaPoliza(Integer id, List<MedidaSeguridad> medidaSeguridad, Poliza poliza) {
         this.id = id;
         this.medidaSeguridad = medidaSeguridad;
         this.poliza = poliza;
     }
     public MedidaPoliza(MedidaPolizaDTO medidaPoliza) {
         this.id = medidaPoliza.getId();
-        this.medidaSeguridad = medidaPoliza.getMedidaSeguridad();
+        medidaPoliza.getMedidaSeguridad().forEach(m-> this.medidaSeguridad.add(new MedidaSeguridad(m)));
         this.poliza = medidaPoliza.getPoliza();
     }
 
@@ -44,11 +44,11 @@ public class MedidaPoliza {
         this.id = id;
     }
 
-    public MedidaSeguridad getMedidaSeguridad() {
+    public List<MedidaSeguridad> getMedidaSeguridad() {
         return medidaSeguridad;
     }
 
-    public void setMedidaSeguridad(MedidaSeguridad medidaSeguridad) {
+    public void setMedidaSeguridad(List<MedidaSeguridad> medidaSeguridad) {
         this.medidaSeguridad = medidaSeguridad;
     }
 

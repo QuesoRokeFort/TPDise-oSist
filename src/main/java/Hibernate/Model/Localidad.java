@@ -18,8 +18,7 @@ public class Localidad {
 	@ManyToOne
 	@JoinColumn(name = "provincia_id")
 	private Provincia provincia;
-	@OneToMany(mappedBy = "localidad", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Direccion> direcciones  = new ArrayList<>();
+
 	public Localidad() {
 	}
 

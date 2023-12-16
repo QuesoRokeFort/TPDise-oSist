@@ -28,7 +28,7 @@ public class Direccion {
 	@JoinColumn(name = "idLocalidad")
 	private Localidad localidad;
 	@ManyToOne
-	@JoinColumn(name = "idPersona")
+	@JoinColumn(name = "idPersona",nullable = false)
 	private Persona persona;
 
 	public Direccion() {

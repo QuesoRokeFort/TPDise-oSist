@@ -19,9 +19,6 @@ public class Cobertura {
     @JoinColumn(name = "idTipoCobertura")
     private TipoCobertura tipoCobertura;
 
-    //No puse PrecioProovedorTipo porque viendo la etapa 3 parece que no esta conectado directo
-    // sino que lo saca de tipoCobetura
-
     @ManyToOne
     @JoinColumn(name = "idProveedor")
     private Proveedor proveedor;

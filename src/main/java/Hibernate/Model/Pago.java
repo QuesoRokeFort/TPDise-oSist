@@ -37,7 +37,7 @@ public class Pago {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario; //Estaba como operador pero lo puse como usuario para que se igual a los otros
+    private Usuario usuario;
 
     public Pago() {
     }
