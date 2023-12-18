@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Collections;
 
 import static Interface.GestorInterface.cardLayout;
 import static Interface.GestorInterface.cardPanel;
@@ -70,9 +71,9 @@ public class AltaPoliza2 {
     private JComboBox siniestrosBox;
     private JButton X1;
    public JButton cancelarButton;
-    private List<ModeloDTO> modelos;
-    private List<MarcaDTO> marcas;
-    private List<AnioFabricacionDTO> años;
+    private List<ModeloDTO> modelos=new ArrayList<>();
+    private List<MarcaDTO> marcas=new ArrayList<>();
+    private List<AnioFabricacionDTO> años=new ArrayList<>();
     static VehiculoDTO vehiculoDTO;
     static LocalidadDTO localidad;
     private boolean bloquearCargaAño = false;
@@ -216,9 +217,10 @@ public class AltaPoliza2 {
                         System.out.println(ProvComboBox.getSelectedItem());
                         ProvinciaDTO selectedProv = uniqueProvinces.stream().filter(provinciaDTO -> provinciaDTO.getNombre().equals(selectedProvNombre)).findFirst().orElse(null);
                         System.out.println(selectedProv.getId());
-                        List<LocalidadDTO> locSelecionadas = GestorDirrecciones.getLocalidadesByProvincia(selectedProv);
+                        List<LocalidadDTO> locSelecionadas = new ArrayList<>(GestorDirrecciones.getLocalidadesByProvincia(selectedProv));
                         DefaultComboBoxModel<String> locComboBoxModel = new DefaultComboBoxModel<>();
                         LocalidadBox.setModel(locComboBoxModel);
+                        Collections.sort(locSelecionadas, (l1, l2) -> l1.getNombre().compareToIgnoreCase(l2.getNombre()));
                         locSelecionadas.forEach(l -> locComboBoxModel.addElement(l.getNombre()));
                         LocalidadBox.setSelectedIndex(-1);
                     }
@@ -233,8 +235,9 @@ public class AltaPoliza2 {
                     if (!bloquearCargaMod) {
                         bloquearCargaAño = true;
                         Object selectedMarcaObject = MarcaBox.getSelectedItem();
-                        modelos = GestorPoliza.getModelosByMarca(marcas.stream().filter(m -> m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null));
+                        modelos = new ArrayList<>(GestorPoliza.getModelosByMarca(marcas.stream().filter(m -> m.getNombreMarca().equals(selectedMarcaObject)).findFirst().orElse(null)));
                         DefaultComboBoxModel<String> modComboBoxModel = new DefaultComboBoxModel<>();
+                        Collections.sort(modelos, (m1, m2) -> m1.getNombreModelo().compareToIgnoreCase(m2.getNombreModelo()));
                         modelos.forEach(m -> modComboBoxModel.addElement(m.getNombreModelo()));
                         ModeloBox.setModel(modComboBoxModel);
                         ModeloBox.setSelectedIndex(-1);
@@ -476,14 +479,17 @@ public class AltaPoliza2 {
     public void cargarDatos(){
         bloquearCargaLoc = true;
         ProvComboBox.removeAllItems();
-        uniqueProvinces = GestorDirrecciones.getProvincias();
-        uniqueProvinces.forEach(p->ProvComboBox.addItem(p.getNombre()));
+        uniqueProvinces = new ArrayList<>(GestorDirrecciones.getProvincias());
+        Collections.sort(uniqueProvinces, (p1, p2) -> p1.getNombre().compareToIgnoreCase(p2.getNombre()));
+        uniqueProvinces.forEach(p -> ProvComboBox.addItem(p.getNombre()));
         ProvComboBox.setSelectedIndex(-1);
         bloquearCargaLoc=false;
         bloquearCargaMod =true;
         DefaultComboBoxModel<String> marcaComboBoxModel = new DefaultComboBoxModel<>();
         MarcaBox.setModel(marcaComboBoxModel);
-        marcas= GestorPoliza.getMarcas();
+        marcas= new ArrayList<>(GestorPoliza.getMarcas());
+
+        Collections.sort(marcas, (m1, m2) -> m1.getNombreMarca().compareToIgnoreCase(m2.getNombreMarca()));
         marcas.forEach(marcaDTO -> marcaComboBoxModel.addElement(marcaDTO.getNombreMarca()));
         MarcaBox.setSelectedIndex(-1);
         bloquearCargaMod =false;
