@@ -386,16 +386,16 @@ public class AltaPoliza2 {
         if (AñoVehiculoBox.getSelectedIndex()<0){
             aviso+= " AñoVehiculo,";
         }
-        if (motorText.getText().equals("")||motorText.getText().length()<20){
+        if (motorText.getText().equals("")||motorText.getText().length()>20){
             aviso+= " Motor,";
         }
-        if(chasisText.getText().equals("")||chasisText.getText().length()<20){
+        if(chasisText.getText().equals("")||chasisText.getText().length()>20){
             aviso+= " Chasis,";
         }
-        if(patenteText.getText().equals("")||patenteText.getText().length()<20){
+        if(patenteText.getText().equals("")||patenteText.getText().length()>20){
             aviso+= " Patente,";
         }
-        if(kmText.getText().equals("")||kmText.getText().length()<20|| !kmText.getText().matches("\\d+")){
+        if(kmText.getText().equals("")||kmText.getText().length()>20|| !kmText.getText().matches("\\d+")){
             aviso+= " Km,";
         }
         if (siniestrosBox.getSelectedIndex()<0){

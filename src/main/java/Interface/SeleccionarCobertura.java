@@ -39,7 +39,6 @@ public class SeleccionarCobertura {
 	private JScrollPane scrollPane;
 	private List<PrecioProveedorTipoDTO> listaPrecios;
 	private DefaultTableModel modeloTabla;
-	private int selectedRow;
 	static CoberturaDTO cob;
 
 
@@ -60,7 +59,6 @@ public class SeleccionarCobertura {
 
 
 	private void createUIComponents() {
-		selectedRow = -1;
 		confirmarButton = new JButton();
 		confirmarButton.addActionListener(new ActionListener() {
 			@Override
@@ -69,7 +67,7 @@ public class SeleccionarCobertura {
 				cob.setAjusteCantHijos(GestorPoliza.CalcularAjusteHIJOS(currentPoliza.getHijosPoliza()));
 				cob.setAjustePorKm(GestorPoliza.CalcularAjusteKM(vehiculoDTO.getKilometrosAnuales()));
 				cob.setAjusteSiniestro(GestorPoliza.calcularAjusteSiniestro(currentPoliza.getNroSiniestrosAnuales()));
-				PrecioProveedorTipoDTO selectedPrecio = listaPrecios.get(selectedRow);
+				PrecioProveedorTipoDTO selectedPrecio = listaPrecios.get(tablaCoberturas.getSelectedRow());
 				cob.setPrecio(selectedPrecio.getPrecio());
 				cob.setProveedor(selectedPrecio.getProveedor());
 				cob.setTipoCobertura(selectedPrecio.getTipoCobertura());
@@ -103,11 +101,15 @@ public class SeleccionarCobertura {
 		NroCliente = new JLabel();
 		Nombre = new JLabel();
 		Apellido = new JLabel();
-		String[] columnas = {"PROVEEDORES", "COBERTURA", "PRECIO", "SELECCIONAR"};
+		String[] columnas = {"PROVEEDORES", "COBERTURA", "PRECIO"};
 		modeloTabla = new DefaultTableModel(null, columnas) {
 			@Override
 			public Class<?> getColumnClass(int columnIndex) {
 				return columnIndex == 3 ? Boolean.class : Object.class;
+			}
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				return false;
 			}
 		};
 		tablaCoberturas = new JTable();
@@ -136,69 +138,13 @@ public class SeleccionarCobertura {
 			modeloTabla.addRow(fila);
 		}
 		tablaCoberturas.setModel(modeloTabla);
-		// Crear el renderizador de celdas
+
 		DefaultTableCellRenderer renderizador = new DefaultTableCellRenderer();
-		// Centrar el contenido en todas las columnas
 		renderizador.setHorizontalAlignment(SwingConstants.CENTER);
 
 		// Aplicar el renderizador a todas las columnas
 		for (int i = 0; i < tablaCoberturas.getColumnCount(); i++) {
 			tablaCoberturas.getColumnModel().getColumn(i).setCellRenderer(renderizador);
-		}
-		tablaCoberturas.getColumnModel().getColumn(3).setCellRenderer(new RadioButtonRenderer());
-		tablaCoberturas.getColumnModel().getColumn(3).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
-	}
-	class RadioButtonRenderer extends DefaultTableCellRenderer {
-		private JRadioButton radioButton = new JRadioButton();
-
-		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-													   boolean hasFocus, int row, int column) {
-			if (value != null && value instanceof Boolean) {
-				radioButton.setSelected((Boolean) value);
-			}
-			return radioButton;
-		}
-	}
-
-	class RadioButtonEditor extends DefaultCellEditor implements ActionListener {
-		private JRadioButton radioButton;
-		private ButtonGroup buttonGroup;
-		private SeleccionarCobertura seleccionarCobertura; // Reference to the outer class
-
-		public RadioButtonEditor(JCheckBox checkBox, SeleccionarCobertura buscarCliente) {
-			super(checkBox);
-			this.seleccionarCobertura = buscarCliente;
-			this.buttonGroup = new ButtonGroup();
-		}
-
-		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-			if (value != null && value instanceof Boolean) {
-				radioButton = new JRadioButton();
-				radioButton.setSelected((Boolean) value);
-				radioButton.addActionListener(this);
-
-				// Add the radio button to the button group for the column
-				buttonGroup.add(radioButton);
-			}
-			return radioButton;
-		}
-
-		public Object getCellEditorValue() {
-			return radioButton.isSelected();
-		}
-
-		public void actionPerformed(ActionEvent actionEvent) {
-			// Unselect other radio buttons in the same column
-			for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
-				AbstractButton button = buttons.nextElement();
-				if (button != radioButton) {
-					button.setSelected(false);
-				}
-			}
-
-			seleccionarCobertura.selectedRow = tablaCoberturas.getEditingRow(); // Set the selected row index
-			stopCellEditing(); // Manually stop editing to trigger the update
-			seleccionarCobertura.modeloTabla.fireTableDataChanged(); // Notify the table model
 		}
 	}
 

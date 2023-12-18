@@ -37,15 +37,18 @@ public class BuscarCliente {
     private Integer documento;
     private List <PersonaDTO> lista;
     private DefaultTableModel modeloTabla;
-    private int selectedRow = -1;
     private boolean defaultTable;
     private int filas;
     public BuscarCliente(){
-        String[] columnas = {"NRO CLIENTE", "APELLIDO", "NOMBRE", "TIPO DOCUMENTO", "NRO DOCUMENTO", "SELECCIONAR"};
+        String[] columnas = {"NRO CLIENTE", "APELLIDO", "NOMBRE", "TIPO DOCUMENTO", "NRO DOCUMENTO"};
         modeloTabla = new DefaultTableModel(null, columnas) {
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                return columnIndex == 5 ? Boolean.class : Object.class;
+                return columnIndex == 4 ? Boolean.class : Object.class;
+            }
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
             }
         };
         defaulttable();
@@ -89,8 +92,6 @@ public class BuscarCliente {
                     // Now, you can update the table with the filtered list
                     cargarTabla(lista);
                     tablaClientes.setModel(modeloTabla);
-                    tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
-                    tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
                 } else {
                     if (!defaultTable) defaulttable();
                 }
@@ -167,11 +168,6 @@ public class BuscarCliente {
             tablaClientes.getColumnModel().getColumn(i).setCellRenderer(renderizador);
         }
 
-        // Configurar el renderizador de la columna de selección
-        tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
-        tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this));
-        tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
-        tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
     }
 
     private void createUIComponents() {
@@ -182,65 +178,9 @@ public class BuscarCliente {
         filas = 5;
     }
 
-    class RadioButtonRenderer extends DefaultTableCellRenderer {
-        private JRadioButton radioButton = new JRadioButton();
-
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-                                                       boolean hasFocus, int row, int column) {
-            if (value != null && value instanceof Boolean) {
-                radioButton.setSelected((Boolean) value);
-            }
-            return radioButton;
-        }
-    }
-
-    class RadioButtonEditor extends DefaultCellEditor implements ActionListener {
-        private JRadioButton radioButton;
-        private ButtonGroup buttonGroup;
-        private BuscarCliente buscarCliente; // Reference to the outer class
-
-        public RadioButtonEditor(JCheckBox checkBox, BuscarCliente buscarCliente) {
-            super(checkBox);
-            this.buscarCliente = buscarCliente;
-            this.buttonGroup = new ButtonGroup();
-        }
-
-        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-            if (value != null && value instanceof Boolean) {
-                radioButton = new JRadioButton();
-                radioButton.setSelected((Boolean) value);
-                radioButton.addActionListener(this);
-
-                // Add the radio button to the button group for the column
-                buttonGroup.add(radioButton);
-            }
-            return radioButton;
-        }
-
-        public Object getCellEditorValue() {
-            return radioButton.isSelected();
-        }
-
-        public void actionPerformed(ActionEvent actionEvent) {
-            // Unselect other radio buttons in the same column
-            for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
-                AbstractButton button = buttons.nextElement();
-                if (button != radioButton) {
-                    button.setSelected(false);
-                }
-            }
-
-            buscarCliente.selectedRow = tablaClientes.getEditingRow(); // Set the selected row index
-            stopCellEditing(); // Manually stop editing to trigger the update
-            buscarCliente.modeloTabla.fireTableDataChanged(); // Notify the table model
-        }
-    }
 
     public PersonaDTO getSelectedPerson() {
-        if (selectedRow != -1 && selectedRow < lista.size()) {
-            return lista.get(selectedRow);
-        }
-        return null;
+        return lista.get(tablaClientes.getSelectedRow());
     }
 
     public JPanel getpantallaprincipal() {
