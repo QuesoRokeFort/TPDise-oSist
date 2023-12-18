@@ -4,7 +4,9 @@ import Hibernate.Model.Localidad;
 import Hibernate.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LocalidadDao {
@@ -91,6 +93,38 @@ public class LocalidadDao {
 				transaction.rollback();
 			}
 		}
+	}
+
+	public static List<Localidad> getLocalidadesByProvincia(int idProvincia) {
+		Session session = null;
+		Transaction transaction = null;
+		List<Localidad> localidades = null;
+
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			transaction = session.beginTransaction();
+
+			String hql = "FROM Localidad l " +
+					"WHERE l.provincia.id = :idProvincia";
+
+			Query<Localidad> query = session.createQuery(hql, Localidad.class);
+			query.setParameter("idProvincia", idProvincia);
+
+			localidades = query.getResultList();
+
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null && transaction.isActive()) {
+				transaction.rollback();
+			}
+			e.printStackTrace(); // Maneja la excepción según tus necesidades.
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+
+		return localidades;
 	}
 }
 

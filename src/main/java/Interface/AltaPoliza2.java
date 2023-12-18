@@ -1,6 +1,7 @@
 package Interface;
 
 import DTO.*;
+import Gestores.GestorDirrecciones;
 import Gestores.GestorPoliza;
 import Hibernate.Model.*;
 
@@ -12,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -76,6 +78,7 @@ public class AltaPoliza2 {
     private boolean bloquearCargaAño = false;
     private boolean bloquearCargaLoc = false;
     private boolean bloquearCargaMod = false;
+    List<ProvinciaDTO> uniqueProvinces= new ArrayList<>();
 
 
     public AltaPoliza2() {
@@ -209,15 +212,14 @@ public class AltaPoliza2 {
             public void itemStateChanged(ItemEvent event) {
                 if (event.getStateChange() == ItemEvent.SELECTED) {
                     if (!bloquearCargaLoc){
-                        Object selectedProvObject = ProvComboBox.getSelectedItem();
-                        List<String> locSelecionadas = currentPersona.getDireccion().stream()
-                                .filter(direccionDTO -> direccionDTO.getLocalidad().getProvincia().getNombre().equals(selectedProvObject))
-                                .map(direccionDTO -> direccionDTO.getLocalidad().getNombre())
-                                .distinct()
-                                .toList();
+                        String selectedProvNombre = (String) ProvComboBox.getSelectedItem();
+                        System.out.println(ProvComboBox.getSelectedItem());
+                        ProvinciaDTO selectedProv = uniqueProvinces.stream().filter(provinciaDTO -> provinciaDTO.getNombre().equals(selectedProvNombre)).findFirst().orElse(null);
+                        System.out.println(selectedProv.getId());
+                        List<LocalidadDTO> locSelecionadas = GestorDirrecciones.getLocalidadesByProvincia(selectedProv);
                         DefaultComboBoxModel<String> locComboBoxModel = new DefaultComboBoxModel<>();
                         LocalidadBox.setModel(locComboBoxModel);
-                        locSelecionadas.forEach(l -> locComboBoxModel.addElement(l));
+                        locSelecionadas.forEach(l -> locComboBoxModel.addElement(l.getNombre()));
                         LocalidadBox.setSelectedIndex(-1);
                     }
                 }
@@ -474,11 +476,8 @@ public class AltaPoliza2 {
     public void cargarDatos(){
         bloquearCargaLoc = true;
         ProvComboBox.removeAllItems();
-        List<String> uniqueProvinces = currentPersona.getDireccion().stream()
-                .map(direccionDTO -> direccionDTO.getLocalidad().getProvincia().getNombre())
-                .distinct()
-                .toList();
-        uniqueProvinces.forEach(p->ProvComboBox.addItem(p));
+        uniqueProvinces = GestorDirrecciones.getProvincias();
+        uniqueProvinces.forEach(p->ProvComboBox.addItem(p.getNombre()));
         ProvComboBox.setSelectedIndex(-1);
         bloquearCargaLoc=false;
         bloquearCargaMod =true;

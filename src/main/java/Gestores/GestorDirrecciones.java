@@ -36,4 +36,10 @@ public class GestorDirrecciones {
 		LocalidadDao.getLocalidades().forEach(localidad -> localidadDTO.add(new LocalidadDTO(localidad)));
 		return localidadDTO;
 	}
+
+	public static List<LocalidadDTO> getLocalidadesByProvincia(ProvinciaDTO selectedProvObject) {
+		List<LocalidadDTO> localidadDTOS = new ArrayList<>();
+		LocalidadDao.getLocalidadesByProvincia(selectedProvObject.getId()).stream().forEach(localidad -> localidadDTOS.add(new LocalidadDTO(localidad)));
+		return localidadDTOS;
+	}
 }
