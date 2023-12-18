@@ -33,8 +33,8 @@ public class BuscarCliente {
     private String nombre;
     private String apellido;
     private TipoDocumento tipoDocumento;
-    private int nroCliente;
-    private int documento;
+    private Integer nroCliente;
+    private Integer documento;
     private List <PersonaDTO> lista;
     private DefaultTableModel modeloTabla;
     private int selectedRow = -1;
@@ -51,45 +51,51 @@ public class BuscarCliente {
         defaulttable();
 
         buscarButton.addActionListener(e -> {
-            if (!nombreText.getText().equals("")) {
-                nombre = nombreText.getText();
-            } else {
-                nombre = null;
-            }
-            if (!ApellidoText.getText().equals("")) {
-                apellido = ApellidoText.getText();
-            } else {
-                apellido = null;
-            }
-            if (!(tipoDocumentobox.getSelectedIndex() == -1)) {
-                tipoDocumento = (TipoDocumento) tipoDocumentobox.getSelectedItem();
-            } else {
-                tipoDocumento = null;
-            }
-            if (!documentoText.getText().equals("")) {
-                documento = Integer.parseInt(documentoText.getText());
-            } else {
-                documento = 0;
-            }
-            if (!nroClienteText.getText().equals("")) {
-                nroCliente = Integer.parseInt(nroClienteText.getText());
-            } else {
-                nroCliente = 0;
-            }
-            if (nombre != null || apellido != null || tipoDocumento != null || documento > 0 || nroCliente > 0) {
-                defaultTable=false;
-                lista = GestorPersona.getClientes(nombre,apellido,tipoDocumento,documento,nroCliente);
+            String aviso = validateData();
+            if (aviso.equals("Error en:")) {
+                if (!nombreText.getText().equals("")) {
+                    nombre = nombreText.getText();
+                } else {
+                    nombre = null;
+                }
+                if (!ApellidoText.getText().equals("")) {
+                    apellido = ApellidoText.getText();
+                } else {
+                    apellido = null;
+                }
+                if (!(tipoDocumentobox.getSelectedIndex() == -1)) {
+                    tipoDocumento = (TipoDocumento) tipoDocumentobox.getSelectedItem();
+                    System.out.println(tipoDocumento);
+                } else {
+                    tipoDocumento = null;
+                }
+                if (!documentoText.getText().equals("")) {
+                    documento = Integer.parseInt(documentoText.getText());
+                } else {
+                    documento = null;
+                }
+                if (!nroClienteText.getText().equals("")) {
+                    nroCliente = Integer.parseInt(nroClienteText.getText());
+                } else {
+                    nroCliente = null;
+                }
+                if (nombre != null || apellido != null || tipoDocumento != null || documento != null || nroCliente != null) {
+                    defaultTable = false;
+                    lista = GestorPersona.getClientes(nombre, apellido, tipoDocumento, documento, nroCliente);
 
-                // Clear the existing data in the table
-                modeloTabla.setRowCount(0);
+                    // Clear the existing data in the table
+                    modeloTabla.setRowCount(0);
 
-                // Now, you can update the table with the filtered list
-                cargarTabla(lista);
-                tablaClientes.setModel(modeloTabla);
-                tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
-                tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
+                    // Now, you can update the table with the filtered list
+                    cargarTabla(lista);
+                    tablaClientes.setModel(modeloTabla);
+                    tablaClientes.getColumnModel().getColumn(5).setCellRenderer(new RadioButtonRenderer());
+                    tablaClientes.getColumnModel().getColumn(5).setCellEditor(new RadioButtonEditor(new JCheckBox(), this)); // Pass 'this' reference
+                } else {
+                    if (!defaultTable) defaulttable();
+                }
             }else {
-                if (!defaultTable) defaulttable();
+                JOptionPane.showMessageDialog(null,aviso);
             }
         });
 
@@ -102,6 +108,23 @@ public class BuscarCliente {
                 }
             }
         });
+    }
+
+    private String validateData() {
+        String aviso = "Error en:";
+        if (nombreText.getText().length()>20) {
+            aviso += " Nombre";
+        }
+        if (ApellidoText.getText().length()>20) {
+            aviso +=" Apellido";
+        }
+        if ((!documentoText.getText().matches("\\d+")&& !documentoText.getText().equals("")) || documentoText.getText().length()>15) {
+            aviso +=" Documento";
+        }
+        if ((!nroClienteText.getText().matches("\\d+")&& !nroClienteText.getText().equals("")) || nroClienteText.getText().length()>15) {
+            aviso +=" NroCliente";
+        }
+        return aviso;
     }
 
     private void cargarTabla(List<PersonaDTO> lista) {
@@ -152,7 +175,7 @@ public class BuscarCliente {
     }
 
     private void createUIComponents() {
-        tipoDocumentobox = new JComboBox<>(TipoDocumento.values());
+        tipoDocumentobox = new JComboBox<>(TipoDocumento.sortedValues());
         tipoDocumentobox.setSelectedIndex(-1);
         Integer valores[] ={5,10,15};
         largoBox = new JComboBox<>(valores);

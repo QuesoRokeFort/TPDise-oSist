@@ -56,11 +56,11 @@ public class PolizaDTO{
     private LocalidadDTO localidad;
 
     private List<HijoDTO> hijos = new ArrayList<>();
-    private MedidaPolizaDTO medidas;
+    private List<MedidaSeguridadDTO>  medidas;
     public PolizaDTO() {
     }
 
-    public PolizaDTO(Integer id, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, MedidaPolizaDTO medidas) {
+    public PolizaDTO(Integer id, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, ClienteDTO cliente, CoberturaDTO cobertura, VehiculoDTO vehiculo, LocalidadDTO localidad, List<HijoDTO> hijos, List<MedidaSeguridadDTO> medidas) {
         this.id = id;
         this.sumaAsegurada = sumaAsegurada;
         this.nroSiniestrosAnuales = nroSiniestrosAnuales;
@@ -101,7 +101,7 @@ public class PolizaDTO{
         this.vehiculo = new VehiculoDTO(poliza.getVehiculo());
         this.localidad = new LocalidadDTO(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoPoliza -> this.hijos.add(new HijoDTO(hijoPoliza)));
-        this.medidas=new MedidaPolizaDTO(poliza.getMedidas());
+        //this.medidas=new MedidaPolizaDTO(poliza.getMedidas());
     }
 
     public String getNroPoliza() {
@@ -286,7 +286,7 @@ public class PolizaDTO{
     public void addHijo(HijoDTO hijoDTO) {
         this.hijos.add(hijoDTO);
     }
-    public MedidaPolizaDTO getMedidasSeguradad() {
+    public List<MedidaSeguridadDTO> getMedidasSeguradad() {
         return medidas;
     }
 

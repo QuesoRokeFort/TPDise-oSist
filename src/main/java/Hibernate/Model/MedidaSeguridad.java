@@ -10,9 +10,9 @@ import java.util.List;
 @Table(name = "MedidaSeguridad")
 public class MedidaSeguridad {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idMedida")
+    private Integer idMedida;
 
     @Column(name = "nombreMedida", length = 20)
     private String nombreMedida;
@@ -20,11 +20,20 @@ public class MedidaSeguridad {
     @Column(name = "valorPorcentual")
     private Integer valorPorcentual;
 
+    @ManyToMany
+    @JoinTable(
+            name = "Poliza_MedidaSeguridad",
+            joinColumns = @JoinColumn(name = "idMedida"),
+            inverseJoinColumns = @JoinColumn(name = "idPoliza")
+    )
+    private List<Poliza> polizas;
+
+
     public MedidaSeguridad() {
     }
 
     public MedidaSeguridad(Integer id, String nombreMedida, Integer valorPorcentual) {
-        this.id = id;
+        this.idMedida = id;
         this.nombreMedida = nombreMedida;
         this.valorPorcentual = valorPorcentual;
     }
@@ -34,11 +43,11 @@ public class MedidaSeguridad {
     }
 
     public Integer getId() {
-        return id;
+        return idMedida;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idMedida = id;
     }
 
     public String getNombreMedida() {
@@ -60,7 +69,7 @@ public class MedidaSeguridad {
     @Override
     public String toString() {
         return "MedidaSeguridad{" +
-                "id=" + id +
+                "id=" + idMedida +
                 ", nombreMedida='" + nombreMedida + '\'' +
                 ", valorPorcentual=" + valorPorcentual +
                 '}';

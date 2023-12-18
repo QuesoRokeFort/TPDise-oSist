@@ -75,15 +75,20 @@ public class Poliza {
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
     private List<Hijo> hijos = new ArrayList<>();
 
-    @OneToOne(mappedBy = "poliza",cascade = CascadeType.ALL)
-    private  MedidaPoliza medidas;
+    @ManyToMany
+    @JoinTable(
+            name = "Poliza_MedidaSeguridad",
+            joinColumns = @JoinColumn(name = "idPoliza"),
+            inverseJoinColumns = @JoinColumn(name = "idMedida")
+    )
+    private List<MedidaSeguridad> medidas = new ArrayList<>();
     @OneToMany(mappedBy = "poliza", cascade = CascadeType.ALL)
     private List<Cuota> cuotas = new ArrayList<>();
 
     public Poliza() {
     }
 
-    public Poliza(Integer id, String nroPoliza, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos, MedidaPoliza medidas, List<Cuota> cuotas) {
+    public Poliza(Integer id, String nroPoliza, Integer sumaAsegurada, Siniestros nroSiniestrosAnuales, String estadoPoliza, LocalDate fechaInicioVigencia, LocalDate fechaFinVigencia, String formaDePago, boolean estadoPolizaPdf, Integer premio, Integer derechoDeEmision, Integer descuentos, Integer montoTotal, Integer prima, Cliente cliente, Cobertura cobertura, Vehiculo vehiculo, Localidad localidad, List<Hijo> hijos,List<MedidaSeguridad> medidas, List<Cuota> cuotas) {
         this.id = id;
         this.nroPoliza = nroPoliza;
         this.sumaAsegurada = sumaAsegurada;
@@ -127,7 +132,7 @@ public class Poliza {
         this.vehiculo = new Vehiculo(poliza.getVehiculo());
         this.localidad = new Localidad(poliza.getLocalidad());
         poliza.getHijosPoliza().forEach(hijoDTO -> this.hijos.add(new Hijo(hijoDTO)));
-        this.medidas = new MedidaPoliza(poliza.getMedidasSeguradad());
+        //this.medidas = new MedidaPoliza(poliza.getMedidasSeguradad());
     }
 
     public List<Cuota> getCuotas() {
@@ -323,11 +328,11 @@ public class Poliza {
         this.nroPoliza = nroPoliza;
     }
 
-    public MedidaPoliza getMedidas() {
+    public List<MedidaSeguridad> getMedidas() {
         return medidas;
     }
 
-    public void setMedidas(MedidaPoliza medidas) {
+    public void setMedidas(List<MedidaSeguridad> medidas) {
         this.medidas = medidas;
     }
 

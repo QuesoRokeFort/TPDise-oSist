@@ -112,25 +112,26 @@ public class PersonaDao {
 			queryString.append(" AND (");
 
 			if (nombre != null) {
-				queryString.append("p.nombrePersona LIKE :nombre OR ");
+				queryString.append("p.nombrePersona LIKE :nombre AND ");
 			}
 			if (apellido != null) {
-				queryString.append("p.apellido LIKE :apellido OR ");
+				queryString.append("p.apellido LIKE :apellido AND ");
 			}
 			if (tipoDocumento != null) {
-				queryString.append("p.idTipoDocumento = :tipoDocumento OR ");
+				queryString.append("p.tipoDocumento = :tipoDocumento AND ");
 			}
 			if (nroDocumento != null) {
-				queryString.append("p.nroDocumento = :nroDocumento OR ");
+				queryString.append("p.nroDocumento = :nroDocumento AND ");
 			}
 			if (idCliente != null) {
-				queryString.append("p.cliente.nroCliente = :idCliente OR ");
+				queryString.append("p.cliente.nroCliente = :idCliente AND ");
 			}
 
 			queryString.setLength(queryString.length() - 4);
 			queryString.append(")");
 		}
 
+		System.out.println("Generated Query: " + queryString);
 		Query<Persona> query = session.createQuery(queryString.toString(), Persona.class);
 
 		if (nombre != null) {
@@ -140,6 +141,7 @@ public class PersonaDao {
 			query.setParameter("apellido", apellido + "%");
 		}
 		if (tipoDocumento != null) {
+
 			query.setParameter("tipoDocumento", tipoDocumento);
 		}
 		if (nroDocumento != null) {
@@ -148,8 +150,6 @@ public class PersonaDao {
 		if (idCliente != null) {
 			query.setParameter("idCliente", idCliente);
 		}
-		System.out.println(queryString);
-
 		return query.getResultList();
 	}
 

@@ -42,7 +42,7 @@ public class GestorPersona {
         return lista;
 	}
 
-    public static List<PersonaDTO> getClientes(String nombre, String apellido, TipoDocumento tipoDocumento, int documento, int nroCliente) {
+    public static List<PersonaDTO> getClientes(String nombre, String apellido, TipoDocumento tipoDocumento, Integer documento, Integer nroCliente) {
         List<PersonaDTO> lista = new ArrayList<>();
         lista = PersonaDao.getPersonaByCriteria(nombre,apellido,tipoDocumento,documento,nroCliente).stream()
                 .filter(persona -> persona.getCliente() != null)

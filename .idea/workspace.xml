@@ -4,30 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="el fin">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/RegistroCambioCobertura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/RegistroCambioLocalidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/RegistroCambioMedSeg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/RegistroCambioModelo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/RegistroCambioProvincia.java" afterDir="false" />
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="correciones parte 1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/PolizaMedidaSeguridad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/PolizaMedidaSeguridadKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/MedidaPolizaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/MedidaPolizaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/MedidaPolizaDTO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/PolizaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cobertura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Direccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Direccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Hijo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Hijo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Localidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Localidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaPoliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/MedidaPolizaDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PersonaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/PersonaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaPoliza.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaSeguridad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/MedidaSeguridad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Pais.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Poliza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Provincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Provincia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/TipoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/TipoDocumento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/GestorInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702653293783</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="correciones parte 1">
+      <created>1702769573792</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702769573792</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -355,7 +355,8 @@
     <MESSAGE value="post correcion final4" />
     <MESSAGE value="patente no necesaria now" />
     <MESSAGE value="el fin" />
-    <option name="LAST_COMMIT_MESSAGE" value="el fin" />
+    <MESSAGE value="correciones parte 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="correciones parte 1" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

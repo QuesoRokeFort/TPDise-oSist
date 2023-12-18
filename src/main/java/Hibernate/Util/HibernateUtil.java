@@ -70,12 +70,13 @@ public class HibernateUtil {
 				configuration.addAnnotatedClass(MedidaSeguridad.class);
 				configuration.addAnnotatedClass(Cuota.class);
 				configuration.addAnnotatedClass(Pago.class);
-				configuration.addAnnotatedClass(MedidaPoliza.class);
 				configuration.addAnnotatedClass(RegistroCambioProvincia.class);
 				configuration.addAnnotatedClass(RegistroCambioLocalidad.class);
 				configuration.addAnnotatedClass(RegistroCambioModelo.class);
 				configuration.addAnnotatedClass(RegistroCambioCobertura.class);
 				configuration.addAnnotatedClass(RegistroCambioMedSeg.class);
+				configuration.addAnnotatedClass(PolizaMedidaSeguridad.class);
+				configuration.addAnnotatedClass(PolizaMedidaSeguridadKey.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();

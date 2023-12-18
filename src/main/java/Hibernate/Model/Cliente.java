@@ -3,6 +3,9 @@ package Hibernate.Model;
 import DTO.ClienteDTO;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
@@ -28,6 +31,8 @@ public class Cliente {
 
 	@OneToOne(mappedBy = "cliente")
 	private Persona persona;
+	@OneToMany(mappedBy = "cliente")
+	private List<Poliza> polizas = new ArrayList<>();
 
 	public Cliente() {
 	}

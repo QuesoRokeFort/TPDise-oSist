@@ -1,3 +1,5 @@
+import DTO.MedidaSeguridadDTO;
+import DTO.PolizaDTO;
 import Hibernate.Dao.*;
 import Hibernate.Model.*;
 import Interface.GestorInterface;
@@ -20,6 +22,7 @@ import java.util.Random;
 public class App {
 
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(() -> {
             try {
                 UIManager.setLookAndFeel("Metal");

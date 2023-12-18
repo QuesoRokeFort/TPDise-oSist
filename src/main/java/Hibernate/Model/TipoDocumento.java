@@ -1,6 +1,8 @@
 package Hibernate.Model;
 
 
+import java.util.Arrays;
+
 public enum TipoDocumento {
 	DNI("Documento Nacional de Identidad"),
 	CUIT("Cuit");
@@ -14,4 +16,11 @@ public enum TipoDocumento {
 	public String getDescripcion() {
 		return descripcion;
 	}
+
+	public static TipoDocumento[] sortedValues() {
+		TipoDocumento[] values = values();
+		Arrays.sort(values, (a, b) -> a.getDescripcion().compareToIgnoreCase(b.getDescripcion()));
+		return values;
+	}
 }
+
