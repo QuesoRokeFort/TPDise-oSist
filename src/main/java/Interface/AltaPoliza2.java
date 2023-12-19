@@ -54,10 +54,6 @@ public class AltaPoliza2 {
     private JComboBox Sexo4;
     private JComboBox Civil4;
     private JButton plusHijo2;
-    private JButton PlusHijo3;
-    private JButton plusHijo4;
-    private JButton closeHijo4;
-    private JButton closeHijo3;
     private JButton closeHijo2;
     private JPanel hijoPanel2;
     private JPanel hijoPanel3;
@@ -71,52 +67,57 @@ public class AltaPoliza2 {
     private JComboBox siniestrosBox;
     private JButton X1;
    public JButton cancelarButton;
+    private JLabel SumaAseguradaText;
     private List<ModeloDTO> modelos=new ArrayList<>();
     private List<MarcaDTO> marcas=new ArrayList<>();
     private List<AnioFabricacionDTO> años=new ArrayList<>();
+    List<LocalidadDTO> locSelecionadas = new ArrayList<>();
     static VehiculoDTO vehiculoDTO;
     static LocalidadDTO localidad;
     private boolean bloquearCargaAño = false;
     private boolean bloquearCargaLoc = false;
     private boolean bloquearCargaMod = false;
     List<ProvinciaDTO> uniqueProvinces= new ArrayList<>();
+    static String medidasSeg = "";
 
 
     public AltaPoliza2() {
         plusHijo2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tabbedPane1.setEnabledAt(1, true); //
-            }
-        });
-        PlusHijo3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tabbedPane1.setEnabledAt(2, true); //
-            }
-        });
-        plusHijo4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tabbedPane1.setEnabledAt(3, true); //
+                if (tabbedPane1.isEnabledAt(0)){
+                    if (tabbedPane1.isEnabledAt(1)){
+                        if (tabbedPane1.isEnabledAt(2)){
+                            tabbedPane1.setEnabledAt(3, true);
+                        }else {
+                            tabbedPane1.setEnabledAt(2, true);
+                        }
+                    }else {
+                        tabbedPane1.setEnabledAt(1, true);
+                    }
+                }else {
+                    tabbedPane1.setEnabledAt(0,true);
+                    Civil1.setFocusable(true);
+                    Sexo1.setFocusable(true);
+                    fechaText1.setFocusable(true);
+                }
             }
         });
         closeHijo2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tabbedPane1.setEnabledAt(1, false); //
-            }
-        });
-        closeHijo3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tabbedPane1.setEnabledAt(2, false); //
-            }
-        });
-        closeHijo4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tabbedPane1.setEnabledAt(3, false); //
+                if (tabbedPane1.isEnabledAt(3)) {
+                    tabbedPane1.setEnabledAt(3, false);
+                } else if (tabbedPane1.isEnabledAt(2)) {
+                    tabbedPane1.setEnabledAt(2, false);
+                } else if (tabbedPane1.isEnabledAt(1)) {
+                    tabbedPane1.setEnabledAt(1, false);
+                } else if (tabbedPane1.isEnabledAt(0)) {
+                    tabbedPane1.setEnabledAt(0, false);
+                    Civil1.setFocusable(false);
+                    Sexo1.setFocusable(false);
+                    fechaText1.setFocusable(false);
+                }
             }
         });
         confirmarButton.addActionListener(new ActionListener() {
@@ -139,14 +140,7 @@ public class AltaPoliza2 {
             }
         });
 
-        X1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fechaText1.setText("Escriba aquí...");
-                Sexo1.setSelectedIndex(-1);
-                Civil1.setSelectedIndex(-1);
-            }
-        });
+
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -216,8 +210,7 @@ public class AltaPoliza2 {
                         String selectedProvNombre = (String) ProvComboBox.getSelectedItem();
                         System.out.println(ProvComboBox.getSelectedItem());
                         ProvinciaDTO selectedProv = uniqueProvinces.stream().filter(provinciaDTO -> provinciaDTO.getNombre().equals(selectedProvNombre)).findFirst().orElse(null);
-                        System.out.println(selectedProv.getId());
-                        List<LocalidadDTO> locSelecionadas = new ArrayList<>(GestorDirrecciones.getLocalidadesByProvincia(selectedProv));
+                        locSelecionadas = new ArrayList<>(GestorDirrecciones.getLocalidadesByProvincia(selectedProv));
                         DefaultComboBoxModel<String> locComboBoxModel = new DefaultComboBoxModel<>();
                         LocalidadBox.setModel(locComboBoxModel);
                         Collections.sort(locSelecionadas, (l1, l2) -> l1.getNombre().compareToIgnoreCase(l2.getNombre()));
@@ -261,7 +254,14 @@ public class AltaPoliza2 {
                 }
             }
         });
+        AñoVehiculoBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                SumaAseguradaText.setText(String.valueOf(GestorPoliza.calcularSumaAsegurada(vehiculoDTO)));
+            }
+        });
     }
+
 
     private PolizaDTO createPoliza() {
         PolizaDTO polizaDTO = new PolizaDTO();
@@ -282,39 +282,30 @@ public class AltaPoliza2 {
         vehiculoDTO.setKilometrosAnuales(Integer.parseInt(kmText.getText()));
         System.out.println(vehiculoDTO.toString());
         polizaDTO.setSumaAsegurada(GestorPoliza.calcularSumaAsegurada(vehiculoDTO));
-        /*if(garaje.isSelected()){
-            MedidaSeguridadDTO garaje = new MedidaSeguridadDTO();
-            garaje.setNombreMedida("garaje");
-            garaje.setValorPorcentual(VALORGARAJE);
-            polizaDTO.addMedida(garaje);
+        if(garaje.isSelected()){
+            medidasSeg +="1";
+        }else {
+            medidasSeg +="0";
         }
         if(alarma.isSelected()){
-            MedidaSeguridadDTO alarma = new MedidaSeguridadDTO();
-            alarma.setNombreMedida("alarma");
-            alarma.setValorPorcentual(VALORALARMA);
-            polizaDTO.addMedida(alarma);
+            medidasSeg +="1";
+        }else {
+            medidasSeg +="0";
         }
         if (rastreador.isSelected()){
-            MedidaSeguridadDTO rastreador = new MedidaSeguridadDTO();
-            rastreador.setNombreMedida("rastreador");
-            rastreador.setValorPorcentual(VALORRASTREADOR);
-            polizaDTO.addMedida(rastreador);
+            medidasSeg +="1";
+        }else {
+            medidasSeg +="0";
         }
         if(tuercasAntirobo.isSelected()){
-            MedidaSeguridadDTO tuercasAntirobo = new MedidaSeguridadDTO();
-            tuercasAntirobo.setNombreMedida("Tuercas Antirobos");
-            tuercasAntirobo.setValorPorcentual(VALORTUERCAS);
-            polizaDTO.addMedida(tuercasAntirobo);
-        }*/
-        //todo ver todo esto
+            medidasSeg +="1";
+        }else {
+            medidasSeg +="0";
+        }
         polizaDTO.setDerechoDeEmision(GestorPoliza.calcularDerechoEmision());
         String selectedLocalidadNombre = (String) LocalidadBox.getSelectedItem();
-        localidad = currentPersona.getDireccion().stream()
-                .filter(dir -> dir.getLocalidad().getNombre().equals(selectedLocalidadNombre))
-                .map(DireccionDTO::getLocalidad)
-                .findFirst()
-                .orElse(null);
-        if(fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0){
+        localidad =  locSelecionadas.stream().filter(localidadDTO -> localidadDTO.getNombre().equals(selectedLocalidadNombre)).findFirst().orElse(null);
+        if (tabbedPane1.isEnabledAt(0)) {
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo1.getSelectedItem());
             hijoDTO.setEstadoCivil((EstadoCivil) Civil1.getSelectedItem());
@@ -395,6 +386,9 @@ public class AltaPoliza2 {
         if(patenteText.getText().equals("")||patenteText.getText().length()>20){
             aviso+= " Patente,";
         }
+        if (GestorPoliza.patenteDuplicada(patenteText.getText())){
+            aviso+=" Patente Ya Existente,";
+        }
         if(kmText.getText().equals("")||kmText.getText().length()>20|| !kmText.getText().matches("\\d+")){
             aviso+= " Km,";
         }
@@ -406,7 +400,7 @@ public class AltaPoliza2 {
 
         Pattern pattern = Pattern.compile(patronFecha);
 
-        if(!(fechaText1.getText().equals("Escriba aquí...") || Sexo1.getSelectedIndex()>=0 || Civil1.getSelectedIndex()>=0)) {
+        if (tabbedPane1.isEnabledAt(0)) {
             String textoFecha = fechaText1.getText();
             validateFecha(textoFecha);
             Matcher matcher = pattern.matcher(textoFecha);
@@ -505,6 +499,8 @@ public class AltaPoliza2 {
         ProvComboBox.setSelectedIndex(-1);
         AñoVehiculoBox= new JComboBox<>();
         hijoPanel1 = new JPanel();
+        fechaText1=new JTextField();
+        fechaText1.setFocusable(false);
         hijoPanel2 = new JPanel();
         hijoPanel3 = new JPanel();
         hijoPanel4 = new JPanel();
@@ -514,8 +510,10 @@ public class AltaPoliza2 {
     private void cargarHijos() {
         Sexo1 = new JComboBox<>(Sexo.values());
         Sexo1.setSelectedIndex(-1);
+        Sexo1.setFocusable(false);
         Civil1 = new JComboBox<>(EstadoCivil.values());
         Civil1.setSelectedIndex(-1);
+        Civil1.setFocusable(false);
         Sexo2 = new JComboBox<>(Sexo.values());
         Sexo2.setSelectedIndex(-1);
         Civil2 = new JComboBox<>(EstadoCivil.values());

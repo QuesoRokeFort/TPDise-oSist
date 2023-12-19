@@ -9,8 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 
-import static Interface.AltaPoliza2.localidad;
-import static Interface.AltaPoliza2.vehiculoDTO;
+import static Interface.AltaPoliza2.*;
 import static Interface.GestorInterface.cardLayout;
 import static Interface.GestorInterface.cardPanel;
 import static Interface.MenuProductorSeguros.currentPoliza;
@@ -54,7 +53,7 @@ public class PolizaGenerar {
 			public void actionPerformed(ActionEvent e) {
 				currentPoliza.setMontoTotal(Integer.valueOf(totalAPagarLabel.getText()));
 				try {
-					GestorPoliza.crearPoliza(currentPoliza, localidad, vehiculoDTO, cob);
+					GestorPoliza.crearPoliza(currentPoliza, localidad, vehiculoDTO, cob,medidasSeg);
 				} catch (IllegalArgumentException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 				}
@@ -91,7 +90,7 @@ public class PolizaGenerar {
 		//patenteLabel = new JLabel();
 		patenteLabel.setText(vehiculoDTO.getPatente());
 		//fechaDeFinLabel = new JLabel();
-		if(currentPoliza.getFormaDePago().equals("Mensual"))
+		if(currentPoliza.getFormaDePago().equals("Semestral"))
 			fechaDeFinLabel.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(1)));
 		//fechaDeInicioLabel = new JLabel();
 		fechaDeInicioLabel.setText(String.valueOf(currentPoliza.getFechaInicioVigencia()));
@@ -107,7 +106,7 @@ public class PolizaGenerar {
 		importe1.setText(String.valueOf(cob.getPrecio()));
 		//totalAPagarLabel = new JLabel();
 		totalAPagarLabel.setText(String.valueOf(cob.getPrecio()));
-		if(currentPoliza.getFormaDePago().equals("Semestral")){
+		if(currentPoliza.getFormaDePago().equals("Mensual")){
 			fechaDeFinLabel.setText(String.valueOf(currentPoliza.getFechaFinVigencia()));
 			vencimiento2.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(2)));
 			vencimiento3.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(3)));

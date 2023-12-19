@@ -12,7 +12,7 @@ import java.util.List;
 public class GestorPoliza {
 	private static final String NUMERO_SUCURSAR = "0001";
 
-	public static void crearPoliza(PolizaDTO currentPoliza, LocalidadDTO l, VehiculoDTO vehiculoDTO, CoberturaDTO c) {
+	public static void crearPoliza(PolizaDTO currentPoliza, LocalidadDTO l, VehiculoDTO vehiculoDTO, CoberturaDTO c, String medidasSeg) {
 		Poliza poliza = new Poliza();
 		if(validateDatosVehiculo(vehiculoDTO)) {
 			Vehiculo vehiculo = new Vehiculo();
@@ -27,7 +27,7 @@ public class GestorPoliza {
 		currentPoliza.getHijosPoliza().forEach(hijoDTO -> {
 			if (validateHijoDTO(hijoDTO)) {
 				Hijo hijo = new Hijo();
-				hijo.setEstadoCivil(hijo.getEstadoCivil());
+				hijo.setEstadoCivil(hijoDTO.getEstadoCivil());
 				hijo.setSexoHijo(hijoDTO.getSexoHijo());
 				hijo.setFechaDeNacimiento(hijoDTO.getFechaDeNacimiento());
 				hijo.setPoliza(poliza);
@@ -40,7 +40,11 @@ public class GestorPoliza {
 			Cobertura cobertura = new Cobertura();
 			cobertura.setProveedor(ProveedorDao.getProveedorById(c.getProveedor().getId()));
 			cobertura.setTipoCobertura(TipoCoberturaDao.getTipoCoberturaById(c.getTipoCobertura().getId()));
-			cobertura.setPrecio(c.getPrecio());
+			if (currentPoliza.getFormaDePago().equals("Mensual")) {
+				cobertura.setPrecio(c.getPrecio());
+			}else {
+				cobertura.setPrecio(c.getPrecio()*6);
+			}
 			cobertura.setAjusteCantHijos(c.getAjusteCantHijos());
 			cobertura.setAjusteSiniestro(c.getAjusteSiniestro());
 			cobertura.setAjustePorKm(c.getAjustePorKm());
@@ -48,27 +52,30 @@ public class GestorPoliza {
 		}
 
 		int cantidadDeCuotas = 1;
-		if (currentPoliza.getFormaDePago().equals("Semestral")){
+		if (currentPoliza.getFormaDePago().equals("Mensual")){
 			cantidadDeCuotas=6;
 		}
 
 		for (int i = 0; i < cantidadDeCuotas; i++) {
 			Cuota cuota = new Cuota();
-			cuota.setImporte(c.getPrecio());
+			if (currentPoliza.getFormaDePago().equals("Mensual")) {
+				cuota.setImporte(c.getPrecio());
+			}else {
+				cuota.setImporte(c.getPrecio()*6);
+			}
 			cuota.setUltimoDiaDePago(currentPoliza.getFechaInicioVigencia().plusMonths(i+1));
 			cuota.setPoliza(poliza);
 			poliza.addCuota(cuota);
 		}
 
 		currentPoliza.setNroPoliza(generarNroPoliza(vehiculoDTO,currentPoliza));
-		/*currentPoliza.getMedidasSeguradad().forEach(m->{
-			MedidaSeguridad medidaSeguridad = new MedidaSeguridad();
-			medidaSeguridad.setValorPorcentual(m.getValorPorcentual());
-			medidaSeguridad.setNombreMedida(m.getNombreMedida());
-			medidaSeguridad.setPoliza(poliza);
-			poliza.addMedidas(medidaSeguridad);
-		});*/
-		//TODO VER ESTO
+
+		for (int i =0; i<medidasSeg.length();i++){
+			if (medidasSeg.charAt(i) == '1'){
+				poliza.getMedidas().add(MedidaSeguridadDao.getMedidaSeguridadById(i+1));
+			}
+		}
+
 		if (validatePolizaDTO(currentPoliza)) {
 			poliza.setDerechoDeEmision(currentPoliza.getDerechoDeEmision());
 			poliza.setFormaDePago(currentPoliza.getFormaDePago());
@@ -93,7 +100,7 @@ public class GestorPoliza {
 			poliza.setNroPoliza(currentPoliza.getNroPoliza());
 		}
 		System.out.println(poliza.toString());
-		PolizaDao.savePoliza(poliza);
+		//PolizaDao.savePoliza(poliza);
 	}
 
 	private static boolean CalcularEstado(Cliente cliente, Siniestros nroSiniestrosAnuales) {
@@ -438,5 +445,12 @@ public class GestorPoliza {
 
 	public static Integer CalcularAjusteKM(int kilometrosAnuales) {
 		return 0;
+	}
+
+	public static boolean patenteDuplicada(String text) {
+		if (VehiculoDao.getVehiculoByPatente(text)==null){
+			return false;
+		}
+		return true;
 	}
 }

@@ -9,12 +9,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Enumeration;
 import java.util.List;
 
 import static Interface.AltaPoliza2.vehiculoDTO;
@@ -75,16 +73,11 @@ public class SeleccionarCobertura {
 				currentPoliza.setFormaDePago((String) formaDePagoBox.getItemAt(formaDePagoBox.getSelectedIndex()));
 				LocalDate nextDay = LocalDate.now().plusDays(1);
 				LocalDateTime midnight = nextDay.atStartOfDay();
-				if(currentPoliza.getFormaDePago().equals("Mensual")){
-					midnight= midnight.plusMonths(1);
-				}else{
-					midnight= midnight.plusMonths(6);
-				}
+				midnight= midnight.plusMonths(6);
 				currentPoliza.setFechaFinVigencia(midnight.toLocalDate());
 				currentPoliza.setEstadoPolizaPdf(false);
-				//currentPoliza.setDescuentos(GestorPoliza.calcularDescuentos(currentPoliza.getMedidasSeguradad(),currentPoliza.getCliente(),currentPoliza.getFormaDePago()));
-				//currentPoliza.setPrima(GestorPoliza.calcularPrima(cob,currentPoliza.getLocalidad(),currentPoliza.getVehiculo(),currentPoliza.getMedidasSeguradad(),currentPoliza.getNroSiniestrosAnuales(),currentPoliza.getHijosPoliza()));
-				//todo there is always more to seee
+				currentPoliza.setDescuentos(GestorPoliza.calcularDescuentos(currentPoliza.getMedidasSeguradad(),currentPoliza.getCliente(),currentPoliza.getFormaDePago()));
+				currentPoliza.setPrima(GestorPoliza.calcularPrima(cob,currentPoliza.getLocalidad(),currentPoliza.getVehiculo(),currentPoliza.getMedidasSeguradad(),currentPoliza.getNroSiniestrosAnuales(),currentPoliza.getHijosPoliza()));
 				currentPoliza.setPremio(GestorPoliza.calcularPremio(currentPoliza.getDerechoDeEmision(),currentPoliza.getPrima()));
 				PolizaGenerar polizaGenerar = new PolizaGenerar();
 				polizaGenerar.cargarDatos();

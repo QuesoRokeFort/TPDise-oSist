@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="correciones parte 3.1">
+    <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="correciones parte 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Gestores/GestorPoliza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/VehiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Dao/VehiculoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/PolizaGenerar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/SeleccionarCobertura.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -323,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702887869647</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="correciones parte 4">
+      <created>1702941907480</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1702941907480</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,7 +378,8 @@
     <MESSAGE value="correciones parte 2" />
     <MESSAGE value="correciones parte 3" />
     <MESSAGE value="correciones parte 3.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="correciones parte 3.1" />
+    <MESSAGE value="correciones parte 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="correciones parte 4" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

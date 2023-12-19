@@ -5,8 +5,10 @@ import Hibernate.Model.Vehiculo;
 import Hibernate.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
+import java.util.Objects;
 
 public class VehiculoDao {
     // guardado
@@ -94,4 +96,28 @@ public class VehiculoDao {
         }
     }
 
+    public static Vehiculo getVehiculoByPatente(String patente) {
+        Transaction transaction = null;
+        Vehiculo vehiculo = null;
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            // Usar HQL para realizar la consulta por patente
+            String hql = "FROM Vehiculo WHERE patente = :patente";
+            Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
+            query.setParameter("patente", patente);
+
+            vehiculo = query.uniqueResult();
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace(); // Manejar la excepción adecuadamente en un entorno de producción
+        }
+
+        return vehiculo;
+    }
 }
