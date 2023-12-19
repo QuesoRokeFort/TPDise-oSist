@@ -3,6 +3,7 @@ package Interface;
 import DTO.PersonaDTO;
 import Gestores.GestorPersona;
 import Hibernate.Model.TipoDocumento;
+import com.google.protobuf.StringValue;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -30,6 +31,7 @@ public class BuscarCliente {
     private JTextField nroClienteText;
     private JTextField ApellidoText;
     private JTextField documentoText;
+    private JLabel páginaXLabel;
     private String nombre;
     private String apellido;
     private TipoDocumento tipoDocumento;
@@ -39,6 +41,8 @@ public class BuscarCliente {
     private DefaultTableModel modeloTabla;
     private boolean defaultTable;
     private int filas;
+    private int pagina;
+    private String página;
     public BuscarCliente(){
         String[] columnas = {"NRO CLIENTE", "APELLIDO", "NOMBRE", "TIPO DOCUMENTO", "NRO DOCUMENTO"};
         modeloTabla = new DefaultTableModel(null, columnas) {
@@ -52,6 +56,9 @@ public class BuscarCliente {
             }
         };
         defaulttable();
+        página = "Página ";
+        página+= String.valueOf(pagina);
+        páginaXLabel.setText(página);
 
         buscarButton.addActionListener(e -> {
             String aviso = validateData();
@@ -109,6 +116,28 @@ public class BuscarCliente {
                 }
             }
         });
+        adelante.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pagina ++;
+                página = "Página ";
+                página+= String.valueOf(pagina);
+                páginaXLabel.setText(página);
+                modeloTabla.setRowCount(0);
+                cargarTabla(lista);
+            }
+        });
+        atras.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pagina--;
+                página = "Página ";
+                página+= String.valueOf(pagina);
+                páginaXLabel.setText(página);
+                modeloTabla.setRowCount(0);
+                cargarTabla(lista);
+            }
+        });
     }
 
     private String validateData() {
@@ -129,7 +158,8 @@ public class BuscarCliente {
     }
 
     private void cargarTabla(List<PersonaDTO> lista) {
-        for (int i = 0; i < filas && i < lista.size(); i++) {
+        int j =0;
+        for (int i = (pagina-1)*filas; j < filas && i < lista.size(); i++) {
             PersonaDTO persona = lista.get(i);
 
             Object[] fila = {
@@ -138,10 +168,9 @@ public class BuscarCliente {
                     persona.getNombrePersona(),
                     persona.getTipoDocumento(),
                     persona.getNroDocumento(),
-                    false
             };
-
             modeloTabla.addRow(fila);
+            j++;
         }
     }
 
@@ -150,24 +179,15 @@ public class BuscarCliente {
         lista=GestorPersona.getPersonas();
         modeloTabla.setRowCount(0);
         cargarTabla(lista);
-        /*for (PersonaDTO persona : lista) {
-            Object[] fila = {persona.getCliente().getNroCliente(), persona.getApellido(), persona.getNombrePersona(),
-                    persona.getTipoDocumento(), persona.getNroDocumento(), false};
-            modeloTabla.addRow(fila);
-        }*/
 
         tablaClientes.setModel(modeloTabla);
-        // Crear el renderizador de celdas
         DefaultTableCellRenderer renderizador = new DefaultTableCellRenderer();
 
-        // Centrar el contenido en todas las columnas
         renderizador.setHorizontalAlignment(SwingConstants.CENTER);
 
-        // Aplicar el renderizador a todas las columnas
         for (int i = 0; i < tablaClientes.getColumnCount(); i++) {
             tablaClientes.getColumnModel().getColumn(i).setCellRenderer(renderizador);
         }
-
     }
 
     private void createUIComponents() {
@@ -176,6 +196,8 @@ public class BuscarCliente {
         Integer valores[] ={5,10,15};
         largoBox = new JComboBox<>(valores);
         filas = 5;
+        pagina =1;
+        páginaXLabel = new JLabel();
     }
 
 

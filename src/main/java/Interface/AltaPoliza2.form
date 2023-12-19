@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interface.AltaPoliza2">
-  <grid id="27dc6" binding="PanelPrincipal" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+  <grid id="27dc6" binding="PanelPrincipal" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="769" height="846"/>
+      <xy x="20" y="20" width="685" height="631"/>
     </constraints>
     <properties>
       <preferredSize width="800" height="600"/>
     </properties>
     <border type="line"/>
     <children>
-      <grid id="f6fde" layout-manager="GridLayoutManager" row-count="26" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+      <grid id="f6fde" layout-manager="GridLayoutManager" row-count="24" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
         <margin top="10" left="10" bottom="10" right="10"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -29,7 +29,7 @@
           </hspacer>
           <component id="2c482" class="javax.swing.JComboBox" binding="ProvComboBox" custom-create="true">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="20"/>
               </grid>
             </constraints>
@@ -37,7 +37,7 @@
           </component>
           <component id="311e0" class="javax.swing.JComboBox" binding="LocalidadBox">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="20"/>
               </grid>
             </constraints>
@@ -45,7 +45,7 @@
           </component>
           <component id="eae9d" class="javax.swing.JComboBox" binding="MarcaBox" custom-create="true">
             <constraints>
-              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="20"/>
               </grid>
             </constraints>
@@ -53,7 +53,7 @@
           </component>
           <component id="96f48" class="javax.swing.JComboBox" binding="ModeloBox" custom-create="true">
             <constraints>
-              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="10" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="20"/>
               </grid>
             </constraints>
@@ -61,7 +61,7 @@
           </component>
           <component id="e5a1" class="javax.swing.JComboBox" binding="AñoVehiculoBox" custom-create="true">
             <constraints>
-              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="13" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="20"/>
               </grid>
             </constraints>
@@ -78,7 +78,7 @@
               <tabbedpane id="ecc9" binding="tabbedPane1" default-binding="true">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="200" height="200"/>
+                    <preferred-size width="300" height="230"/>
                   </grid>
                 </constraints>
                 <properties>
@@ -87,257 +87,264 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <grid id="63750" binding="hijoPanel1" layout-manager="GridLayoutManager" row-count="6" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="63750" binding="hijoPanel1" custom-create="true" layout-manager="GridLayoutManager" row-count="7" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="5" right="0"/>
                     <constraints>
                       <tabbedpane title="Hijo1" enabled="false"/>
                     </constraints>
                     <properties>
                       <focusable value="true"/>
+                      <minimumSize width="-1" height="-1"/>
                       <opaque value="true"/>
                       <visible value="true"/>
                     </properties>
                     <border type="line"/>
                     <children>
-                      <component id="518b1" class="javax.swing.JLabel">
+                      <grid id="c2e90" binding="fecha1Panel" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
                         <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <text value="Sexo                                       "/>
-                        </properties>
-                      </component>
-                      <component id="693d8" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="4" column="0" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <text value="Estado Civil                           "/>
-                        </properties>
-                      </component>
-                      <component id="1c375" class="javax.swing.JComboBox" binding="Sexo1" custom-create="true">
-                        <constraints>
-                          <grid row="3" column="0" row-span="1" col-span="8" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
+                          <grid row="1" column="0" row-span="6" col-span="6" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties/>
-                      </component>
-                      <component id="bba5d" class="javax.swing.JComboBox" binding="Civil1" custom-create="true">
-                        <constraints>
-                          <grid row="5" column="0" row-span="1" col-span="8" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties/>
-                      </component>
-                      <component id="77034" class="javax.swing.JTextField" binding="fechaText1">
-                        <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="8" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="1" use-parent-layout="false">
-                            <preferred-size width="160" height="-1"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <text value="Escriba aquí..."/>
-                        </properties>
-                      </component>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
                       <component id="d00ed" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Fecha de Nacimiento "/>
                         </properties>
                       </component>
+                      <component id="693d8" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Estado Civil                           "/>
+                        </properties>
+                      </component>
+                      <component id="bba5d" class="javax.swing.JComboBox" binding="Civil1" custom-create="true">
+                        <constraints>
+                          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="518b1" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Sexo                                       "/>
+                          <verticalAlignment value="1"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="1c375" class="javax.swing.JComboBox" binding="Sexo1" custom-create="true">
+                        <constraints>
+                          <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
                     </children>
                   </grid>
-                  <grid id="18226" binding="hijoPanel2" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="a248c" binding="hijoPanel2" layout-manager="GridLayoutManager" row-count="7" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="5" right="0"/>
                     <constraints>
                       <tabbedpane title="Hijo2" enabled="false"/>
                     </constraints>
                     <properties>
                       <enabled value="true"/>
+                      <focusable value="true"/>
+                      <minimumSize width="-1" height="-1"/>
                       <opaque value="true"/>
                       <visible value="false"/>
                     </properties>
                     <border type="line"/>
                     <children>
-                      <component id="59229" class="javax.swing.JTextField" binding="fechaText2">
+                      <grid id="fb9c9" binding="fecha2Panel" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
                         <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="1" use-parent-layout="false">
-                            <preferred-size width="160" height="-1"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <text value="Escriba aqui..."/>
-                        </properties>
-                      </component>
-                      <component id="261c2" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <text value="Sexo                                       "/>
-                        </properties>
-                      </component>
-                      <component id="acbbc" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <text value="Estado Civil                           "/>
-                        </properties>
-                      </component>
-                      <component id="a744c" class="javax.swing.JComboBox" binding="Sexo2" custom-create="true">
-                        <constraints>
-                          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
+                          <grid row="1" column="0" row-span="6" col-span="6" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties/>
-                      </component>
-                      <component id="930f2" class="javax.swing.JComboBox" binding="Civil2" custom-create="true">
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <component id="ec380" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties/>
-                      </component>
-                      <component id="88635" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Fecha de Nacimiento "/>
                         </properties>
                       </component>
+                      <component id="4bb58" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Estado Civil                           "/>
+                        </properties>
+                      </component>
+                      <component id="4c7bf" class="javax.swing.JComboBox" binding="Civil2" custom-create="true">
+                        <constraints>
+                          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="5a6a9" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Sexo                                       "/>
+                          <verticalAlignment value="1"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="f3ffa" class="javax.swing.JComboBox" binding="Sexo2" custom-create="true">
+                        <constraints>
+                          <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
                     </children>
                   </grid>
-                  <grid id="3f703" binding="hijoPanel3" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="4dd09" binding="hijoPanel3" layout-manager="GridLayoutManager" row-count="7" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="5" right="0"/>
                     <constraints>
                       <tabbedpane title="Hijo3" enabled="false"/>
                     </constraints>
                     <properties>
-                      <enabled value="true"/>
+                      <focusable value="true"/>
+                      <minimumSize width="-1" height="-1"/>
+                      <opaque value="true"/>
                       <visible value="false"/>
                     </properties>
                     <border type="line"/>
                     <children>
-                      <component id="e941" class="javax.swing.JTextField" binding="fechaText3">
+                      <grid id="2f388" binding="fecha3Panel" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
                         <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="1" use-parent-layout="false">
-                            <preferred-size width="160" height="-1"/>
-                          </grid>
+                          <grid row="1" column="0" row-span="6" col-span="6" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties>
-                          <text value="Escriba aqui..."/>
-                        </properties>
-                      </component>
-                      <component id="f6500" class="javax.swing.JLabel">
+                        <properties/>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <component id="10d2" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Fecha de Nacimiento "/>
                         </properties>
                       </component>
-                      <component id="f25d8" class="javax.swing.JLabel">
+                      <component id="fbfcf" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <text value="Sexo                                       "/>
-                        </properties>
-                      </component>
-                      <component id="b978b" class="javax.swing.JComboBox" binding="Sexo3" custom-create="true">
-                        <constraints>
-                          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties/>
-                      </component>
-                      <component id="bd70" class="javax.swing.JComboBox" binding="Civil3" custom-create="true">
-                        <constraints>
-                          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties/>
-                      </component>
-                      <component id="f3b39" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Estado Civil                           "/>
                         </properties>
                       </component>
+                      <component id="3946b" class="javax.swing.JComboBox" binding="Civil3" custom-create="true">
+                        <constraints>
+                          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="1dbe7" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Sexo                                       "/>
+                          <verticalAlignment value="1"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="326b5" class="javax.swing.JComboBox" binding="Sexo3" custom-create="true">
+                        <constraints>
+                          <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
                     </children>
                   </grid>
-                  <grid id="92104" binding="hijoPanel4" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="f4ed2" binding="hijoPanel4" layout-manager="GridLayoutManager" row-count="7" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="5" right="0"/>
                     <constraints>
                       <tabbedpane title="Hijo4" enabled="false"/>
                     </constraints>
                     <properties>
-                      <enabled value="true"/>
+                      <focusable value="true"/>
+                      <minimumSize width="-1" height="-1"/>
+                      <opaque value="true"/>
                       <visible value="false"/>
                     </properties>
                     <border type="line"/>
                     <children>
-                      <component id="7c181" class="javax.swing.JTextField" binding="fechaText4">
+                      <grid id="eac52" binding="fecha4Panel" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
                         <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="1" use-parent-layout="false">
-                            <preferred-size width="160" height="-1"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <text value="Escriba aqui..."/>
-                        </properties>
-                      </component>
-                      <component id="59d5b" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <text value="Estado Civil                           "/>
-                        </properties>
-                      </component>
-                      <component id="40df1" class="javax.swing.JComboBox" binding="Sexo4" custom-create="true">
-                        <constraints>
-                          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
+                          <grid row="1" column="0" row-span="6" col-span="6" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties/>
-                      </component>
-                      <component id="32cbd" class="javax.swing.JComboBox" binding="Civil4" custom-create="true">
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <component id="77156" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="140" height="20"/>
-                          </grid>
-                        </constraints>
-                        <properties/>
-                      </component>
-                      <component id="f153" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Fecha de Nacimiento "/>
                         </properties>
                       </component>
-                      <component id="24e88" class="javax.swing.JLabel">
+                      <component id="ba98b" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Estado Civil                           "/>
+                        </properties>
+                      </component>
+                      <component id="1699d" class="javax.swing.JComboBox" binding="Civil4" custom-create="true">
+                        <constraints>
+                          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="61756" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Sexo                                       "/>
+                          <verticalAlignment value="1"/>
+                          <verticalTextPosition value="1"/>
                         </properties>
+                      </component>
+                      <component id="b6fe3" class="javax.swing.JComboBox" binding="Sexo4" custom-create="true">
+                        <constraints>
+                          <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="140" height="20"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
                       </component>
                     </children>
                   </grid>
@@ -348,7 +355,7 @@
           <grid id="e3ad5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="16" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="200" height="30"/>
               </grid>
             </constraints>
@@ -368,14 +375,9 @@
               </component>
             </children>
           </grid>
-          <hspacer id="ba13f">
-            <constraints>
-              <grid row="25" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-          </hspacer>
           <grid id="819a9" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="-1" height="10"/>
               </grid>
             </constraints>
@@ -432,7 +434,7 @@
           </vspacer>
           <grid id="dfc3e" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="-1" height="10"/>
               </grid>
             </constraints>
@@ -475,7 +477,7 @@
           </grid>
           <grid id="30edf" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="-1" height="10"/>
               </grid>
             </constraints>
@@ -525,7 +527,7 @@
           </vspacer>
           <grid id="24688" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="9" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="-1" height="10"/>
               </grid>
             </constraints>
@@ -575,7 +577,7 @@
           </vspacer>
           <grid id="5d3ab" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="12" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="-1" height="10"/>
               </grid>
             </constraints>
@@ -625,7 +627,7 @@
           </vspacer>
           <grid id="eedc5" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="15" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="-1" height="10"/>
               </grid>
             </constraints>
@@ -902,7 +904,7 @@
           </component>
           <grid id="e7b03" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="16" column="5" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="16" column="5" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="-1" height="10"/>
               </grid>
             </constraints>
@@ -1006,27 +1008,21 @@
               </component>
             </children>
           </grid>
-          <vspacer id="e1612">
-            <constraints>
-              <grid row="24" column="8" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="5"/>
-              </grid>
-            </constraints>
-          </vspacer>
           <component id="de33a" class="javax.swing.JButton" binding="confirmarButton" default-binding="true">
             <constraints>
-              <grid row="25" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
+              <grid row="23" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="50" height="15"/>
               </grid>
             </constraints>
             <properties>
               <font name="BankGothic Lt BT"/>
+              <horizontalTextPosition value="0"/>
               <text value="Confirmar"/>
             </properties>
           </component>
           <component id="49ea3" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
             <constraints>
-              <grid row="25" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
+              <grid row="23" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="50" height="15"/>
               </grid>
             </constraints>
@@ -1037,16 +1033,6 @@
           </component>
         </children>
       </grid>
-      <hspacer id="3605d">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
-      <vspacer id="3c2">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
       <grid id="34188" layout-manager="GridBagLayout">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>

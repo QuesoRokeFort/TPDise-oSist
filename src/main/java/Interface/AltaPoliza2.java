@@ -4,21 +4,21 @@ import DTO.*;
 import Gestores.GestorDirrecciones;
 import Gestores.GestorPoliza;
 import Hibernate.Model.*;
+import com.toedter.calendar.JCalendar;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.*;
 import java.io.ObjectInputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Collections;
 
 import static Interface.GestorInterface.cardLayout;
 import static Interface.GestorInterface.cardPanel;
@@ -41,16 +41,16 @@ public class AltaPoliza2 {
     private JTextField chasisText;
     private JTextField patenteText;
     private JTextField kmText;
-    private JTextField fechaText1;
+
     private JComboBox Sexo1;
     private JComboBox Civil1;
-    private JTextField fechaText2;
+
     private JComboBox Sexo2;
     private JComboBox Civil2;
-    private JTextField fechaText3;
+
     private JComboBox Sexo3;
     private JComboBox Civil3;
-    private JTextField fechaText4;
+
     private JComboBox Sexo4;
     private JComboBox Civil4;
     private JButton plusHijo2;
@@ -68,6 +68,10 @@ public class AltaPoliza2 {
     private JButton X1;
    public JButton cancelarButton;
     private JLabel SumaAseguradaText;
+    private JPanel fecha1Panel;
+    private JPanel fecha2Panel;
+    private JPanel fecha3Panel;
+    private JPanel fecha4Panel;
     private List<ModeloDTO> modelos=new ArrayList<>();
     private List<MarcaDTO> marcas=new ArrayList<>();
     private List<AnioFabricacionDTO> años=new ArrayList<>();
@@ -79,6 +83,11 @@ public class AltaPoliza2 {
     private boolean bloquearCargaMod = false;
     List<ProvinciaDTO> uniqueProvinces= new ArrayList<>();
     static String medidasSeg = "";
+    private JCalendar calendar;
+    private JCalendar calendar2;
+    private JCalendar calendar3;
+    private JCalendar calendar4;
+
 
 
     public AltaPoliza2() {
@@ -97,9 +106,6 @@ public class AltaPoliza2 {
                     }
                 }else {
                     tabbedPane1.setEnabledAt(0,true);
-                    Civil1.setFocusable(true);
-                    Sexo1.setFocusable(true);
-                    fechaText1.setFocusable(true);
                 }
             }
         });
@@ -114,9 +120,6 @@ public class AltaPoliza2 {
                     tabbedPane1.setEnabledAt(1, false);
                 } else if (tabbedPane1.isEnabledAt(0)) {
                     tabbedPane1.setEnabledAt(0, false);
-                    Civil1.setFocusable(false);
-                    Sexo1.setFocusable(false);
-                    fechaText1.setFocusable(false);
                 }
             }
         });
@@ -145,61 +148,6 @@ public class AltaPoliza2 {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-            }
-        });
-        fechaText1.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                if (fechaText1.getText().equals("Escriba aquí...")) fechaText1.setText("");
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                if (fechaText1.getText().equals("")) {
-                    fechaText1.setText("Escriba aquí...");
-                }
-            }
-        });
-
-        fechaText2.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                if (fechaText2.getText().equals("Escriba aquí...")) fechaText2.setText("");
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                if (fechaText2.getText().equals("")) {
-                    fechaText2.setText("Escriba aquí...");
-                }
-            }
-        });
-
-        fechaText3.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                if (fechaText3.getText().equals("Escriba aquí...")) fechaText3.setText("");
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                if (fechaText3.getText().equals("")) {
-                    fechaText3.setText("Escriba aquí...");
-                }
-            }
-        });
-
-        fechaText4.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                if (fechaText4.getText().equals("Escriba aquí...")) fechaText4.setText("");
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                if (fechaText4.getText().equals("")) {
-                    fechaText4.setText("Escriba aquí...");
-                }
             }
         });
         ProvComboBox.addItemListener(new ItemListener() {
@@ -309,52 +257,32 @@ public class AltaPoliza2 {
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo1.getSelectedItem());
             hijoDTO.setEstadoCivil((EstadoCivil) Civil1.getSelectedItem());
-            try {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date fecha = dateFormat.parse(fechaText1.getText());
-                hijoDTO.setFechaDeNacimiento(fecha);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            Date fecha = calendar.getDate();
+            hijoDTO.setFechaDeNacimiento(fecha);
             polizaDTO.addHijo(hijoDTO);
         }
         if(tabbedPane1.isEnabledAt(1)){
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo2.getSelectedItem());
             hijoDTO.setEstadoCivil((EstadoCivil) Civil2.getSelectedItem());
-            try {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date fecha = dateFormat.parse(fechaText2.getText());
-                hijoDTO.setFechaDeNacimiento(fecha);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            Date fecha = calendar2.getDate();
+            hijoDTO.setFechaDeNacimiento(fecha);
             polizaDTO.addHijo(hijoDTO);
         }
         if(tabbedPane1.isEnabledAt(2)){
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo3.getSelectedItem());
             hijoDTO.setEstadoCivil((EstadoCivil) Civil3.getSelectedItem());
-            try {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date fecha = dateFormat.parse(fechaText3.getText());
-                hijoDTO.setFechaDeNacimiento(fecha);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            Date fecha = calendar3.getDate();
+            hijoDTO.setFechaDeNacimiento(fecha);
             polizaDTO.addHijo(hijoDTO);
         }
         if(tabbedPane1.isEnabledAt(3)){
             HijoDTO hijoDTO = new HijoDTO();
             hijoDTO.setSexoHijo((Sexo) Sexo4.getSelectedItem());
             hijoDTO.setEstadoCivil((EstadoCivil) Civil4.getSelectedItem());
-            try {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date fecha = dateFormat.parse(fechaText4.getText());
-                hijoDTO.setFechaDeNacimiento(fecha);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            Date fecha = calendar4.getDate();
+            hijoDTO.setFechaDeNacimiento(fecha);
             polizaDTO.addHijo(hijoDTO);
         }
         return polizaDTO;
@@ -396,16 +324,16 @@ public class AltaPoliza2 {
             aviso+= " Siniestros,";
         }
 
-        String patronFecha = "\\d{4}-\\d{2}-\\d{2}";
 
-        Pattern pattern = Pattern.compile(patronFecha);
-
+        Calendar now = Calendar.getInstance();
+        now.add(Calendar.YEAR, -18);
+        Calendar thirtyYearsAgo = Calendar.getInstance();
+        thirtyYearsAgo.add(Calendar.YEAR, -30);
         if (tabbedPane1.isEnabledAt(0)) {
-            String textoFecha = fechaText1.getText();
-            validateFecha(textoFecha);
-            Matcher matcher = pattern.matcher(textoFecha);
-
-            if (!matcher.matches()) {
+            Date selectedDate = calendar.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
                 aviso += " Fecha Hijo1, ";
             }
             if (Sexo1.getSelectedIndex() < 0) {
@@ -416,11 +344,10 @@ public class AltaPoliza2 {
             }
         }
         if (tabbedPane1.isEnabledAt(1)) {
-            String textoFecha = fechaText2.getText();
-
-            Matcher matcher = pattern.matcher(textoFecha);
-
-            if (!matcher.matches()) {
+            Date selectedDate2 = calendar2.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate2);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
                 aviso += " Fecha Hijo2, ";
             }
             if (Sexo2.getSelectedIndex() < 0) {
@@ -431,11 +358,10 @@ public class AltaPoliza2 {
             }
         }
         if (tabbedPane1.isEnabledAt(2)) {
-            String textoFecha = fechaText3.getText();
-
-            Matcher matcher = pattern.matcher(textoFecha);
-
-            if (!matcher.matches()) {
+            Date selectedDate3 = calendar3.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate3);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
                 aviso += " Fecha Hijo3, ";
             }
             if (Sexo3.getSelectedIndex() < 0) {
@@ -446,11 +372,10 @@ public class AltaPoliza2 {
             }
         }
         if (tabbedPane1.isEnabledAt(3)) {
-            String textoFecha = fechaText4.getText();
-
-            Matcher matcher = pattern.matcher(textoFecha);
-
-            if (!matcher.matches()) {
+            Date selectedDate4 = calendar4.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate4);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
                 aviso += " Fecha Hijo4, ";
             }
             if (Sexo4.getSelectedIndex() < 0) {
@@ -463,9 +388,6 @@ public class AltaPoliza2 {
         return aviso;
     }
 
-    private void validateFecha(String textoFecha) {
-        //todo
-    }
 
     public JPanel getPantallaPrincipal() {
         return PanelPrincipal;
@@ -499,12 +421,22 @@ public class AltaPoliza2 {
         ProvComboBox.setSelectedIndex(-1);
         AñoVehiculoBox= new JComboBox<>();
         hijoPanel1 = new JPanel();
-        fechaText1=new JTextField();
-        fechaText1.setFocusable(false);
         hijoPanel2 = new JPanel();
         hijoPanel3 = new JPanel();
         hijoPanel4 = new JPanel();
         MarcaBox = new JComboBox<>();
+        fecha1Panel = new JPanel();
+        calendar = new JCalendar();
+        fecha1Panel.add(calendar, Component.CENTER_ALIGNMENT);
+        fecha2Panel = new JPanel();
+        calendar2 = new JCalendar();
+        fecha2Panel.add(calendar2, Component.CENTER_ALIGNMENT);
+        calendar3 = new JCalendar();
+        fecha3Panel = new JPanel();
+        fecha3Panel.add(calendar3, Component.CENTER_ALIGNMENT);
+        calendar4 = new JCalendar();
+        fecha4Panel = new JPanel();
+        fecha4Panel.add(calendar4, Component.CENTER_ALIGNMENT);
     }
 
     private void cargarHijos() {
