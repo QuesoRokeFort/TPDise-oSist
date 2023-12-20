@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e500e9bb-ad2a-4ea3-b274-468cb22ccb22" name="Changes" comment="correciones parte 5">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/EstadoCivil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/EstadoCivil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Sexo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hibernate/Model/Sexo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/AltaPoliza2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interface/BuscarCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

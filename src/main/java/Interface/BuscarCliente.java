@@ -143,10 +143,10 @@ public class BuscarCliente {
     private String validateData() {
         String aviso = "Error en:";
         if (nombreText.getText().length()>20) {
-            aviso += " Nombre";
+            aviso += " Nombre, campo mayor a 20 caracteres";
         }
         if (ApellidoText.getText().length()>20) {
-            aviso +=" Apellido";
+            aviso +=" Apellido, campo mayor a 20 caracteres";
         }
         if ((!documentoText.getText().matches("\\d+")&& !documentoText.getText().equals("")) || documentoText.getText().length()>15) {
             aviso +=" Documento";

@@ -291,37 +291,47 @@ public class AltaPoliza2 {
     private String validateData() {
         String aviso="Error en:";
         if (ProvComboBox.getSelectedIndex()<0){
-            aviso+= " Provincia,";
+            aviso+= " Provincia, campo vacio";
         }
         if (LocalidadBox.getSelectedIndex()<0){
-            aviso+= " Localidad,";
+            aviso+= " Localidad, campo vacio";
         }
         if (MarcaBox.getSelectedIndex()<0){
-            aviso+= " Marca,";
+            aviso+= " Marca, campo vacio";
         }
         if (ModeloBox.getSelectedIndex()<0){
-            aviso+= " Modelo,";
+            aviso+= " Modelo, campo vacio";
         }
         if (AñoVehiculoBox.getSelectedIndex()<0){
-            aviso+= " AñoVehiculo,";
+            aviso+= " AñoVehiculo, campo vacio";
         }
-        if (motorText.getText().equals("")||motorText.getText().length()>20){
-            aviso+= " Motor,";
+        if (motorText.getText().equals("")){
+            aviso+= " Motor, campo vacio";
+        }else if(motorText.getText().length()>20) {
+            aviso += " Motor, campo mayor a 20 caracteres";
         }
-        if(chasisText.getText().equals("")||chasisText.getText().length()>20){
-            aviso+= " Chasis,";
+        if(chasisText.getText().equals("")){
+            aviso+= " Chasis, campo vacio";
+        }else if(chasisText.getText().length()>20){
+            aviso+= " Chasis, campo mayor a 20 caracteres";
         }
-        if(patenteText.getText().equals("")||patenteText.getText().length()>20){
-            aviso+= " Patente,";
+        if(patenteText.getText().equals("")){
+            aviso+= " Patente, campo vacio";
+        }else if(patenteText.getText().length()>20){
+            aviso+= " Patente, campo mayor a 20 caracteres";
         }
         if (GestorPoliza.patenteDuplicada(patenteText.getText())){
-            aviso+=" Patente Ya Existente,";
+            aviso+=" Patente Ya Existente";
         }
-        if(kmText.getText().equals("")||kmText.getText().length()>20|| !kmText.getText().matches("\\d+")){
-            aviso+= " Km,";
+        if(kmText.getText().equals("")){
+            aviso+= " Km, campo vacio";
+        }else if(kmText.getText().length()>20){
+            aviso+= " Km, campo mayor a 20 caracteres";
+        }else if(!kmText.getText().matches("\\d+")){
+            aviso+= " Km, campo solo acepta numeros";
         }
         if (siniestrosBox.getSelectedIndex()<0){
-            aviso+= " Siniestros,";
+            aviso+= " Siniestros, campo vacio";
         }
 
 
@@ -334,13 +344,13 @@ public class AltaPoliza2 {
             Calendar dob = Calendar.getInstance();
             dob.setTime(selectedDate);
             if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
-                aviso += " Fecha Hijo1, ";
+                aviso += " Fecha Hijo1, no cumple formato";
             }
             if (Sexo1.getSelectedIndex() < 0) {
-                aviso += " Sexo Hijo1,";
+                aviso += " Sexo Hijo1, campo vacio";
             }
             if (Civil1.getSelectedIndex() < 0) {
-                aviso += " Estado Civil Hijo1,";
+                aviso += " Estado Civil Hijo1, campo vacio";
             }
         }
         if (tabbedPane1.isEnabledAt(1)) {
@@ -389,7 +399,7 @@ public class AltaPoliza2 {
     }
 
 
-    public JPanel getPantallaPrincipal() {
+    public JPanel getPantallaPrincipal(){
         return PanelPrincipal;
     }
     public void cargarDatos(){

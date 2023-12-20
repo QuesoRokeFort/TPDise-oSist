@@ -1,8 +1,9 @@
 package Hibernate.Model;
 
 public enum Sexo {
-	MASCULINO("Masculino"),
 	FEMENINO("Femenino"),
+	MASCULINO("Masculino"),
+
 	NO_ESPECIFICADO("No Especificado");
 
 	private final String descripcion;
