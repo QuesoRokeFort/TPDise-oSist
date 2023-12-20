@@ -50,8 +50,8 @@ public class AltaPoliza1 {
         ApellidoLabel.setText(personaDTO.getApellido());
         tipoDocumentLabel.setText(String.valueOf(personaDTO.getTipoDocumento()));
         numeroDocumentoLabel.setText(String.valueOf(personaDTO.getNroDocumento()));
-        provinciaLabel.setText(personaDTO.getDireccion().get(0).getCalle());
+        direccionLabel.setText(personaDTO.getDireccion().get(0).getCalle());
         localidadLabel.setText(personaDTO.getDireccion().get(0).getLocalidad().getNombre());
-        direccionLabel.setText(personaDTO.getDireccion().get(0).getLocalidad().getProvincia().getNombre());
+        provinciaLabel.setText(personaDTO.getDireccion().get(0).getLocalidad().getProvincia().getNombre());
     }
 }

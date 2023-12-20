@@ -96,7 +96,7 @@
                       <focusable value="true"/>
                       <minimumSize width="-1" height="-1"/>
                       <opaque value="true"/>
-                      <visible value="true"/>
+                      <visible value="false"/>
                     </properties>
                     <border type="line"/>
                     <children>
@@ -134,7 +134,7 @@
                       </component>
                       <component id="518b1" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="2" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Sexo                                       "/>
@@ -200,7 +200,7 @@
                       </component>
                       <component id="5a6a9" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="2" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Sexo                                       "/>
@@ -265,7 +265,7 @@
                       </component>
                       <component id="1dbe7" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="2" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Sexo                                       "/>
@@ -292,7 +292,7 @@
                       <focusable value="true"/>
                       <minimumSize width="-1" height="-1"/>
                       <opaque value="true"/>
-                      <visible value="false"/>
+                      <visible value="true"/>
                     </properties>
                     <border type="line"/>
                     <children>
@@ -330,7 +330,7 @@
                       </component>
                       <component id="61756" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false"/>
+                          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="2" fill="0" indent="1" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Sexo                                       "/>

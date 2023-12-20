@@ -387,7 +387,115 @@ public class AltaPoliza2 {
         }
         return aviso;
     }
+    /*private String validateDataEspesificado() {
+        String aviso="Error en:";
+        if (ProvComboBox.getSelectedIndex()<0){
+            aviso+= " Provincia, campo vacio";
+        }
+        if (LocalidadBox.getSelectedIndex()<0){
+            aviso+= " Localidad, campo vacio";
+        }
+        if (MarcaBox.getSelectedIndex()<0){
+            aviso+= " Marca, campo vacio";
+        }
+        if (ModeloBox.getSelectedIndex()<0){
+            aviso+= " Modelo, campo vacio";
+        }
+        if (AñoVehiculoBox.getSelectedIndex()<0){
+            aviso+= " AñoVehiculo, campo vacio";
+        }
+        if (motorText.getText().equals("")){
+            aviso+= " Motor, campo vacio";
+        }else if(motorText.getText().length()>20) {
+            aviso += " Motor, campo mayor a 20 caracteres";
+        }
+        if(chasisText.getText().equals("")){
+            aviso+= " Chasis, campo vacio";
+        }else if(chasisText.getText().length()>20){
+            aviso+= " Chasis, campo mayor a 20 caracteres";
+        }
+        if(patenteText.getText().equals("")){
+            aviso+= " Patente, campo vacio";
+        }else if(patenteText.getText().length()>20){
+            aviso+= " Patente, campo mayor a 20 caracteres";
+        }
+        if (GestorPoliza.patenteDuplicada(patenteText.getText())){
+            aviso+=" Patente Ya Existente";
+        }
+        if(kmText.getText().equals("")){
+            aviso+= " Km, campo vacio";
+        }else if(kmText.getText().length()>20){
+            aviso+= " Km, campo mayor a 20 caracteres";
+        }else if(!kmText.getText().matches("\\d+")){
+            aviso+= " Km, campo solo acepta numeros";
+        }
+        if (siniestrosBox.getSelectedIndex()<0){
+            aviso+= " Siniestros, campo vacio";
+        }
 
+
+        Calendar now = Calendar.getInstance();
+        now.add(Calendar.YEAR, -18);
+        Calendar thirtyYearsAgo = Calendar.getInstance();
+        thirtyYearsAgo.add(Calendar.YEAR, -30);
+        if (tabbedPane1.isEnabledAt(0)) {
+            Date selectedDate = calendar.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
+                aviso += " Fecha Hijo1, no cumple formato";
+            }
+            if (Sexo1.getSelectedIndex() < 0) {
+                aviso += " Sexo Hijo1, campo vacio";
+            }
+            if (Civil1.getSelectedIndex() < 0) {
+                aviso += " Estado Civil Hijo1, campo vacio";
+            }
+        }
+        if (tabbedPane1.isEnabledAt(1)) {
+            Date selectedDate2 = calendar2.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate2);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
+                aviso += " Fecha Hijo2, ";
+            }
+            if (Sexo2.getSelectedIndex() < 0) {
+                aviso += " Sexo Hijo2,";
+            }
+            if (Civil2.getSelectedIndex() < 0) {
+                aviso += " Estado Civil Hijo2,";
+            }
+        }
+        if (tabbedPane1.isEnabledAt(2)) {
+            Date selectedDate3 = calendar3.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate3);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
+                aviso += " Fecha Hijo3, ";
+            }
+            if (Sexo3.getSelectedIndex() < 0) {
+                aviso += " Sexo Hijo3,";
+            }
+            if (Civil3.getSelectedIndex() < 0) {
+                aviso += " Estado Civil Hijo3,";
+            }
+        }
+        if (tabbedPane1.isEnabledAt(3)) {
+            Date selectedDate4 = calendar4.getDate();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(selectedDate4);
+            if (!dob.after(thirtyYearsAgo) || !dob.before(now)) {
+                aviso += " Fecha Hijo4, ";
+            }
+            if (Sexo4.getSelectedIndex() < 0) {
+                aviso += " Sexo Hijo4,";
+            }
+            if (Civil4.getSelectedIndex() < 0) {
+                aviso += " Estado Civil Hijo4,";
+            }
+        }
+        return aviso;
+    }*/
 
     public JPanel getPantallaPrincipal() {
         return PanelPrincipal;
@@ -440,23 +548,27 @@ public class AltaPoliza2 {
     }
 
     private void cargarHijos() {
-        Sexo1 = new JComboBox<>(Sexo.values());
+        Sexo[] sexoValues = Sexo.values();
+        Arrays.sort(sexoValues, (s1, s2) -> s1.name().compareTo(s2.name()));
+        EstadoCivil[] CivilValues = EstadoCivil.values();
+        Arrays.sort(CivilValues, (s1, s2) -> s1.name().compareTo(s2.name()));
+        Sexo1 = new JComboBox<>(sexoValues);
         Sexo1.setSelectedIndex(-1);
         Sexo1.setFocusable(false);
-        Civil1 = new JComboBox<>(EstadoCivil.values());
+        Civil1 = new JComboBox<>(CivilValues);
         Civil1.setSelectedIndex(-1);
         Civil1.setFocusable(false);
-        Sexo2 = new JComboBox<>(Sexo.values());
+        Sexo2 = new JComboBox<>(sexoValues);
         Sexo2.setSelectedIndex(-1);
-        Civil2 = new JComboBox<>(EstadoCivil.values());
+        Civil2 = new JComboBox<>(CivilValues);
         Civil2.setSelectedIndex(-1);
-        Sexo3 = new JComboBox<>(Sexo.values());
+        Sexo3 = new JComboBox<>(sexoValues);
         Sexo3.setSelectedIndex(-1);
-        Civil3 = new JComboBox<>(EstadoCivil.values());
+        Civil3 = new JComboBox<>(CivilValues);
         Civil3.setSelectedIndex(-1);
-        Sexo4 = new JComboBox<>(Sexo.values());
+        Sexo4 = new JComboBox<>(sexoValues);
         Sexo4.setSelectedIndex(-1);
-        Civil4 = new JComboBox<>(EstadoCivil.values());
+        Civil4 = new JComboBox<>(CivilValues);
         Civil4.setSelectedIndex(-1);
     }
 

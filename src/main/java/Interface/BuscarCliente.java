@@ -119,23 +119,27 @@ public class BuscarCliente {
         adelante.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pagina ++;
-                página = "Página ";
-                página+= String.valueOf(pagina);
-                páginaXLabel.setText(página);
-                modeloTabla.setRowCount(0);
-                cargarTabla(lista);
+                if ((pagina)*filas < lista.size()) {
+                    pagina++;
+                    página = "Página ";
+                    página += String.valueOf(pagina);
+                    páginaXLabel.setText(página);
+                    modeloTabla.setRowCount(0);
+                    cargarTabla(lista);
+                }
             }
         });
         atras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pagina--;
-                página = "Página ";
-                página+= String.valueOf(pagina);
-                páginaXLabel.setText(página);
-                modeloTabla.setRowCount(0);
-                cargarTabla(lista);
+                if (pagina>1) {
+                    pagina--;
+                    página = "Página ";
+                    página += String.valueOf(pagina);
+                    páginaXLabel.setText(página);
+                    modeloTabla.setRowCount(0);
+                    cargarTabla(lista);
+                }
             }
         });
     }
@@ -148,10 +152,10 @@ public class BuscarCliente {
         if (ApellidoText.getText().length()>20) {
             aviso +=" Apellido";
         }
-        if ((!documentoText.getText().matches("\\d+")&& !documentoText.getText().equals("")) || documentoText.getText().length()>15) {
+        if ((!documentoText.getText().matches("\\d+")&& !documentoText.getText().equals("")) || documentoText.getText().length()>15 || (!documentoText.getText().equals("") && Integer.parseInt(documentoText.getText())<=0)) {
             aviso +=" Documento";
         }
-        if ((!nroClienteText.getText().matches("\\d+")&& !nroClienteText.getText().equals("")) || nroClienteText.getText().length()>15) {
+        if ((!nroClienteText.getText().matches("\\d+")&& !nroClienteText.getText().equals("")) || nroClienteText.getText().length()>15 || (!nroClienteText.getText().equals("") && Integer.parseInt(nroClienteText.getText())<=0)) {
             aviso +=" NroCliente";
         }
         return aviso;
