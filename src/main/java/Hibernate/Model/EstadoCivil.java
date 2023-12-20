@@ -1,9 +1,11 @@
 package Hibernate.Model;
 
 public enum EstadoCivil {
-	SOLTERO("Soltero/a"),
 	CASADO("Casado/a"),
 	DIVORCIADO("Divorciado/a"),
+	SOLTERO("Soltero/a"),
+
+
 	VIUDO("Viudo/a");
 
 	private final String descripcion;
