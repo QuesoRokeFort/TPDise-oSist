@@ -100,18 +100,18 @@ public class PolizaGenerar {
 		//ImportePorDescuento = new JLabel();
 		ImportePorDescuento.setText(String.valueOf(currentPoliza.getDescuentos()));
 		//vencimiento1 = new JLabel();
-		vencimiento1.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(1)));
+		vencimiento1.setText(String.valueOf(currentPoliza.getFechaInicioVigencia()));
 		//importe1 = new JLabel();
 		importe1.setText(String.valueOf(cob.getPrecio()*6));
 		//totalAPagarLabel = new JLabel();
 		totalAPagarLabel.setText(String.valueOf(cob.getPrecio()*6));
 		if(currentPoliza.getFormaDePago().equals("Mensual")){
 			importe1.setText(String.valueOf(cob.getPrecio()));
-			vencimiento2.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(2)));
-			vencimiento3.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(3)));
-			vencimiento4.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(4)));
-			vencimiento5.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(5)));
-			vencimiento6.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(6)));
+			vencimiento2.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(1)));
+			vencimiento3.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(2)));
+			vencimiento4.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(3)));
+			vencimiento5.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(4)));
+			vencimiento6.setText(String.valueOf(currentPoliza.getFechaInicioVigencia().plusMonths(5)));
 			importe2.setText(String.valueOf(cob.getPrecio()));
 			importe3.setText(String.valueOf(cob.getPrecio()));
 			importe4.setText(String.valueOf(cob.getPrecio()));

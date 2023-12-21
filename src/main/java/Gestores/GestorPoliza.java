@@ -100,7 +100,7 @@ public class GestorPoliza {
 			poliza.setNroPoliza(currentPoliza.getNroPoliza());
 		}
 		System.out.println(poliza.toString());
-		//PolizaDao.savePoliza(poliza);
+		PolizaDao.savePoliza(poliza);
 	}
 
 	private static boolean CalcularEstado(Cliente cliente, Siniestros nroSiniestrosAnuales) {
