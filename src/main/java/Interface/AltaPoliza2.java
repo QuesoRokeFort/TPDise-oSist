@@ -138,7 +138,7 @@ public class AltaPoliza2 {
                     cobertura.cargarDatos();
                     cardLayout.show(cardPanel,"elegir cobertura");
                 } else {
-                    JOptionPane.showMessageDialog(null, aviso);
+                    JOptionPane.showMessageDialog(null,aviso,"Advertencia",JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
